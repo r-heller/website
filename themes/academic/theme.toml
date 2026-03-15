@@ -1,0 +1,7 @@
+name = "Academic"
+license = "MIT"
+licenselink = "https://github.com/example/academic/blob/main/LICENSE"
+description = "A clean academic theme for Hugo"
+
+[author]
+  name = "Custom"
