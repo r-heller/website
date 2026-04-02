@@ -13,9 +13,9 @@ unsafe = true
 
 [params]
 author = "R. Heller"
-description = "Biomedical Researcher · Biostatistics · Data Science"
-keywords = "biostatistics,data science,R,spinal cord injury,research"
-info = ["Biomedical Researcher", "Biostatistics · Data Science"]
+description = "Biomedical Research · Biostatistics · Data Science"
+keywords = "biostatistics,data science,R,traumaimmunology,research"
+info = ["Biomedical Research", "Biostatistics · Data Science"]
 avatarURL = "images/avatar.svg"
 # footerContent = ""
 dateFormat = "2006-01-02"
@@ -44,10 +44,10 @@ weight = 2
 url = "https://orcid.org/0000-0001-8006-9742"
 
 [[params.social]]
-name = "Email"
-icon = "fa-solid fa-envelope fa-2x"
+name = "ResearchGate"
+icon = "fa-brands fa-researchgate fa-2x"
 weight = 3
-url = "mailto:your-email@example.com"
+url = "https://www.researchgate.net/profile/Raban-Heller"
 
 # ─── Navigation ──────────────────────────────────────────────────────────────
 
@@ -62,9 +62,9 @@ weight = 2
 url = "publications/"
 
 [[menu.main]]
-name = "R Packages"
+name = "Software"
 weight = 3
-url = "r-packages/"
+url = "software/"
 
 [[menu.main]]
 name = "Contact"

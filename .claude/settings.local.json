@@ -20,7 +20,19 @@
       "Bash(export PATH=\"/c/Program Files/Go/bin:$PATH\")",
       "Bash(go list:*)",
       "Bash(GOPROXY=https://proxy.golang.org go get github.com/luizdepra/hugo-coder@latest)",
-      "Bash(go get:*)"
+      "Bash(go get:*)",
+      "Bash(cp \"C:/Users/raban/Downloads/files/bambamR_icon.svg\" \"C:/Users/raban/Documents/GitHub/website/static/images/\")",
+      "Bash(cp \"C:/Users/raban/Downloads/files/hexmakeR_icon.svg\" \"C:/Users/raban/Documents/GitHub/website/static/images/\")",
+      "Bash(cp \"C:/Users/raban/Downloads/files/lstparsR_icon.svg\" \"C:/Users/raban/Documents/GitHub/website/static/images/\")",
+      "Bash(cp \"C:/Users/raban/Downloads/files/phenoscapR_icon.svg\" \"C:/Users/raban/Documents/GitHub/website/static/images/\")",
+      "Bash(cp \"C:/Users/raban/Downloads/files/reflowR_icon.svg\" \"C:/Users/raban/Documents/GitHub/website/static/images/\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:1313/website/software/)",
+      "Bash(pip install:*)",
+      "Bash(python -c \":*)",
+      "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)",
+      "WebFetch(domain:doi.org)",
+      "WebFetch(domain:www.mdpi.com)",
+      "WebFetch(domain:linkinghub.elsevier.com)"
     ]
   }
 }

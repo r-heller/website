@@ -1,0 +1,74 @@
+<svg width="500" height="580" viewBox="0 0 500 580" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1035"/>
+      <stop offset="100%" stop-color="#0d0920"/>
+    </linearGradient>
+    <linearGradient id="hex-glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7F77DD" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#534AB7" stop-opacity="0.08"/>
+    </linearGradient>
+    <clipPath id="hex-clip">
+      <polygon points="250,30 455,145 455,375 250,490 45,375 45,145"/>
+    </clipPath>
+  </defs>
+
+  <!-- Main hex shape -->
+  <polygon points="250,30 455,145 455,375 250,490 45,375 45,145"
+    fill="url(#bg-grad)" stroke="none"/>
+  <polygon points="250,30 455,145 455,375 250,490 45,375 45,145"
+    fill="url(#hex-glow)" stroke="none"/>
+
+  <!-- Hex border -->
+  <polygon points="250,30 455,145 455,375 250,490 45,375 45,145"
+    fill="none" stroke="#7F77DD" stroke-width="12" stroke-linejoin="round"/>
+  <polygon points="250,44 441,153 441,367 250,476 59,367 59,153"
+    fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linejoin="round" stroke-opacity="0.6"/>
+
+  <g clip-path="url(#hex-clip)">
+    <!-- Mini hex stickers -->
+    <polygon points="110,120 138,105 166,120 166,150 138,165 110,150"
+      fill="#3C3489" stroke="#7F77DD" stroke-width="1.5"/>
+    <text font-family="monospace" font-size="11" fill="#CECBF6" text-anchor="middle" x="138" y="138">gg</text>
+
+    <polygon points="355,100 383,85 411,100 411,130 383,145 355,130"
+      fill="#085041" stroke="#1D9E75" stroke-width="1.5"/>
+    <text font-family="monospace" font-size="11" fill="#9FE1CB" text-anchor="middle" x="383" y="118">dt</text>
+
+    <polygon points="80,290 108,275 136,290 136,320 108,335 80,320"
+      fill="#3C3489" stroke="#7F77DD" stroke-width="1.5"/>
+    <text font-family="monospace" font-size="11" fill="#CECBF6" text-anchor="middle" x="108" y="308">sf</text>
+
+    <polygon points="370,305 398,290 426,305 426,335 398,350 370,335"
+      fill="#712B13" stroke="#D85A30" stroke-width="1.5"/>
+    <text font-family="monospace" font-size="11" fill="#F5C4B3" text-anchor="middle" x="398" y="323">tm</text>
+
+    <polygon points="200,370 228,355 256,370 256,400 228,415 200,400"
+      fill="#085041" stroke="#1D9E75" stroke-width="1.5"/>
+    <text font-family="monospace" font-size="10" fill="#9FE1CB" text-anchor="middle" x="228" y="388">lm</text>
+
+    <!-- Guide lines -->
+    <line x1="148" y1="230" x2="355" y2="230" stroke="#EF9F27" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+    <line x1="148" y1="260" x2="355" y2="260" stroke="#EF9F27" stroke-width="1" stroke-dasharray="4 3" opacity="0.35"/>
+
+    <!-- Central hex outline being constructed -->
+    <polygon points="250,170 310,205 310,275 250,310 190,275 190,205"
+      fill="none" stroke="#EF9F27" stroke-width="2" stroke-linejoin="round" stroke-dasharray="8 4" opacity="0.85"/>
+
+    <!-- Pencil tool -->
+    <g transform="translate(305,168) rotate(-38)">
+      <rect x="-5" y="-24" width="10" height="30" rx="2" fill="#FAC775"/>
+      <polygon points="-5,6 5,6 0,18" fill="#F0994A"/>
+      <rect x="-5" y="-28" width="10" height="6" rx="1" fill="#B4B2A9"/>
+      <rect x="-4" y="-7" width="8" height="2" fill="#D85A30" opacity="0.5"/>
+    </g>
+
+    <!-- R letter -->
+    <text font-family="Georgia, serif" font-weight="700" font-size="52"
+      fill="#7F77DD" text-anchor="middle" x="250" y="258" opacity="0.9">R</text>
+  </g>
+
+  <!-- Package name -->
+  <text font-family="monospace" font-weight="700" font-size="28"
+    fill="#EEEDFE" text-anchor="middle" x="250" y="545" letter-spacing="1">hexmakeR</text>
+</svg>

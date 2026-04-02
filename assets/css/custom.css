@@ -30,18 +30,21 @@
   font-style: italic;
 }
 
-/* R package cards */
+/* Software / R package cards */
 .pkg-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
 .pkg-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
   border: 1px solid var(--border-color, #ddd);
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 1.2rem;
   transition: box-shadow 0.2s ease;
 }
 
@@ -49,23 +52,58 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.pkg-icon {
+  width: 90px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.pkg-body {
+  flex: 1;
+  min-width: 0;
+}
+
 .pkg-card h3 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-family: monospace;
+}
+
+.pkg-card p {
+  margin: 0 0 0.6rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--secondary-color, #666);
 }
 
 .pkg-card .pkg-links a {
-  margin-right: 1rem;
-  font-size: 0.9rem;
+  margin-right: 0.8rem;
+  font-size: 0.85rem;
 }
 
 /* Contact page */
 .contact-info {
-  font-size: 1.1rem;
-  line-height: 2;
+  font-size: 1.3rem;
+  line-height: 2.2;
 }
 
 .contact-info a {
   text-decoration: none;
   border-bottom: 1px solid var(--accent);
+}
+
+/* Responsive: stack card layout on small screens */
+@media (max-width: 500px) {
+  .pkg-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .pkg-icon {
+    width: 80px;
+  }
+  .pkg-grid {
+    grid-template-columns: 1fr;
+  }
 }
