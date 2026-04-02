@@ -1,57 +1,77 @@
-baseURL = 'https://example.org/'
-languageCode = 'en'
-title = 'R Statistics Tutorials & Research'
-theme = 'academic'
+baseURL = "https://r-heller.github.io/"
+title = "R. Heller"
+theme = "hugo-coder"
+languageCode = "en"
+defaultContentLanguage = "en"
+paginate = 20
+enableEmoji = true
+
+[markup.highlight]
+noClasses = false
+
+[markup.goldmark.renderer]
+unsafe = true
 
 [params]
-  description = 'Personal academic website featuring R statistical tutorials, research publications, and blog posts.'
-  author = 'Your Name'
-  dateFormat = 'January 2, 2006'
+author = "R. Heller"
+description = "Biomedical Researcher · Biostatistics · Data Science"
+keywords = "biostatistics,data science,R,spinal cord injury,research"
+info = ["Biomedical Researcher", "Biostatistics · Data Science"]
+avatarURL = "images/avatar.svg"
+# footerContent = ""
+dateFormat = "2006-01-02"
+hideFooter = false
+hideCredits = false
+since = 2025
+enableTwemoji = false
 
-[markup]
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = true
-    lineNos = true
-    style = 'monokai'
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+# Color scheme: auto | light | dark
+colorScheme = "auto"
 
-[menu]
-  [[menu.main]]
-    identifier = 'home'
-    name = 'Home'
-    url = '/'
-    weight = 1
-  [[menu.main]]
-    identifier = 'tutorials'
-    name = 'R Tutorials'
-    url = '/tutorials/'
-    weight = 2
-  [[menu.main]]
-    identifier = 'blog'
-    name = 'Blog'
-    url = '/blog/'
-    weight = 3
-  [[menu.main]]
-    identifier = 'about'
-    name = 'About'
-    url = '/about/'
-    weight = 4
-  [[menu.main]]
-    identifier = 'publications'
-    name = 'Publications'
-    url = '/publications/'
-    weight = 5
-  [[menu.main]]
-    identifier = 'impressum'
-    name = 'Impressum'
-    url = '/impressum/'
-    weight = 6
+# Custom CSS (optional, for minor tweaks)
+customCSS = ["css/custom.css"]
 
-[outputs]
-  home = ['HTML', 'RSS']
+# Social icons on the home page
+[[params.social]]
+name = "GitHub"
+icon = "fa-brands fa-github fa-2x"
+weight = 1
+url = "https://github.com/r-heller"
 
-[pagination]
-  pagerSize = 10
+[[params.social]]
+name = "ORCID"
+icon = "fa-brands fa-orcid fa-2x"
+weight = 2
+url = "https://orcid.org/0000-0001-8006-9742"
+
+[[params.social]]
+name = "Email"
+icon = "fa-solid fa-envelope fa-2x"
+weight = 3
+url = "mailto:your-email@example.com"
+
+# ─── Navigation ──────────────────────────────────────────────────────────────
+
+[[menu.main]]
+name = "About"
+weight = 1
+url = "about/"
+
+[[menu.main]]
+name = "Publications"
+weight = 2
+url = "publications/"
+
+[[menu.main]]
+name = "R Packages"
+weight = 3
+url = "r-packages/"
+
+[[menu.main]]
+name = "Contact"
+weight = 4
+url = "contact/"
+
+[module]
+[[module.imports]]
+path = "github.com/luizdepra/hugo-coder"

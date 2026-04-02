@@ -1,39 +1,19 @@
 ---
-title: "About Me"
-description: "Bio, research interests, and academic background."
-layout: "single"
+title: "About"
+date: 2025-01-01
 ---
 
-## Bio
+## R. Heller
 
-<!-- Replace with your own bio -->
-I am a researcher and data scientist with a passion for statistics, data visualisation, and reproducible research. My work focuses on applying modern statistical methods to real-world problems using R.
+I am a researcher with a focus on **biostatistics**, **biomedical research**, and **data science**. My work spans clinical research methodology, spinal cord injury outcomes, and the development of statistical tools for the research community.
 
-## Research Interests
+### Research Interests
 
-- Statistical modelling and inference
-- Data visualisation and scientific communication
-- Reproducible research workflows
-- Open science and open-source software
+- **Biostatistics**: Study design, clinical trial methodology, and advanced statistical modeling
+- **Spinal Cord Injury**: Outcome measurement, rehabilitation research, and prediction models
+- **Data Science**: Reproducible research workflows, R programming, and data visualization
+- **Statistical Education**: Making complex statistical concepts accessible through practical examples
 
-## Education
+### Tools
 
-<!-- Replace with your education -->
-- **Ph.D. in [Your Field]** — [University Name], [Year]
-- **M.Sc. in [Your Field]** — [University Name], [Year]
-- **B.Sc. in [Your Field]** — [University Name], [Year]
-
-## Skills
-
-| Category | Tools |
-|----------|-------|
-| Programming | R, Python, SQL |
-| Statistics | Regression, Mixed Models, Bayesian Methods |
-| Visualisation | ggplot2, Shiny, Plotly |
-| Writing | R Markdown, Quarto, LaTeX |
-
-## Contact
-
-- Email: [your.email@example.com](mailto:your.email@example.com)
-- GitHub: [github.com/yourusername](https://github.com/yourusername)
-- ORCID: [0000-0000-0000-0000](https://orcid.org/0000-0000-0000-0000)
+I work primarily with [R / RStudio](https://posit.co/), [Zotero](https://www.zotero.org/), [Overleaf / LaTeX](https://www.overleaf.com/), and [Adobe Acrobat](https://www.adobe.com/acrobat.html).

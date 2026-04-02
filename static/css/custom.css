@@ -1,0 +1,71 @@
+/*
+ * Custom overrides for Hugo Coder theme
+ * Keep this minimal — the theme does the heavy lifting
+ */
+
+/* Publication list styling */
+.publication-year {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.3rem;
+}
+
+.publication-item {
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.publication-item .pub-title {
+  font-weight: 600;
+}
+
+.publication-item .pub-authors {
+  color: var(--secondary-color, #666);
+}
+
+.publication-item .pub-journal {
+  font-style: italic;
+}
+
+/* R package cards */
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.pkg-card {
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.pkg-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pkg-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.pkg-card .pkg-links a {
+  margin-right: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Contact page */
+.contact-info {
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+.contact-info a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
