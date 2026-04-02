@@ -2,7 +2,25 @@
   "permissions": {
     "allow": [
       "mcp__Claude_Preview__preview_start",
-      "Bash(where hugo:*)"
+      "Bash(where hugo:*)",
+      "Bash(gh run:*)",
+      "Bash(where gh:*)",
+      "Read(//c/Program Files/Hugo/**)",
+      "Read(//c/ProgramData/chocolatey/bin/**)",
+      "Read(//c/Users/raban/**)",
+      "Bash(cmd.exe /c \"where hugo\")",
+      "Bash(ls /c/Users/raban/AppData/Local/Microsoft/WinGet/Links/hugo*)",
+      "Bash(ls /c/Users/raban/scoop/shims/hugo*)",
+      "Read(//c/Hugo/**)",
+      "Bash(powershell.exe -Command \"Get-Command hugo -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(powershell.exe -Command \"\\(Get-Command hugo\\).Source\")",
+      "Bash(ls \"/c/Users/raban/AppData/Local/Microsoft/WinGet/Packages/\"*hugo*)",
+      "Read(//c/Program Files/Go/**)",
+      "Read(//c/Program Files/**)",
+      "Bash(export PATH=\"/c/Program Files/Go/bin:$PATH\")",
+      "Bash(go list:*)",
+      "Bash(GOPROXY=https://proxy.golang.org go get github.com/luizdepra/hugo-coder@latest)",
+      "Bash(go get:*)"
     ]
   }
 }
