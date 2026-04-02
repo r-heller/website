@@ -3,6 +3,40 @@
  * Keep this minimal — the theme does the heavy lifting
  */
 
+/* Publication metrics header */
+.pub-metrics {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.pub-metrics-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pub-metrics-list li {
+  margin-bottom: 0.2rem;
+}
+
+.pub-metrics-qr {
+  flex-shrink: 0;
+  margin-left: 2rem;
+}
+
+@media (max-width: 500px) {
+  .pub-metrics {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pub-metrics-qr {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}
+
 /* Publication list styling */
 .publication-year {
   margin-top: 2rem;

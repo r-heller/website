@@ -32,7 +32,10 @@
       "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)",
       "WebFetch(domain:doi.org)",
       "WebFetch(domain:www.mdpi.com)",
-      "WebFetch(domain:linkinghub.elsevier.com)"
+      "WebFetch(domain:linkinghub.elsevier.com)",
+      "WebFetch(domain:www.sciencedirect.com)",
+      "WebFetch(domain:api.crossref.org)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:1313/website/)"
     ]
   }
 }
