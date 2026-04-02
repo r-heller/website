@@ -9,9 +9,9 @@ Research with a focus on biostatistics, biomedical research, and data science. S
 
 ### Research Interests
 
-- **Traumaimmunology**: Immune response after trauma, inflammatory biomarkers, neuroimmunological recovery
+- **Traumaimmunology**: Immune response after trauma, cross-species biomarker signatures
 - **Biostatistics**: Clinical trial methodology, statistical modeling, outcome prediction
-- **Data Science**: R programming, reproducible research, data visualization
+- **Data Science**: R programming, reproducible research, high-dimensional data visualization
 
 ### Tools
 
