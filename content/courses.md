@@ -13,4 +13,4 @@ Interactive tutorials covering descriptive statistics, data visualization, infer
 
 Course materials, slides, and supplementary resources.
 
-[github.com/CTTIR/courses](https://github.com/CTTIR/courses)
+[r-heller.github.io/courses](https://r-heller.github.io/courses/)
