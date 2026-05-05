@@ -1,0 +1,106 @@
+baseURL = "https://r-heller.github.io/website/"
+title = "R. Heller"
+languageCode = "en"
+defaultContentLanguage = "en"
+paginate = 20
+enableEmoji = true
+
+[markup.highlight]
+noClasses = false
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+author = "R. Heller"
+description = "Biomedical Research · Biostatistics · Data Science"
+keywords = "biostatistics,data science,R,traumaimmunology,research"
+info = ["Biomedical Research", "Biostatistics · Data Science"]
+avatarURL = "images/avatar.svg"
+favicon_32 = "images/favicon.svg"
+favicon_16 = "images/favicon.svg"
+# footerContent = ""
+dateFormat = "2006-01-02"
+hideFooter = false
+hideCredits = false
+since = 2025
+enableTwemoji = false
+
+# Color scheme: auto | light | dark
+colorScheme = "auto"
+
+# Custom CSS (optional, for minor tweaks)
+customCSS = ["css/custom.css"]
+
+# Social icons on the home page
+[[params.social]]
+name = "GitHub"
+icon = "fa-brands fa-github fa-2x"
+weight = 1
+url = "https://github.com/r-heller"
+
+[[params.social]]
+name = "ORCID"
+icon = "fa-brands fa-orcid fa-2x"
+weight = 2
+url = "https://orcid.org/0000-0001-8006-9742"
+
+[[params.social]]
+name = "ResearchGate"
+icon = "fa-brands fa-researchgate fa-2x"
+weight = 3
+url = "https://www.researchgate.net/profile/Raban-Heller"
+
+# ─── Navigation ──────────────────────────────────────────────────────────────
+
+[[menu.main]]
+name = "About"
+weight = 1
+url = "about/"
+
+[[menu.main]]
+name = "Publications"
+weight = 2
+url = "publications/"
+
+[[menu.main]]
+name = "Software"
+weight = 3
+url = "software/"
+
+[[menu.main]]
+name = "Courses"
+weight = 4
+url = "courses/"
+
+[[menu.main]]
+name = "Contact"
+weight = 5
+url = "contact/"
+
+[[menu.main]]
+name = "Rechtliches"
+weight = 6
+identifier = "rechtliches"
+
+[[menu.main]]
+name = "Impressum"
+parent = "rechtliches"
+weight = 1
+url = "legal/impressum/"
+
+[[menu.main]]
+name = "Datenschutz"
+parent = "rechtliches"
+weight = 2
+url = "legal/datenschutz/"
+
+[[menu.main]]
+name = "Haftungsausschluss"
+parent = "rechtliches"
+weight = 3
+url = "legal/haftungsausschluss/"
+
+[module]
+[[module.imports]]
+path = "github.com/luizdepra/hugo-coder"

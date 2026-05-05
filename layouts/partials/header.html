@@ -1,0 +1,22 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      {{ range .Site.Menus.main }}
+        {{ if .HasChildren }}
+          <span class="nav-dropdown">
+            <a href="#" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="nav-caret">&#9662;</span></a>
+            <span class="nav-dropdown-menu">
+              {{ range .Children }}
+                <a href="{{ .URL | relURL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">{{ .Name }}</a>
+              {{ end }}
+            </span>
+          </span>
+        {{ else }}
+          <a href="{{ .URL | relURL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">{{ .Name }}</a>
+        {{ end }}
+      {{ end }}
+    </nav>
+  </div>
+</header>
