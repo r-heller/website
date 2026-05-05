@@ -8,3 +8,6 @@ node_modules/
 # IDE
 .vscode/
 .idea/
+
+# Local backup
+OLD/

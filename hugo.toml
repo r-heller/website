@@ -81,20 +81,7 @@ url = "contact/"
 [[menu.main]]
 name = "Impressum"
 weight = 6
-identifier = "impressum"
-url = "legal/impressum/"
-
-[[menu.main]]
-name = "Datenschutz"
-parent = "impressum"
-weight = 2
-url = "legal/datenschutz/"
-
-[[menu.main]]
-name = "Haftungsausschluss"
-parent = "impressum"
-weight = 3
-url = "legal/haftungsausschluss/"
+url = "impressum/"
 
 [module]
 [[module.imports]]
