@@ -9,7 +9,7 @@ Interactive tutorials covering descriptive statistics, data visualization, infer
 
 [CTTIR.github.io/tutorials](https://CTTIR.github.io/tutorials/)
 
-## Courses Repository
+## R Courses Repository
 
 Course materials, slides, and supplementary resources.
 
