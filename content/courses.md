@@ -7,10 +7,10 @@ date: 2025-01-01
 
 Interactive tutorials covering descriptive statistics, data visualization, inferential statistics, and regression modeling in R.
 
-[r-heller.github.io/R-Tutorials](https://r-heller.github.io/R-Tutorials/)
+[CTTIR.github.io/tutorials](https://CTTIR.github.io/tutorials/)
 
 ## Courses Repository
 
 Course materials, slides, and supplementary resources.
 
-[github.com/r-heller/courses](https://github.com/r-heller/courses)
+[github.com/CTTIR/courses](https://github.com/CTTIR/courses)

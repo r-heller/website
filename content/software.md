@@ -17,8 +17,8 @@ Interactive hex sticker generator for R packages with Shiny interface and progra
 
 <div class="pkg-links">
 
-[GitHub](https://github.com/r-heller/hexmakeR) ·
-[Documentation](https://r-heller.github.io/hexmakeR/)
+[GitHub](https://github.com/CTTIR/hexmakeR) ·
+[Documentation](https://CTTIR.github.io/hexmakeR/)
 
 </div>
 </div>
@@ -34,8 +34,8 @@ Spatial single-cell analysis for Akoya PhenoCycler/CODEX multiplexed tissue imag
 
 <div class="pkg-links">
 
-[GitHub](https://github.com/r-heller/phenoscapR) ·
-[Documentation](https://r-heller.github.io/phenoscapR/)
+[GitHub](https://github.com/CTTIR/phenoscapR) ·
+[Documentation](https://CTTIR.github.io/phenoscapR/)
 
 </div>
 </div>
@@ -51,8 +51,8 @@ RNA-seq analysis toolkit from BAM to publication — QC, normalization, differen
 
 <div class="pkg-links">
 
-[GitHub](https://github.com/r-heller/bambamR) ·
-[Documentation](https://r-heller.github.io/bambamR/)
+[GitHub](https://github.com/CTTIR/bambamR) ·
+[Documentation](https://CTTIR.github.io/bambamR/)
 
 </div>
 </div>
@@ -85,8 +85,8 @@ Themed workflowr extensions for reproducible research with custom colour schemes
 
 <div class="pkg-links">
 
-[GitHub](https://github.com/r-heller/reflowR) ·
-[Documentation](https://r-heller.github.io/reflowR/)
+[GitHub](https://github.com/CTTIR/reflowR) ·
+[Documentation](https://CTTIR.github.io/reflowR/)
 
 </div>
 </div>
@@ -102,15 +102,15 @@ Native R/C++ implementation of the SONG dimensionality reduction algorithm with 
 
 <div class="pkg-links">
 
-[GitHub](https://github.com/r-heller/songR) ·
-[Documentation](https://r-heller.github.io/songR/)
+[GitHub](https://github.com/CTTIR/songR) ·
+[Documentation](https://CTTIR.github.io/songR/)
 
 </div>
 </div>
 </div>
 
 <div class="pkg-card">
-<img src="https://raw.githubusercontent.com/r-heller/molpathR/main/man/figures/logo.svg" alt="molpathR" class="pkg-icon" onerror="this.style.display='none'">
+<img src="https://raw.githubusercontent.com/CTTIR/molpathR/main/man/figures/logo.svg" alt="molpathR" class="pkg-icon" onerror="this.style.display='none'">
 <div class="pkg-body">
 
 ### molpathR
@@ -119,8 +119,8 @@ Integrated database for molecular pathology — VCF, XML, PDF, clinical data, im
 
 <div class="pkg-links">
 
-[GitHub](https://github.com/r-heller/molpathR) ·
-[Documentation](https://r-heller.github.io/molpathR/)
+[GitHub](https://github.com/CTTIR/molpathR) ·
+[Documentation](https://CTTIR.github.io/molpathR/)
 
 </div>
 </div>
@@ -136,8 +136,8 @@ Human-in-the-loop cell segmentation for histological and fluorescence microscopy
 
 <div class="pkg-links">
 
-[GitHub](https://github.com/r-heller/segmantR) ·
-[Documentation](https://r-heller.github.io/segmantR/)
+[GitHub](https://github.com/CTTIR/segmantR) ·
+[Documentation](https://CTTIR.github.io/segmantR/)
 
 </div>
 </div>
@@ -153,15 +153,15 @@ MRI/CT analysis and visualization for spinal cord injury — lesion quantificati
 
 <div class="pkg-links">
 
-[GitHub](https://github.com/r-heller/scimagR) ·
-[Documentation](https://r-heller.github.io/scimagR/)
+[GitHub](https://github.com/CTTIR/scimagR) ·
+[Documentation](https://CTTIR.github.io/scimagR/)
 
 </div>
 </div>
 </div>
 
 <div class="pkg-card">
-<img src="https://raw.githubusercontent.com/r-heller/hyperspectR/main/man/figures/logo.svg" alt="hyperspectR" class="pkg-icon" onerror="this.style.display='none'">
+<img src="https://raw.githubusercontent.com/CTTIR/hyperspectR/main/man/figures/logo.svg" alt="hyperspectR" class="pkg-icon" onerror="this.style.display='none'">
 <div class="pkg-body">
 
 ### hyperspectR
@@ -170,8 +170,8 @@ Hyperspectral imaging analysis for Cubert cameras in biomedical and surgical app
 
 <div class="pkg-links">
 
-[GitHub](https://github.com/r-heller/hyperspectR) ·
-[Documentation](https://r-heller.github.io/hyperspectR/)
+[GitHub](https://github.com/CTTIR/hyperspectR) ·
+[Documentation](https://CTTIR.github.io/hyperspectR/)
 
 </div>
 </div>
