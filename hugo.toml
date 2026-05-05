@@ -4,7 +4,6 @@ languageCode = "en"
 defaultContentLanguage = "en"
 paginate = 20
 enableEmoji = true
-theme = "academic"
 
 [markup.highlight]
 noClasses = false
@@ -102,3 +101,6 @@ parent = "rechtliches"
 weight = 3
 url = "legal/haftungsausschluss/"
 
+[module]
+[[module.imports]]
+path = "github.com/luizdepra/hugo-coder"
