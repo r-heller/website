@@ -59,28 +59,33 @@ weight = 1
 url = "about/"
 
 [[menu.main]]
-name = "Publications"
+name = "Projects"
 weight = 2
+url = "projects/"
+
+[[menu.main]]
+name = "Publications"
+weight = 3
 url = "publications/"
 
 [[menu.main]]
 name = "Software"
-weight = 3
+weight = 4
 url = "software/"
 
 [[menu.main]]
 name = "Courses"
-weight = 4
+weight = 5
 url = "courses/"
 
 [[menu.main]]
 name = "Contact"
-weight = 5
+weight = 6
 url = "contact/"
 
 [[menu.main]]
 name = "Impressum"
-weight = 6
+weight = 7
 url = "impressum/"
 
 [module]
