@@ -36,16 +36,6 @@ filtered list below is the canonical view.
     <span><strong id="ov-stat-sw">…</strong> software</span>
     <span style="margin-left:auto;font-family:var(--ov-mono);" id="ov-stat-edges">…</span>
   </div>
-  <nav class="ov-lists ov-lists-2col" aria-label="All works">
-    <section id="ov-col-pub" class="ov-col" aria-labelledby="ov-col-pub-heading">
-      <h3 id="ov-col-pub-heading">Publications <span class="count" id="ov-col-count-pub">…</span></h3>
-      <div class="ov-col-cards"></div>
-    </section>
-    <section id="ov-col-sw" class="ov-col" aria-labelledby="ov-col-sw-heading">
-      <h3 id="ov-col-sw-heading">Software <span class="count" id="ov-col-count-sw">…</span></h3>
-      <div class="ov-col-cards"></div>
-    </section>
-  </nav>
 </div>
 
 <script type="module" src="/website/js/overview/main.js"></script>

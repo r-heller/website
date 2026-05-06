@@ -163,7 +163,8 @@
   --ov-t6: #5F4B8B;
   --ov-t7: #3D5A80;
   --ov-t8: #6B705C;
-  --ov-highlight: #E63946;
+  /* Highlight follows the theme's link colour (Coder defines --link-color). */
+  --ov-highlight: var(--link-color, #3D5A80);
 }
 
 /* Coder auto mode → follow OS. */
@@ -180,7 +181,7 @@
     --ov-t6: #8576B5;
     --ov-t7: #6E8AAD;
     --ov-t8: #9AA088;
-    --ov-highlight: #F26B72;
+    --ov-highlight: var(--link-color, #6E8AAD);
   }
 }
 
@@ -197,7 +198,7 @@ body.colorscheme-dark {
   --ov-t6: #8576B5;
   --ov-t7: #6E8AAD;
   --ov-t8: #9AA088;
-  --ov-highlight: #F26B72;
+  --ov-highlight: var(--link-color, #6E8AAD);
 }
 
 /* Topic-colour swatch helpers */

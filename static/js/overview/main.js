@@ -2,7 +2,6 @@
 // Phase 3: graph render. Phase 4: filters + URL state. Phase 5: search + list.
 import { initFilters } from './filters.js';
 import { initSearch }  from './search.js';
-import { initList }    from './list.js';
 
 const GRAPH_URL  = new URL('graph.json', document.baseURI).toString();
 const LAYOUT_KEY = 'ov-layout-v3';     // bumped: invalidate the collapsed-line layout
@@ -115,12 +114,16 @@ function styleSheet() {
 function showTooltip(el, evt) {
   const tip = document.getElementById('ov-tooltip');
   const d = el.data();
-  let html = `<strong>${escapeHtml(d.label)}</strong>`;
+  let html = `<div style="font-weight:600;line-height:1.3;margin-bottom:.25rem;">${escapeHtml(d.label)}</div>`;
   if (d.type === 'publication') {
-    html += `<br><span style="color:var(--ov-text-2);">${escapeHtml(d.authors || '')}</span>`;
-    html += `<br><em>${escapeHtml(d.venue || '')}</em> · ${d.year ?? ''}`;
+    html += `<div style="color:var(--ov-text-2);font-size:.75rem;line-height:1.35;margin-bottom:.2rem;">${escapeHtml(d.authors || '')}</div>`;
+    html += `<div style="font-size:.75rem;"><em>${escapeHtml(d.venue || '')}</em> · ${d.year ?? ''}</div>`;
   } else if (d.type === 'software') {
-    html += `<br><span style="color:var(--ov-text-2);">${escapeHtml(d.description || '')}</span>`;
+    html += `<div style="color:var(--ov-text-2);font-size:.75rem;line-height:1.35;">${escapeHtml(d.description || '')}</div>`;
+  }
+  if (d.url) {
+    const which = d.type === 'publication' ? 'DOI' : 'GitHub';
+    html += `<div style="margin-top:.35rem;font-size:.7rem;color:var(--link-color, #3D5A80);">Click to open ${which} ↗</div>`;
   }
   tip.innerHTML = html;
   const cont = document.querySelector('.ov-graph').getBoundingClientRect();
@@ -209,7 +212,6 @@ async function init() {
   if (isMobile) {
     if (loading) loading.textContent = 'graph hidden on small screens';
     initSearch({ graph });
-    initList({ graph, cy: stubCy() });
     initFilters({ graph, cy: stubCy(), store: null });
     return;
   }
@@ -267,7 +269,6 @@ async function init() {
     loading.style.display = 'none';
     if (!useCached) persistLayout(cy);
     initSearch({ graph });
-    initList({ graph, cy });
     initFilters({ graph, cy, store: null });
   });
 
