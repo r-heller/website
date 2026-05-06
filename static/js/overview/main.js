@@ -5,7 +5,7 @@ import { initSearch }  from './search.js';
 import { initList }    from './list.js';
 
 const GRAPH_URL  = new URL('graph.json', document.baseURI).toString();
-const LAYOUT_KEY = 'ov-layout-v2';     // bumped: course nodes removed
+const LAYOUT_KEY = 'ov-layout-v3';     // bumped: invalidate the collapsed-line layout
 
 const TOPIC_VAR = ['--ov-t1','--ov-t2','--ov-t3','--ov-t4','--ov-t5','--ov-t6','--ov-t7','--ov-t8'];
 
@@ -244,18 +244,22 @@ async function init() {
         }
       : {
           name: 'fcose',
-          quality: 'default',
-          randomize: false,
+          quality: 'proof',
+          randomize: true,
           animate: false,
-          nodeRepulsion: 4500,
-          idealEdgeLength: 60,
-          edgeElasticity: 0.45,
-          gravity: 0.25,
-          gravityRange: 3.8,
-          numIter: 2500,
+          nodeRepulsion: 9000,
+          idealEdgeLength: 90,
+          edgeElasticity: 0.25,
+          gravity: 0.4,
+          gravityRange: 1.6,
+          gravityCompound: 1.0,
+          numIter: 3500,
           tile: true,
           packComponents: true,
-          padding: 30,
+          tilingPaddingVertical: 30,
+          tilingPaddingHorizontal: 30,
+          padding: 40,
+          fit: true,
         },
   });
 
