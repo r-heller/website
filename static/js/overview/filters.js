@@ -2,12 +2,12 @@
 // Phase 5 piggybacks on the same `ov-state-change` event with a `matched` payload.
 
 const URL_KEYS = {
-  type: 'type', rtopic: 'rtopic', ttopic: 'ttopic',
+  type: 'type', rtopic: 'rtopic',
   method: 'method', from: 'from', to: 'to',
   venue: 'venue', language: 'language',
 };
 
-const ALL_TYPES = ['publication', 'software', 'course'];
+const ALL_TYPES = ['publication', 'software'];
 
 export function initFilters({ graph, cy, store }) {
   const rail = document.getElementById('ov-rail-body');
@@ -30,7 +30,6 @@ export function initFilters({ graph, cy, store }) {
   const state = {
     types: new Set(ALL_TYPES),
     rtopics: new Set(),
-    ttopics: new Set(),
     methods: new Set(),
     venues: new Set(),
     languages: new Set(),
@@ -42,7 +41,6 @@ export function initFilters({ graph, cy, store }) {
   // -------------------- DOM ----------------------------------------------
   const sectionType    = makeChipSection('Type', renderTypeChips(state, graph));
   const sectionRtopic  = makeChipSection('Research topic', renderRTopicChips(state, graph));
-  const sectionTtopic  = makeChipSection('Tutorial topic', renderTTopicChips(state, graph));
   const sectionMethod  = makeChipSection('Method', renderMethodChips(state, graph));
   const sectionYear    = makeYearSlider(state, yearMin, yearMax);
   const sectionVenue   = makeChipSection('Venue', renderVenueChips(state, venues));
@@ -53,20 +51,19 @@ export function initFilters({ graph, cy, store }) {
   reset.textContent = 'Reset all';
   reset.addEventListener('click', () => {
     state.types = new Set(ALL_TYPES);
-    state.rtopics.clear(); state.ttopics.clear(); state.methods.clear();
+    state.rtopics.clear(); state.methods.clear();
     state.venues.clear(); state.languages.clear();
     state.yearFrom = yearMin; state.yearTo = yearMax;
     rerenderAll();
   });
 
-  rail.append(sectionType, sectionRtopic, sectionTtopic, sectionMethod,
+  rail.append(sectionType, sectionRtopic, sectionMethod,
               sectionYear, sectionVenue, sectionLang, reset);
 
   // -------------------- apply --------------------------------------------
   function rerenderAll() {
     sectionType.body.replaceChildren(...renderTypeChips(state, graph));
     sectionRtopic.body.replaceChildren(...renderRTopicChips(state, graph));
-    sectionTtopic.body.replaceChildren(...renderTTopicChips(state, graph));
     sectionMethod.body.replaceChildren(...renderMethodChips(state, graph));
     sectionVenue.body.replaceChildren(...renderVenueChips(state, venues));
     sectionLang.body.replaceChildren(...renderLanguageChips(state, languages));
@@ -83,9 +80,7 @@ export function initFilters({ graph, cy, store }) {
     }
     cy.batch(() => {
       cy.nodes().forEach(n => {
-        const id = n.id();
-        if (id.startsWith('parent-')) return;          // compounds: never hide here
-        const ok = matched.has(id);
+        const ok = matched.has(n.id());
         n.style('display', ok ? 'element' : 'none');
         n.style('opacity', ok ? 1 : 0.15);
       });
@@ -153,19 +148,6 @@ function renderRTopicChips(state, graph) {
     pressed: state.rtopics.size === 0 ? false : state.rtopics.has(t.slug),
     colourIdx: t.colour_index,
     on: () => { toggle(state.rtopics, t.slug); fire(); },
-  }));
-}
-
-function renderTTopicChips(state, graph) {
-  const counts = {};
-  graph.nodes.forEach(n => {
-    if (n.type !== 'course') return;
-    counts[n.tutorial_topic] = (counts[n.tutorial_topic] || 0) + 1;
-  });
-  return graph.topics.tutorial.map(t => chip({
-    label: t.label, count: counts[t.slug] || 0,
-    pressed: state.ttopics.has(t.slug),
-    on: () => { toggle(state.ttopics, t.slug); fire(); },
   }));
 }
 
@@ -237,27 +219,9 @@ function computeMatched(graph, state) {
       if (state.rtopics.size && !(n.topics || []).some(t => state.rtopics.has(t))) continue;
       if (state.methods.size && !(n.methods || []).some(m => state.methods.has(m))) continue;
       if (state.languages.size && !state.languages.has(n.language)) continue;
-    } else if (n.type === 'course') {
-      if (state.ttopics.size && !state.ttopics.has(n.tutorial_topic)) continue;
-      // Methods filter: a course matches a method when the method bridges to its tutorial-topic.
-      if (state.methods.size) {
-        const ttopics = methodTutorialTopics(graph, state.methods);
-        if (!ttopics.has(n.tutorial_topic)) continue;
-      }
     }
     out.add(n.id);
   }
-  return out;
-}
-
-let _methodTopicCache = null;
-function methodTutorialTopics(graph, selected) {
-  if (!_methodTopicCache) {
-    _methodTopicCache = new Map();
-    graph.methods.forEach(m => _methodTopicCache.set(m.slug, m.tutorial_topics || []));
-  }
-  const out = new Set();
-  selected.forEach(s => (_methodTopicCache.get(s) || []).forEach(t => out.add(t)));
   return out;
 }
 
@@ -266,11 +230,10 @@ function countsByType(graph) {
 }
 
 function updateCounts(matched, graph) {
-  const c = { publication: 0, software: 0, course: 0 };
+  const c = { publication: 0, software: 0 };
   for (const n of graph.nodes) if (matched.has(n.id)) c[n.type] = (c[n.type] || 0) + 1;
-  document.getElementById('ov-stat-pub').textContent    = c.publication;
-  document.getElementById('ov-stat-sw').textContent     = c.software;
-  document.getElementById('ov-stat-course').textContent = c.course;
+  document.getElementById('ov-stat-pub').textContent = c.publication;
+  document.getElementById('ov-stat-sw').textContent  = c.software;
 }
 
 // ============================================================================
@@ -284,7 +247,6 @@ function writeURL(state, { yearMin, yearMax }) {
   };
   set(URL_KEYS.type,    state.types.size === ALL_TYPES.length ? '' : Array.from(state.types).join(','));
   set(URL_KEYS.rtopic,  Array.from(state.rtopics).join(','));
-  set(URL_KEYS.ttopic,  Array.from(state.ttopics).join(','));
   set(URL_KEYS.method,  Array.from(state.methods).join(','));
   set(URL_KEYS.venue,   Array.from(state.venues).join(','));
   set(URL_KEYS.language, Array.from(state.languages).join(','));
@@ -303,7 +265,6 @@ function hydrateFromURL(state, { yearMin, yearMax }) {
     if (v) v.split(',').filter(Boolean).forEach(s => target.add(s));
   };
   fillSet(URL_KEYS.rtopic, state.rtopics);
-  fillSet(URL_KEYS.ttopic, state.ttopics);
   fillSet(URL_KEYS.method, state.methods);
   fillSet(URL_KEYS.venue,  state.venues);
   fillSet(URL_KEYS.language, state.languages);

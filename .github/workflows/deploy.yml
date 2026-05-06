@@ -44,9 +44,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Fetch CTTIR tutorial index
-        run: python scripts/fetch_cttir_index.py
-
       - name: Build overview graph
         run: python scripts/build_overview_graph.py
 

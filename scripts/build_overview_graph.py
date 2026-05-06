@@ -186,16 +186,9 @@ def main() -> int:
                 print(f"[build] WARN: {sw['name']} repo unreachable ({sw['repo']}): {e}",
                       file=sys.stderr)
 
-    # Tutorials.
-    cttir_path = data / "_generated" / "cttir_tutorials.json"
-    if not cttir_path.exists():
-        print(f"[build] FATAL: {cttir_path} missing — run scripts/fetch_cttir_index.py first",
-              file=sys.stderr)
-        return 2
-    courses = json.loads(cttir_path.read_text(encoding="utf-8"))
-    if not courses:
-        print("[build] FATAL: zero courses in CTTIR index", file=sys.stderr)
-        return 2
+    # Courses are excluded from the overview network by design.
+    # (CTTIR tutorials live on cttir.github.io and don't belong in this graph.)
+    courses: list[dict] = []
 
     # ---------------- node assembly ------------------------------------
     nodes = []
@@ -276,16 +269,12 @@ def main() -> int:
             ttopic_count[n["tutorial_topic"]] += 1
 
     empty_rtopics = [t for t in rtopic_slugs if rtopic_count[t] == 0]
-    empty_ttopics = [t for t in ttopic_slugs if ttopic_count[t] == 0]
     empty_methods = [m for m in method_slugs if method_count[m] == 0]
     if empty_rtopics:
         print(f"[build] FATAL: research_topics with zero entities: {empty_rtopics}",
               file=sys.stderr)
         return 2
-    if empty_ttopics:
-        print(f"[build] FATAL: tutorial_topics with zero courses: {empty_ttopics}",
-              file=sys.stderr)
-        return 2
+    # tutorial_topics gate skipped — courses are not part of this network.
     if empty_methods:
         print(f"[build] FATAL: methods with zero entities: {empty_methods}", file=sys.stderr)
         return 2

@@ -5,8 +5,7 @@ import { initSearch }  from './search.js';
 import { initList }    from './list.js';
 
 const GRAPH_URL  = new URL('graph.json', document.baseURI).toString();
-const LAYOUT_KEY = 'ov-layout-v1';     // localStorage key (Phase 3 caches client-side)
-const ZOOM_THRESHOLD = 1.5;            // below: course leaves hidden, parent visible
+const LAYOUT_KEY = 'ov-layout-v2';     // bumped: course nodes removed
 
 const TOPIC_VAR = ['--ov-t1','--ov-t2','--ov-t3','--ov-t4','--ov-t5','--ov-t6','--ov-t7','--ov-t8'];
 
@@ -28,40 +27,23 @@ function shapeFor(type) {
 
 function buildElements(graph, topicIndex) {
   const nodes = [];
-  const compoundIds = new Set();
-
-  // course compound parents — one per tutorial-topic.
-  for (const t of graph.topics.tutorial) {
-    const parentId = `parent-${t.slug}`;
-    compoundIds.add(parentId);
-    nodes.push({
-      data: {
-        id: parentId,
-        label: t.label,
-        type: 'compound',
-        primary_topic: t.slug,
-        colour: cssVar('--ov-text-2'),
-      },
-      classes: 'compound',
-    });
-  }
-
   for (const n of graph.nodes) {
     const colour = topicColour(n.primary_topic, topicIndex);
-    const data = {
-      id: n.id,
-      label: n.title,
-      type: n.type,
-      url: n.url,
-      year: n.year || null,
-      venue: n.venue || null,
-      authors: n.authors || null,
-      description: n.description || null,
-      primary_topic: n.primary_topic,
-      colour,
-    };
-    if (n.type === 'course') data.parent = `parent-${n.tutorial_topic}`;
-    nodes.push({ data, classes: n.type });
+    nodes.push({
+      data: {
+        id: n.id,
+        label: n.title,
+        type: n.type,
+        url: n.url,
+        year: n.year || null,
+        venue: n.venue || null,
+        authors: n.authors || null,
+        description: n.description || null,
+        primary_topic: n.primary_topic,
+        colour,
+      },
+      classes: n.type,
+    });
   }
 
   const edges = graph.edges.map((e, i) => ({
@@ -69,7 +51,7 @@ function buildElements(graph, topicIndex) {
     classes: e.kind,
   }));
 
-  return { nodes, edges, compoundIds };
+  return { nodes, edges };
 }
 
 function styleSheet() {
@@ -87,24 +69,6 @@ function styleSheet() {
     },
     { selector: 'node.publication', style: { 'shape': 'ellipse', 'width': 14, 'height': 14 } },
     { selector: 'node.software',    style: { 'shape': 'round-rectangle', 'width': 14, 'height': 14 } },
-    { selector: 'node.course',      style: { 'shape': 'triangle', 'width': 12, 'height': 12 } },
-    {
-      selector: 'node.compound',
-      style: {
-        'shape': 'round-rectangle',
-        'background-color': cssVar('--ov-surface'),
-        'background-opacity': 0.4,
-        'border-color': cssVar('--ov-border'),
-        'border-width': 1,
-        'border-style': 'dashed',
-        'label': 'data(label)',
-        'color': cssVar('--ov-text-2'),
-        'font-size': 10,
-        'text-valign': 'top',
-        'text-halign': 'center',
-        'padding': 8,
-      },
-    },
     {
       selector: 'edge',
       style: {
@@ -157,10 +121,6 @@ function showTooltip(el, evt) {
     html += `<br><em>${escapeHtml(d.venue || '')}</em> · ${d.year ?? ''}`;
   } else if (d.type === 'software') {
     html += `<br><span style="color:var(--ov-text-2);">${escapeHtml(d.description || '')}</span>`;
-  } else if (d.type === 'course') {
-    html += `<br><span style="color:var(--ov-text-2);">${escapeHtml(d.description || '')}</span>`;
-  } else if (d.type === 'compound') {
-    html += `<br><span style="color:var(--ov-text-2);">tutorial group · zoom in to expand</span>`;
   }
   tip.innerHTML = html;
   const cont = document.querySelector('.ov-graph').getBoundingClientRect();
@@ -179,19 +139,6 @@ function hideTooltip() {
 function escapeHtml(s) {
   return String(s ?? '').replace(/[&<>"']/g, c =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-}
-
-function applyZoomBehaviour(cy) {
-  const update = () => {
-    const z = cy.zoom();
-    const expanded = z >= ZOOM_THRESHOLD;
-    cy.batch(() => {
-      cy.nodes('.course').style('display', expanded ? 'element' : 'none');
-      cy.nodes('.compound').style('display', expanded ? 'none' : 'element');
-    });
-  };
-  cy.on('zoom', update);
-  update();
 }
 
 function persistLayout(cy) {
@@ -214,8 +161,6 @@ function readLayoutCache() {
 function topicIndexFromGraph(graph) {
   const m = new Map();
   graph.topics.research.forEach(t => m.set(t.slug, t.colour_index));
-  // tutorial topics share the same palette by ordinal — map their position+1.
-  graph.topics.tutorial.forEach((t, i) => m.set(t.slug, ((i % 8) + 1)));
   return m;
 }
 
@@ -316,7 +261,6 @@ async function init() {
 
   cy.ready(() => {
     loading.style.display = 'none';
-    applyZoomBehaviour(cy);
     if (!useCached) persistLayout(cy);
     initSearch({ graph });
     initList({ graph, cy });

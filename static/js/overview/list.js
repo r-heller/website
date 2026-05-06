@@ -1,18 +1,17 @@
 // Three-column card list with graph↔list sync.
 
-const TYPE_ORDER = ['publication', 'software', 'course'];
-const COLUMN_OF = { publication: 'pub', software: 'sw', course: 'course' };
+const TYPE_ORDER = ['publication', 'software'];
+const COLUMN_OF = { publication: 'pub', software: 'sw' };
 
 export function initList({ graph, cy }) {
   const cols = {
-    pub:    document.getElementById('ov-col-pub'),
-    sw:     document.getElementById('ov-col-sw'),
-    course: document.getElementById('ov-col-course'),
+    pub: document.getElementById('ov-col-pub'),
+    sw:  document.getElementById('ov-col-sw'),
   };
   if (!cols.pub) return;
 
   const cardById = new Map();
-  const colCounts = { pub: 0, sw: 0, course: 0 };
+  const colCounts = { pub: 0, sw: 0 };
 
   // Initial render — every node gets a card; visibility toggled via class.
   for (const t of TYPE_ORDER) {
@@ -30,7 +29,7 @@ export function initList({ graph, cy }) {
   // Filter sync.
   document.addEventListener('ov-matched', (e) => {
     const matched = e.detail.matched;
-    colCounts.pub = colCounts.sw = colCounts.course = 0;
+    colCounts.pub = colCounts.sw = 0;
     for (const [id, card] of cardById) {
       const ok = matched.has(id);
       card.style.display = ok ? '' : 'none';
@@ -39,9 +38,8 @@ export function initList({ graph, cy }) {
         colCounts[COLUMN_OF[t]]++;
       }
     }
-    document.getElementById('ov-col-count-pub').textContent    = colCounts.pub;
-    document.getElementById('ov-col-count-sw').textContent     = colCounts.sw;
-    document.getElementById('ov-col-count-course').textContent = colCounts.course;
+    document.getElementById('ov-col-count-pub').textContent = colCounts.pub;
+    document.getElementById('ov-col-count-sw').textContent  = colCounts.sw;
   });
 
   // Card hover → highlight the matching node in the graph.
@@ -90,9 +88,7 @@ function renderCard(n, graph) {
   if (colourIdx) c.classList.add(`ov-topic-${colourIdx}`);
 
   const glyph = document.createElement('span');
-  glyph.className = 'ov-glyph ' +
-    (n.type === 'publication' ? 'ov-pub' :
-     n.type === 'software'    ? 'ov-sw'  : 'ov-course');
+  glyph.className = 'ov-glyph ' + (n.type === 'publication' ? 'ov-pub' : 'ov-sw');
 
   const title = document.createElement('div');
   title.className = 'ov-card-title';
@@ -104,10 +100,8 @@ function renderCard(n, graph) {
   if (n.type === 'publication') {
     const auth = (n.authors || '').split(',').slice(0, 3).join(', ');
     meta.textContent = `${auth || ''} · ${n.year ?? ''} · ${n.venue || ''}`.trim();
-  } else if (n.type === 'software') {
-    meta.textContent = `${n.language || 'R'} · ${(n.topics || [])[0] || ''}`;
   } else {
-    meta.textContent = `CTTIR · ${n.tutorial_topic || ''}`;
+    meta.textContent = `${n.language || 'R'} · ${(n.topics || [])[0] || ''}`;
   }
   c.append(meta);
 
@@ -128,31 +122,21 @@ function renderCard(n, graph) {
     a.href = n.url;
     a.target = '_blank';
     a.rel = 'noopener';
-    a.textContent =
-      n.type === 'publication' ? 'DOI ↗' :
-      n.type === 'software'    ? 'GitHub ↗' :
-                                 'CTTIR ↗';
+    a.textContent = n.type === 'publication' ? 'DOI ↗' : 'GitHub ↗';
     c.append(a);
   }
   return c;
 }
 
 function topicColourIndex(n, graph) {
-  if (n.type === 'course') {
-    const i = graph.topics.tutorial.findIndex(t => t.slug === n.tutorial_topic);
-    return i < 0 ? null : ((i % 8) + 1);
-  }
-  const slug = n.primary_topic;
-  if (!slug) return null;
-  const t = graph.topics.research.find(x => x.slug === slug);
+  if (!n.primary_topic) return null;
+  const t = graph.topics.research.find(x => x.slug === n.primary_topic);
   return t ? t.colour_index : null;
 }
 
 function collectTags(n) {
   const out = [];
   if (n.topics) out.push(...n.topics);
-  if (n.tutorial_topic) out.push(n.tutorial_topic);
   if (n.methods) out.push(...n.methods);
-  if (n.tags) out.push(...n.tags);
   return out;
 }
