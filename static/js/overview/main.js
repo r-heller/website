@@ -4,7 +4,7 @@ import { initFilters } from './filters.js';
 import { initSearch }  from './search.js';
 
 const GRAPH_URL  = new URL('graph.json', document.baseURI).toString();
-const LAYOUT_KEY = 'ov-layout-v5';     // bumped: switched to deterministic clustered layout
+const LAYOUT_KEY = 'ov-layout-v6';     // bumped: world-coord positions + post-init fit/center
 
 const TOPIC_VAR = ['--ov-t1','--ov-t2','--ov-t3','--ov-t4','--ov-t5','--ov-t6','--ov-t7','--ov-t8'];
 
@@ -176,22 +176,20 @@ function topicIndexFromGraph(graph) {
   return m;
 }
 
-// Deterministic topic-clustered layout. Predictable network appearance
-// without depending on Cytoscape's force-directed layouts (which have been
-// unreliable across cytoscape versions in our environment).
-function computeClusteredLayout(nodes, graph, width, height) {
-  const cx = width / 2;
-  const cy = height / 2;
+// Deterministic topic-clustered layout in fixed world coordinates.
+// Cytoscape's fit:true rescales to whatever the container is — so we don't
+// need to know the container size at layout time. This removes the whole
+// race-condition class around clientWidth/Height being 0 at init.
+function computeClusteredLayout(nodes, graph) {
+  const RING = 600;            // distance from origin to each topic centre
   const topics = graph.topics.research;
-  const ring = Math.min(width, height) * 0.34;
 
   const centres = new Map();
   topics.forEach((t, i) => {
     const a = (i / topics.length) * Math.PI * 2 - Math.PI / 2;
-    centres.set(t.slug, { x: cx + Math.cos(a) * ring, y: cy + Math.sin(a) * ring });
+    centres.set(t.slug, { x: Math.cos(a) * RING, y: Math.sin(a) * RING });
   });
 
-  // Bucket nodes by primary topic so cluster spread is even.
   const buckets = new Map();
   for (const n of nodes) {
     const t = n.data.primary_topic || (topics[0] && topics[0].slug);
@@ -199,21 +197,18 @@ function computeClusteredLayout(nodes, graph, width, height) {
     buckets.get(t).push(n);
   }
 
-  const minClusterRadius = 50;
-  const positions = {};
   for (const [topic, items] of buckets) {
-    const c = centres.get(topic) || { x: cx, y: cy };
-    const r = Math.max(minClusterRadius, Math.sqrt(items.length) * 22);
+    const c = centres.get(topic) || { x: 0, y: 0 };
+    const r = Math.max(80, Math.sqrt(items.length) * 38);
     items.forEach((n, i) => {
       const angle = (i / items.length) * Math.PI * 2;
-      const jitter = (Math.random() - 0.5) * 14;
-      const px = c.x + Math.cos(angle) * (r + jitter);
-      const py = c.y + Math.sin(angle) * (r + jitter);
-      n.position = { x: px, y: py };
-      positions[n.data.id] = { x: Math.round(px), y: Math.round(py) };
+      const jitter = (Math.random() - 0.5) * 18;
+      n.position = {
+        x: c.x + Math.cos(angle) * (r + jitter),
+        y: c.y + Math.sin(angle) * (r + jitter),
+      };
     });
   }
-  return positions;
 }
 
 function loadScript(src, integrity) {
@@ -273,14 +268,12 @@ async function init() {
   const topicIndex = topicIndexFromGraph(graph);
   const { nodes, edges } = buildElements(graph, topicIndex);
 
-  // Wait for the container to have measurable dimensions before laying out.
-  await new Promise(r => requestAnimationFrame(r));
-  const W = cyContainer.clientWidth  || 900;
-  const H = cyContainer.clientHeight || 600;
-
   const cached = readLayoutCache();
   const useCached = cached && nodes.every(n => n.data.id in cached);
-  if (!useCached) computeClusteredLayout(nodes, graph, W, H);
+  if (!useCached) computeClusteredLayout(nodes, graph);
+  if (useCached) {
+    nodes.forEach(n => { const p = cached[n.data.id]; if (p) n.position = p; });
+  }
 
   const cy = cytoscape({
     container: cyContainer,
@@ -289,13 +282,16 @@ async function init() {
     minZoom: 0.2,
     maxZoom: 4,
     wheelSensitivity: 0.25,
-    layout: {
-      name: 'preset',
-      positions: useCached ? id => cached[id] : undefined,
-      fit: true,
-      padding: 30,
-    },
+    layout: { name: 'preset', fit: true, padding: 30 },
   });
+
+  // Re-fit after a frame so the container has measured dimensions, no matter
+  // what state it was in at construction time.
+  const settle = () => { try { cy.resize(); cy.fit(undefined, 30); } catch {} };
+  requestAnimationFrame(settle);
+  setTimeout(settle, 50);
+  setTimeout(settle, 250);
+  window.addEventListener('resize', () => { cy.resize(); cy.fit(undefined, 30); });
 
   cy.ready(() => {
     loading.style.display = 'none';
