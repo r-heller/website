@@ -65,19 +65,19 @@ function styleSheet() {
         'border-color': 'data(colour)',
         'border-width': 0,
         'label': '',
-        'width': 14,
-        'height': 14,
+        'width': 20,
+        'height': 20,
       },
     },
-    { selector: 'node.publication', style: { 'shape': 'ellipse', 'width': 14, 'height': 14 } },
-    { selector: 'node.software',    style: { 'shape': 'round-rectangle', 'width': 14, 'height': 14 } },
+    { selector: 'node.publication', style: { 'shape': 'ellipse', 'width': 20, 'height': 20 } },
+    { selector: 'node.software',    style: { 'shape': 'round-rectangle', 'width': 22, 'height': 22 } },
     {
       selector: 'edge',
       style: {
         'curve-style': 'haystack',
-        'width': 0.8,
+        'width': 0.7,
         'line-color': cssVar('--ov-edge'),
-        'opacity': 0.55,
+        'opacity': 0.25,
       },
     },
     {
@@ -85,8 +85,8 @@ function styleSheet() {
       style: {
         'line-style': 'dashed',
         'line-color': cssVar('--ov-edge'),
-        'opacity': 0.35,
-        'width': 0.8,
+        'opacity': 0.15,
+        'width': 0.7,
       },
     },
     {
@@ -94,8 +94,8 @@ function styleSheet() {
       style: {
         'line-style': 'solid',
         'line-color': cssVar('--ov-edge'),
-        'opacity': 0.75,
-        'width': 'mapData(weight, 1, 5, 1, 3)',
+        'opacity': 0.32,
+        'width': 'mapData(weight, 1, 5, 0.8, 2.4)',
       },
     },
     {
@@ -103,8 +103,8 @@ function styleSheet() {
       style: {
         'curve-style': 'bezier',
         'line-style': 'solid',
-        'opacity': 0.95,
-        'width': 2.5,
+        'opacity': 0.65,
+        'width': 2,
         'target-arrow-shape': 'triangle',
         'target-arrow-color': cssVar('--ov-edge'),
         'line-color': cssVar('--ov-edge'),
