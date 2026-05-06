@@ -198,9 +198,9 @@ async function init() {
     return;
   }
 
-  document.getElementById('ov-stat-pub').textContent    = graph.stats.publications;
-  document.getElementById('ov-stat-sw').textContent     = graph.stats.software;
-  document.getElementById('ov-stat-course').textContent = graph.stats.courses;
+  const setText = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  setText('ov-stat-pub',    graph.stats.publications);
+  setText('ov-stat-sw',     graph.stats.software);
   const edgesEl = document.getElementById('ov-stat-edges');
   if (edgesEl) edgesEl.textContent =
     `${graph.stats.edges_total} edges · ${(graph.stats.coverage * 100).toFixed(0)}% coverage`;
