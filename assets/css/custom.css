@@ -163,6 +163,8 @@
   --ov-t6: #5F4B8B;
   --ov-t7: #3D5A80;
   --ov-t8: #6B705C;
+  /* Edges in the overview network: dark grey on light, light grey on dark. */
+  --ov-edge: rgba(0, 0, 0, 0.45);
   /* Highlight follows the theme's link colour (Coder defines --link-color). */
   --ov-highlight: var(--link-color, #3D5A80);
 }
@@ -181,6 +183,7 @@
     --ov-t6: #8576B5;
     --ov-t7: #6E8AAD;
     --ov-t8: #9AA088;
+    --ov-edge: rgba(255, 255, 255, 0.55);
     --ov-highlight: var(--link-color, #6E8AAD);
   }
 }
@@ -198,6 +201,7 @@ body.colorscheme-dark {
   --ov-t6: #8576B5;
   --ov-t7: #6E8AAD;
   --ov-t8: #9AA088;
+  --ov-edge: rgba(255, 255, 255, 0.55);
   --ov-highlight: var(--link-color, #6E8AAD);
 }
 

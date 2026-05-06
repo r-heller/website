@@ -9,7 +9,10 @@ const LAYOUT_KEY = 'ov-layout-v3';     // bumped: invalidate the collapsed-line 
 const TOPIC_VAR = ['--ov-t1','--ov-t2','--ov-t3','--ov-t4','--ov-t5','--ov-t6','--ov-t7','--ov-t8'];
 
 function cssVar(name) {
-  return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || '#888';
+  // Read from <body> so values cascaded from body.colorscheme-{light,dark}
+  // resolve to the active scheme — :root only sees the light defaults.
+  const el = document.body || document.documentElement;
+  return getComputedStyle(el).getPropertyValue(name).trim() || '#888';
 }
 
 function topicColour(slug, topicIndex) {
@@ -72,20 +75,26 @@ function styleSheet() {
       selector: 'edge',
       style: {
         'curve-style': 'haystack',
-        'width': 0.6,
-        'line-color': cssVar('--ov-text-2'),
-        'opacity': 0.15,
+        'width': 0.8,
+        'line-color': cssVar('--ov-edge'),
+        'opacity': 0.55,
       },
     },
     {
       selector: 'edge.topic-related',
-      style: { 'line-style': 'dashed', 'opacity': 0.15, 'width': 0.6 },
+      style: {
+        'line-style': 'dashed',
+        'line-color': cssVar('--ov-edge'),
+        'opacity': 0.35,
+        'width': 0.8,
+      },
     },
     {
       selector: 'edge.shared-tags',
       style: {
         'line-style': 'solid',
-        'opacity': 0.30,
+        'line-color': cssVar('--ov-edge'),
+        'opacity': 0.75,
         'width': 'mapData(weight, 1, 5, 1, 3)',
       },
     },
@@ -97,8 +106,8 @@ function styleSheet() {
         'opacity': 0.95,
         'width': 2.5,
         'target-arrow-shape': 'triangle',
-        'target-arrow-color': cssVar('--ov-text-2'),
-        'line-color': cssVar('--ov-text-2'),
+        'target-arrow-color': cssVar('--ov-edge'),
+        'line-color': cssVar('--ov-edge'),
       },
     },
     {
