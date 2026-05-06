@@ -4,7 +4,7 @@ import { initFilters } from './filters.js';
 import { initSearch }  from './search.js';
 
 const GRAPH_URL  = new URL('graph.json', document.baseURI).toString();
-const LAYOUT_KEY = 'ov-layout-v3';     // bumped: invalidate the collapsed-line layout
+const LAYOUT_KEY = 'ov-layout-v4';     // bumped: switched to built-in cose layout
 
 const TOPIC_VAR = ['--ov-t1','--ov-t2','--ov-t3','--ov-t4','--ov-t5','--ov-t6','--ov-t7','--ov-t8'];
 
@@ -189,9 +189,6 @@ function loadScript(src, integrity) {
 
 const CDN = [
   ['https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js', 'sha384-H3uzGzTfGHUAumB8+s4GEdfFwzAceN9wCCndN8AXubWKFIPuBSWKKtWDx7RhSf/z'],
-  ['https://unpkg.com/layout-base@2.0.1/layout-base.js',       'sha384-5E2lB9AIGE6LRCnOOSTnZRlYZFZ01iMeN2fw97Z1r4Z/kXALxKw2AC+ZzQqoeDsG'],
-  ['https://unpkg.com/cose-base@2.2.0/cose-base.js',           'sha384-RswRBkrMsPUYpJLbZ1CVA08zbNzAkykE2oGJTujBwfjWNdfxv2WVjLJNqv1LhAOp'],
-  ['https://unpkg.com/cytoscape-fcose@2.2.0/cytoscape-fcose.js','sha384-uk5Wbjq1+KqUdHO30w7N7GrEGdzBhaJeW9o/ANF6v9+yx3M/cBmoX51C000JNCUf'],
 ];
 
 const isMobile = window.matchMedia('(max-width: 767px)').matches;
@@ -254,23 +251,21 @@ async function init() {
           padding: 20,
         }
       : {
-          name: 'fcose',
-          quality: 'proof',
+          name: 'cose',
           randomize: true,
           animate: false,
-          nodeRepulsion: 9000,
-          idealEdgeLength: 90,
-          edgeElasticity: 0.25,
-          gravity: 0.4,
-          gravityRange: 1.6,
-          gravityCompound: 1.0,
-          numIter: 3500,
-          tile: true,
-          packComponents: true,
-          tilingPaddingVertical: 30,
-          tilingPaddingHorizontal: 30,
+          nodeRepulsion: () => 8000,
+          idealEdgeLength: () => 90,
+          edgeElasticity: () => 32,
+          nestingFactor: 1.2,
+          gravity: 80,
+          numIter: 1500,
+          initialTemp: 200,
+          coolingFactor: 0.95,
+          minTemp: 1.0,
           padding: 40,
           fit: true,
+          componentSpacing: 100,
         },
   });
 
