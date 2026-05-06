@@ -141,3 +141,293 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* =====================================================================
+   Overview network — design system (Phase 2)
+   Palette: Okabe-Ito-derived; topics carry colour, type carries shape.
+   ===================================================================== */
+
+/* Light defaults — apply unless body explicitly says otherwise.
+   Coder uses body.colorscheme-{light,dark,auto} — its JS toggles between them. */
+:root {
+  --ov-surface: #FFFFFF;
+  --ov-border: rgba(0,0,0,0.10);
+  --ov-text-2: rgba(0,0,0,0.60);
+  --ov-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --ov-t1: #264653;
+  --ov-t2: #2A9D8F;
+  --ov-t3: #E9C46A;
+  --ov-t4: #F4A261;
+  --ov-t5: #E76F51;
+  --ov-t6: #5F4B8B;
+  --ov-t7: #3D5A80;
+  --ov-t8: #6B705C;
+  --ov-highlight: #E63946;
+}
+
+/* Coder auto mode → follow OS. */
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    --ov-surface: #161A20;
+    --ov-border: rgba(255,255,255,0.10);
+    --ov-text-2: rgba(255,255,255,0.60);
+    --ov-t1: #5A8896;
+    --ov-t2: #5BC0B3;
+    --ov-t3: #F0D58E;
+    --ov-t4: #F5B584;
+    --ov-t5: #EE9379;
+    --ov-t6: #8576B5;
+    --ov-t7: #6E8AAD;
+    --ov-t8: #9AA088;
+    --ov-highlight: #F26B72;
+  }
+}
+
+/* Coder explicit dark toggle. */
+body.colorscheme-dark {
+  --ov-surface: #161A20;
+  --ov-border: rgba(255,255,255,0.10);
+  --ov-text-2: rgba(255,255,255,0.60);
+  --ov-t1: #5A8896;
+  --ov-t2: #5BC0B3;
+  --ov-t3: #F0D58E;
+  --ov-t4: #F5B584;
+  --ov-t5: #EE9379;
+  --ov-t6: #8576B5;
+  --ov-t7: #6E8AAD;
+  --ov-t8: #9AA088;
+  --ov-highlight: #F26B72;
+}
+
+/* Topic-colour swatch helpers */
+.ov-topic-1 { --ov-topic: var(--ov-t1); }
+.ov-topic-2 { --ov-topic: var(--ov-t2); }
+.ov-topic-3 { --ov-topic: var(--ov-t3); }
+.ov-topic-4 { --ov-topic: var(--ov-t4); }
+.ov-topic-5 { --ov-topic: var(--ov-t5); }
+.ov-topic-6 { --ov-topic: var(--ov-t6); }
+.ov-topic-7 { --ov-topic: var(--ov-t7); }
+.ov-topic-8 { --ov-topic: var(--ov-t8); }
+
+/* Page chrome */
+.ov-page { display: flex; flex-direction: column; gap: 0; }
+.ov-header {
+  display: flex; gap: .75rem; align-items: center;
+  padding: .5rem .75rem; border-bottom: 1px solid var(--ov-border);
+  background: var(--ov-surface);
+}
+.ov-search {
+  flex: 1; min-width: 0;
+  padding: .5rem .75rem;
+  border: 1px solid var(--ov-border); border-radius: 6px;
+  background: transparent; color: inherit; font: inherit;
+}
+.ov-type-chips { display: flex; gap: .35rem; }
+.ov-chip {
+  display: inline-flex; align-items: center; gap: .35rem;
+  padding: .3rem .6rem;
+  border: 1px solid var(--ov-border); border-radius: 999px;
+  background: transparent; color: inherit;
+  font: inherit; font-size: .85rem; cursor: pointer;
+}
+.ov-chip[aria-pressed="true"] {
+  background: var(--ov-text-2); color: var(--ov-surface);
+  border-color: transparent;
+}
+.ov-chip .swatch {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--ov-topic, currentColor);
+}
+
+/* Body grid: rail + graph */
+.ov-body {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 60vh;
+}
+.ov-rail {
+  border-right: 1px solid var(--ov-border);
+  padding: 1rem .9rem;
+  overflow-y: auto;
+}
+.ov-rail h4 {
+  margin: 1rem 0 .4rem;
+  font-size: .8rem; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--ov-text-2);
+}
+.ov-rail h4:first-child { margin-top: 0; }
+.ov-rail .ov-chip-group { display: flex; flex-wrap: wrap; gap: .3rem; }
+.ov-rail .ov-chip { font-size: .8rem; padding: .2rem .5rem; }
+.ov-rail .reset {
+  margin-top: 1.5rem; width: 100%;
+  border: 1px dashed var(--ov-border); border-radius: 6px;
+  padding: .45rem; background: transparent; color: var(--ov-text-2);
+  cursor: pointer;
+}
+
+/* Graph viewport */
+.ov-graph {
+  position: relative;
+  background:
+    radial-gradient(circle at 25% 30%, rgba(38,70,83,.05), transparent 40%),
+    radial-gradient(circle at 70% 65%, rgba(231,111,81,.05), transparent 40%);
+  min-height: 500px;
+}
+.ov-graph .placeholder {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  color: var(--ov-text-2); font-family: var(--ov-mono); font-size: .8rem;
+  pointer-events: none;
+}
+
+/* Stats line */
+.ov-stats {
+  display: flex; gap: 1.25rem; align-items: center;
+  padding: .4rem .75rem;
+  font-family: var(--ov-mono); font-size: .8rem;
+  color: var(--ov-text-2);
+  border-top: 1px solid var(--ov-border);
+  border-bottom: 1px solid var(--ov-border);
+}
+.ov-stats strong { color: inherit; font-weight: 600; }
+
+/* Three-column list */
+.ov-lists {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.ov-col {
+  border-right: 1px solid var(--ov-border);
+  padding: .9rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.ov-col:last-child { border-right: 0; }
+.ov-col h3 {
+  margin: 0 0 .75rem;
+  font-size: .9rem; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--ov-text-2);
+  display: flex; align-items: baseline; gap: .4rem;
+}
+.ov-col h3 .count {
+  font-family: var(--ov-mono); font-size: .8rem; color: var(--ov-text-2);
+}
+
+/* Cards */
+.ov-card {
+  border: 1px solid var(--ov-border); border-radius: 6px;
+  padding: .65rem .75rem;
+  margin-bottom: .55rem;
+  background: var(--ov-surface);
+  transition: box-shadow 120ms ease, border-color 120ms ease;
+}
+.ov-card:hover,
+.ov-card.ov-card-hot {
+  border-color: var(--ov-highlight);
+  box-shadow: 0 1px 8px rgba(0,0,0,.08);
+}
+.ov-card .ov-card-title {
+  font-weight: 600; line-height: 1.35; margin: 0 0 .35rem;
+}
+.ov-card .ov-card-meta {
+  font-family: var(--ov-mono); font-size: .75rem; color: var(--ov-text-2);
+  margin-bottom: .35rem;
+}
+.ov-card .ov-card-tags {
+  display: flex; flex-wrap: wrap; gap: .25rem;
+}
+.ov-card .ov-tag {
+  font-size: .7rem; padding: .1rem .4rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ov-topic, var(--ov-text-2)) 15%, transparent);
+  color: var(--ov-topic, var(--ov-text-2));
+  border: 1px solid color-mix(in srgb, var(--ov-topic, var(--ov-text-2)) 30%, transparent);
+}
+.ov-card .ov-card-link {
+  display: inline-block; margin-top: .35rem; font-size: .8rem;
+}
+
+/* Type-shape glyph in cards (matches graph encoding) */
+.ov-glyph {
+  display: inline-block; width: 10px; height: 10px; vertical-align: -1px;
+  margin-right: .35rem;
+  background: var(--ov-topic);
+}
+.ov-glyph.ov-pub { border-radius: 50%; }            /* circle = publication */
+.ov-glyph.ov-sw  { border-radius: 2px; }            /* square = software */
+.ov-glyph.ov-course {
+  background: transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 9px solid var(--ov-topic);
+  width: 0; height: 0;
+}                                                   /* triangle = course */
+
+/* Navbar dropdown for nested menu (Contributions → Overview/Pubs/Software/Courses) */
+.navigation-item.nav-has-children { position: relative; }
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 11rem;
+  margin: 0;
+  padding: .35rem 0;
+  list-style: none;
+  background: var(--bg-color, #fff);
+  border: 1px solid var(--ov-border);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+  z-index: 100;
+}
+.navigation-item.nav-has-children:hover > .nav-dropdown,
+.navigation-item.nav-has-children:focus-within > .nav-dropdown {
+  display: block;
+}
+.nav-dropdown li { margin: 0; }
+.nav-dropdown a {
+  display: block;
+  padding: .4rem .9rem;
+  font-size: .9rem;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-dropdown a:hover,
+.nav-dropdown a:focus-visible {
+  background: color-mix(in srgb, var(--ov-highlight) 10%, transparent);
+}
+
+/* On mobile menu (checkbox-toggled), drop the dropdown to inline list */
+@media (max-width: 767px) {
+  .nav-dropdown {
+    position: static;
+    display: block;
+    border: 0;
+    box-shadow: none;
+    padding-left: 1rem;
+    background: transparent;
+    min-width: 0;
+  }
+}
+
+/* Focus ring (keyboard) — applies to chips, search, cards, links inside the page. */
+.ov-page :focus-visible {
+  outline: 2px solid var(--ov-highlight);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .ov-body { grid-template-columns: 1fr; }
+  .ov-rail { border-right: 0; border-bottom: 1px solid var(--ov-border); }
+  .ov-lists { grid-template-columns: 1fr; }
+  .ov-col { border-right: 0; border-bottom: 1px solid var(--ov-border); max-height: none; }
+}
+
+/* Mobile: graph is hidden by Phase 6 JS; placeholder shown here for layout */
+@media (max-width: 767px) {
+  .ov-graph { display: none; }
+  .ov-stats { font-size: .75rem; }
+}

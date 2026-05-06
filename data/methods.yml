@@ -1,0 +1,45 @@
+# Methods — analytical/statistical techniques. The cross-domain bridge.
+# Each method declares which tutorial_topics it draws course-edges from.
+# bayesian-inference dropped (orphan, zero pub/sw hits).
+- slug: mixed-effects-models
+  label: Mixed-effects models
+  tutorial_topics: [regression-modelling, clinical-biostatistics]
+- slug: logistic-regression
+  label: Logistic regression
+  tutorial_topics: [regression-modelling, machine-learning]
+- slug: cox-regression
+  label: Cox proportional hazards
+  tutorial_topics: [survival-analysis]
+- slug: roc-and-biomarker-validation
+  label: ROC analysis & biomarker validation
+  tutorial_topics: [clinical-biostatistics, machine-learning]
+- slug: time-resolved-biomarker-dynamics
+  label: Time-resolved biomarker analysis
+  tutorial_topics: [time-series, clinical-biostatistics]
+- slug: rna-seq-differential-expression
+  label: RNA-seq differential expression
+  tutorial_topics: [bioinformatics]
+- slug: single-cell-spatial-analysis
+  label: Single-cell & spatial omics
+  tutorial_topics: [bioinformatics, multivariate]
+- slug: dimensionality-reduction
+  label: Dimensionality reduction
+  tutorial_topics: [multivariate, machine-learning]
+- slug: image-segmentation
+  label: Image segmentation
+  tutorial_topics: [machine-learning, bioinformatics]
+- slug: hyperspectral-imaging
+  label: Hyperspectral imaging
+  tutorial_topics: [bioinformatics]
+- slug: population-pk-pd
+  label: Population PK/PD
+  tutorial_topics: [clinical-biostatistics]
+- slug: clinical-trial-design
+  label: Clinical trial / RCT design
+  tutorial_topics: [sample-size, experimental-design]
+- slug: meta-analysis
+  label: Meta-analysis
+  tutorial_topics: [meta-analysis]
+- slug: machine-learning-classification
+  label: ML classification (clinical)
+  tutorial_topics: [machine-learning]

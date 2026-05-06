@@ -1,0 +1,35 @@
+# Research topics — applies to publications and software.
+# Approved 2026-05-06 (see OVERVIEW_PLAN.md Phase 1.5).
+# Colours assigned in Phase 2; placeholder ordinal here.
+- slug: trauma-spinal-cord-injury
+  label: Trauma & Spinal Cord Injury
+  description: TSCI biomarkers, neurological recovery, surgical timing, monocyte/cytokine dynamics, IL-4 reprogramming, AI in trauma care.
+  colour_index: 1
+- slug: trace-element-biology
+  label: Trace Elements & Nutrition
+  description: Selenium, zinc, copper, magnesium biomarkers in disease and supplementation.
+  colour_index: 2
+- slug: covid-19-vaccination-response
+  label: COVID-19 & Vaccine Response
+  description: Mortality biomarkers and humoral response in SARS-CoV-2 and mRNA vaccination.
+  colour_index: 3
+- slug: bone-regeneration-non-union
+  label: Bone Regeneration & Non-Union
+  description: Masquelet technique, autologous grafts, scaffolds, bioactive glass, MMPs in fracture healing.
+  colour_index: 4
+- slug: orthopaedic-trauma-care
+  label: Orthopaedic & Military Trauma Care
+  description: Femoral neck, knee OA, military trauma, ultrasound diagnostics, digitalization in trauma.
+  colour_index: 5
+- slug: immuno-oncology-haematology
+  label: Immuno-Oncology & Haematology
+  description: Brain metastases, AML conditioning regimens.
+  colour_index: 6
+- slug: molecular-and-imaging-tools
+  label: Molecular & Imaging Analysis Tools
+  description: Spatial transcriptomics, RNA-seq, mol-path databases, segmentation, hyperspectral, SCI imaging.
+  colour_index: 7
+- slug: biostatistics-research-methods
+  label: Biostatistics & Research Tooling
+  description: Dimensionality reduction, NONMEM PK/PD, workflowr theming, hex stickers — general R tooling.
+  colour_index: 8

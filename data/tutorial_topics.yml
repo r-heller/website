@@ -1,0 +1,34 @@
+# Tutorial topics — applies to courses on cttir.github.io/tutorials.
+# Slugs mirror CTTIR's URL path component verbatim.
+- slug: regression-modelling
+  label: Regression & Modelling
+- slug: bioinformatics
+  label: Bioinformatics
+- slug: machine-learning
+  label: Machine Learning
+- slug: inference
+  label: Inferential Statistics
+- slug: probability
+  label: Probability Theory
+- slug: clinical-biostatistics
+  label: Clinical Biostatistics
+- slug: visualisation
+  label: Data Visualisation
+- slug: bayesian
+  label: Bayesian Statistics
+- slug: statistical-foundations
+  label: Statistical Foundations
+- slug: time-series
+  label: Time-Series Analysis
+- slug: survival-analysis
+  label: Survival Analysis
+- slug: sample-size
+  label: Sample Size & Power
+- slug: multivariate
+  label: Multivariate Methods
+- slug: experimental-design
+  label: Experimental Design
+- slug: meta-analysis
+  label: Meta-Analysis
+- slug: descriptive-statistics
+  label: Descriptive Statistics

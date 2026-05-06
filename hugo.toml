@@ -59,33 +59,48 @@ weight = 1
 url = "about/"
 
 [[menu.main]]
-name = "Projects"
+identifier = "contributions"
+name = "Contributions"
 weight = 2
-url = "projects/"
+url = "overview/"
 
 [[menu.main]]
+parent = "contributions"
+name = "Overview"
+weight = 1
+url = "overview/"
+
+[[menu.main]]
+parent = "contributions"
 name = "Publications"
-weight = 3
+weight = 2
 url = "publications/"
 
 [[menu.main]]
+parent = "contributions"
 name = "Software"
-weight = 4
+weight = 3
 url = "software/"
 
 [[menu.main]]
+parent = "contributions"
 name = "Courses"
-weight = 5
+weight = 4
 url = "courses/"
 
 [[menu.main]]
+name = "Projects"
+weight = 3
+url = "projects/"
+
+[[menu.main]]
 name = "Contact"
-weight = 6
+weight = 4
 url = "contact/"
 
 [[menu.main]]
 name = "Impressum"
-weight = 7
+weight = 5
 url = "impressum/"
 
 [module]

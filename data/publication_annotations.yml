@@ -1,0 +1,159 @@
+# Per-publication topic + method assignments, keyed by DOI.
+# Order is the same as content/publications.md (newest first).
+# Every DOI in publications.md MUST appear here — CI gate enforces this.
+- doi: 10.3390/cancers18071087
+  topics: [immuno-oncology-haematology]
+  methods: []
+- doi: 10.7150/thno.123815
+  topics: [trauma-spinal-cord-injury]
+  methods: [time-resolved-biomarker-dynamics]
+- doi: 10.3390/nu17030496
+  topics: [trauma-spinal-cord-injury, trace-element-biology]
+  methods: [time-resolved-biomarker-dynamics, roc-and-biomarker-validation]
+- doi: 10.1016/j.jtemb.2024.127441
+  topics: [trace-element-biology]
+  methods: [roc-and-biomarker-validation]
+- doi: 10.1136/military-2023-002453
+  topics: [orthopaedic-trauma-care]
+  methods: []
+- doi: 10.1177/23779608241229507
+  topics: [trauma-spinal-cord-injury]
+  methods: []
+- doi: 10.3390/molecules29112466
+  topics: [covid-19-vaccination-response, trace-element-biology]
+  methods: [meta-analysis]
+- doi: 10.1136/bmjmilitary-2021-001821
+  topics: [orthopaedic-trauma-care]
+  methods: []
+- doi: 10.1016/j.heliyon.2023.e20919
+  topics: [covid-19-vaccination-response, trace-element-biology]
+  methods: [roc-and-biomarker-validation]
+- doi: 10.1016/j.otsr.2023.103653
+  topics: [orthopaedic-trauma-care]
+  methods: []
+- doi: 10.1016/j.joca.2023.07.013
+  topics: [bone-regeneration-non-union]
+  methods: []
+- doi: 10.3389/fimmu.2022.906551
+  topics: [covid-19-vaccination-response, trace-element-biology]
+  methods: [roc-and-biomarker-validation]
+- doi: 10.1016/j.redox.2022.102242
+  topics: [covid-19-vaccination-response, trace-element-biology]
+  methods: [logistic-regression]
+- doi: 10.3389/fimmu.2022.1022673
+  topics: [covid-19-vaccination-response, trace-element-biology]
+  methods: [logistic-regression, roc-and-biomarker-validation]
+- doi: 10.3390/nu14071407
+  topics: [covid-19-vaccination-response, trace-element-biology]
+  methods: [logistic-regression, roc-and-biomarker-validation]
+- doi: 10.3389/fnins.2021.680240
+  topics: [trauma-spinal-cord-injury, trace-element-biology]
+  methods: [roc-and-biomarker-validation]
+- doi: 10.1093/brain/awab203
+  topics: [trauma-spinal-cord-injury]
+  methods: [time-resolved-biomarker-dynamics, mixed-effects-models]
+- doi: 10.3390/nu13020619
+  topics: [trace-element-biology]
+  methods: [roc-and-biomarker-validation]
+- doi: 10.1080/10790268.2019.1632060
+  topics: [trauma-spinal-cord-injury]
+  methods: [time-resolved-biomarker-dynamics]
+- doi: 10.3390/jcm10245977
+  topics: [trauma-spinal-cord-injury]
+  methods: [logistic-regression]
+- doi: 10.3390/biomedicines9111714
+  topics: [covid-19-vaccination-response]
+  methods: [logistic-regression]
+- doi: 10.3390/nu13061898
+  topics: [covid-19-vaccination-response, trace-element-biology]
+  methods: [cox-regression]
+- doi: 10.2147/jir.s297329
+  topics: [bone-regeneration-non-union]
+  methods: []
+- doi: 10.3390/antiox9050421
+  topics: [trauma-spinal-cord-injury, trace-element-biology]
+  methods: [time-resolved-biomarker-dynamics]
+- doi: 10.1016/j.jor.2019.08.018
+  topics: [bone-regeneration-non-union]
+  methods: [mixed-effects-models]
+- doi: 10.3390/nu12123599
+  topics: [trace-element-biology]
+  methods: []
+- doi: 10.1016/j.otsr.2020.03.006
+  topics: [orthopaedic-trauma-care]
+  methods: []
+- doi: 10.1016/j.rcot.2020.03.020
+  topics: [orthopaedic-trauma-care]
+  methods: []
+- doi: 10.1016/j.redox.2020.101764
+  topics: [covid-19-vaccination-response, trace-element-biology]
+  methods: [logistic-regression, roc-and-biomarker-validation]
+- doi: 10.3390/cells9040918
+  topics: [bone-regeneration-non-union]
+  methods: []
+- doi: 10.3390/nu12072098
+  topics: [covid-19-vaccination-response, trace-element-biology]
+  methods: [logistic-regression]
+- doi: 10.1016/j.jtemb.2019.126415
+  topics: [trauma-spinal-cord-injury, trace-element-biology]
+  methods: [roc-and-biomarker-validation]
+- doi: 10.1007/s00104-019-01091-9
+  topics: [orthopaedic-trauma-care]
+  methods: [machine-learning-classification]
+- doi: 10.1007/s00113-020-00859-7
+  topics: [orthopaedic-trauma-care]
+  methods: []
+- doi: 10.1201/9780429423482-83
+  topics: [trauma-spinal-cord-injury, trace-element-biology]
+  methods: []
+- doi: 10.1201/9780429423482-87
+  topics: [trauma-spinal-cord-injury, trace-element-biology]
+  methods: [roc-and-biomarker-validation]
+- doi: 10.1016/j.jtemb.2018.10.006
+  topics: [trauma-spinal-cord-injury, trace-element-biology]
+  methods: [roc-and-biomarker-validation]
+- doi: 10.1016/j.injury.2019.06.018
+  topics: [bone-regeneration-non-union]
+  methods: []
+- doi: 10.3390/antiox8110509
+  topics: [trauma-spinal-cord-injury, trace-element-biology]
+  methods: [time-resolved-biomarker-dynamics]
+- doi: 10.1186/s13018-018-0961-4
+  topics: [bone-regeneration-non-union]
+  methods: [roc-and-biomarker-validation]
+- doi: 10.1371/journal.pone.0196051
+  topics: [bone-regeneration-non-union]
+  methods: []
+- doi: 10.3390/diagnostics8030055
+  topics: [bone-regeneration-non-union]
+  methods: [roc-and-biomarker-validation]
+- doi: 10.1016/j.injury.2018.07.015
+  topics: [bone-regeneration-non-union]
+  methods: [roc-and-biomarker-validation]
+- doi: 10.1016/j.clml.2018.07.275
+  topics: [immuno-oncology-haematology]
+  methods: []
+- doi: 10.1186/s13063-018-2681-9
+  topics: [bone-regeneration-non-union]
+  methods: [clinical-trial-design]
+- doi: 10.1002/jbm.a.36377
+  topics: [bone-regeneration-non-union]
+  methods: []
+- doi: 10.1089/neu.2015.4294
+  topics: [trauma-spinal-cord-injury]
+  methods: [time-resolved-biomarker-dynamics]
+- doi: 10.1038/sc.2017.69
+  topics: [trauma-spinal-cord-injury]
+  methods: [time-resolved-biomarker-dynamics, roc-and-biomarker-validation]
+- doi: 10.1038/sc.2016.104
+  topics: [trauma-spinal-cord-injury]
+  methods: [roc-and-biomarker-validation]
+- doi: 10.1038/sc.2016.44
+  topics: [trauma-spinal-cord-injury]
+  methods: []
+- doi: 10.1371/journal.pone.0159764
+  topics: [trauma-spinal-cord-injury]
+  methods: [time-resolved-biomarker-dynamics]
+- doi: 10.1016/S0020-1383(16)30580-0
+  topics: [trauma-spinal-cord-injury]
+  methods: [roc-and-biomarker-validation]

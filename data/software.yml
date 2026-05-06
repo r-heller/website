@@ -1,0 +1,81 @@
+# R packages — formal registry. Authored from content/software.md.
+# topics + methods drive graph edges.
+- name: hexmakeR
+  repo: https://github.com/CTTIR/hexmakeR
+  docs: https://CTTIR.github.io/hexmakeR/
+  language: R
+  description: Interactive hex sticker generator for R packages with Shiny interface and programmatic API.
+  topics: [biostatistics-research-methods]
+  methods: []
+
+- name: phenoscapR
+  repo: https://github.com/CTTIR/phenoscapR
+  docs: https://CTTIR.github.io/phenoscapR/
+  language: R
+  description: Spatial single-cell analysis for Akoya PhenoCycler/CODEX multiplexed tissue imaging data.
+  topics: [molecular-and-imaging-tools]
+  methods: [single-cell-spatial-analysis]
+
+- name: bambamR
+  repo: https://github.com/CTTIR/bambamR
+  docs: https://CTTIR.github.io/bambamR/
+  language: R
+  description: RNA-seq analysis toolkit from BAM to publication — QC, normalization, differential expression, and visualization.
+  topics: [molecular-and-imaging-tools]
+  methods: [rna-seq-differential-expression]
+
+- name: lstparsR
+  repo: https://github.com/Clinical-Pharmacy-Saarland-University/lstparsR
+  docs: https://clinical-pharmacy-saarland-university.github.io/lstparsR/
+  language: R
+  description: Tidy parsing of NONMEM listing files for population PK/PD workflows.
+  topics: [biostatistics-research-methods]
+  methods: [population-pk-pd]
+
+- name: reflowR
+  repo: https://github.com/CTTIR/reflowR
+  docs: https://CTTIR.github.io/reflowR/
+  language: R
+  description: Themed workflowr extensions for reproducible research with custom colour schemes, ggplot2 themes, and report templates.
+  topics: [biostatistics-research-methods]
+  methods: []
+
+- name: songR
+  repo: https://github.com/CTTIR/songR
+  docs: https://CTTIR.github.io/songR/
+  language: R
+  description: Native R/C++ implementation of the SONG dimensionality reduction algorithm with incremental embedding support.
+  topics: [biostatistics-research-methods]
+  methods: [dimensionality-reduction]
+
+- name: molpathR
+  repo: https://github.com/CTTIR/molpathR
+  docs: https://CTTIR.github.io/molpathR/
+  language: R
+  description: Integrated database for molecular pathology — VCF, XML, PDF, clinical data, imaging, and survival analysis with Shiny explorer.
+  topics: [molecular-and-imaging-tools]
+  methods: [cox-regression, machine-learning-classification]
+
+- name: segmantR
+  repo: https://github.com/CTTIR/segmantR
+  docs: https://CTTIR.github.io/segmantR/
+  language: R
+  description: Human-in-the-loop cell segmentation for histological and fluorescence microscopy images.
+  topics: [molecular-and-imaging-tools]
+  methods: [image-segmentation]
+
+- name: scimagR
+  repo: https://github.com/CTTIR/scimagR
+  docs: https://CTTIR.github.io/scimagR/
+  language: R
+  description: MRI/CT analysis and visualization for spinal cord injury — lesion quantification, temporal tracking, and clinical reporting.
+  topics: [trauma-spinal-cord-injury, molecular-and-imaging-tools]
+  methods: [image-segmentation]
+
+- name: hyperspectR
+  repo: https://github.com/CTTIR/hyperspectR
+  docs: https://CTTIR.github.io/hyperspectR/
+  language: R
+  description: Hyperspectral imaging analysis for Cubert cameras in biomedical and surgical applications — tissue indices, Shiny viewer.
+  topics: [molecular-and-imaging-tools]
+  methods: [hyperspectral-imaging]

@@ -39,6 +39,17 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch CTTIR tutorial index
+        run: python scripts/fetch_cttir_index.py
+
+      - name: Build overview graph
+        run: python scripts/build_overview_graph.py
+
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
@@ -52,6 +63,9 @@ jobs:
 
       - name: Check legal placeholders
         run: bash scripts/check-legal-placeholders.sh public/
+
+      - name: Check overview JS budget
+        run: bash scripts/check-overview-budget.sh public/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
