@@ -714,3 +714,37 @@ The two build-time artefacts won't get committed accidentally now. CI regenerate
 2. **Used-in cross-domain edges** — wait for CTTIR to add `references_doi:` and `software:` to tutorial frontmatter, then re-run the build.
 
 End of build.
+
+---
+
+## Phase 6.2 — Post-launch adjustments (2026-05-06)
+
+A handful of in-flight fixes after the first deploy.
+
+### Fixes
+
+- **Soft software repo probe.** The hard URL-resolve gate failed on private CTTIR/* repos. Replaced with an opt-in soft probe (`--probe-net`) that warns but never fails.
+- **Courses excluded from the network.** The 569 CTTIR tutorials drowned out the personal work. Dropped them from the build (`build_overview_graph.py`), the rail filter (`filters.js`), and the page DOM. CTTIR fetch step removed from CI; `fetch_cttir_index.py` and `tutorial_topics.yml` stay in-tree as a ready-to-reactivate path. Result: 62 nodes, 703 edges, 100 % coverage.
+- **Dropdown dark/light.** Replaced `var(--bg-color, #fff)` (Coder doesn't expose that name) with `--ov-surface` + `--fg-color` so the Contributions menu picks up Coder's `colorscheme-light/dark/auto` toggle.
+- **Init crash from a stale write.** `getElementById('ov-stat-course').textContent = …` was throwing `TypeError: null` because the courses span was removed from the page but the JS write wasn't. Switched all stat writes to a guarded `setText()` helper. Page no longer hangs on "loading…".
+- **fcose collapsed onto a line.** First-load layout produced a near-1D embedding because `randomize: false` + no initial positions degenerates the spectral phase. Switched to `randomize: true`, raised `nodeRepulsion` (4500 → 9000) and `idealEdgeLength` (60 → 90), tightened `gravityRange` (3.8 → 1.6), upped quality to `proof`. Bumped `LAYOUT_KEY` to `v3` to invalidate the bad cached coords on existing visitors.
+- **Two-column list removed.** Once the network became the focus, the list below was redundant. Dropped `list.js`, the `<nav class="ov-lists">` block, and the `initList` wiring.
+- **Hover behaviour.** Hover keeps an in-place tooltip with title + meta + a "click to open DOI/GitHub ↗" hint. No scroll, no follow. Click still opens the URL in a new tab.
+- **Accent colour switched off crimson.** `--ov-highlight` now resolves to `var(--link-color, #3D5A80)` so focus rings, hover rings, dropdown hover, and Cytoscape's `node.hover` border all match the Coder template's link blue and switch with light/dark.
+
+### Git identity hygiene
+
+One commit went out under the wrong git identity (`s-leboulanger`) before push. The push was rejected by GitHub's email-privacy guard, so nothing reached `main`. Reset locally, set the project's `user.name`/`user.email` to `r-heller`, recommitted, and pushed cleanly. All commits on origin/main are under the correct author.
+
+### Current state
+
+```
+nodes:    62  (52 publications + 10 software)
+edges:    703
+coverage: 100%
+JS gz:    7.8 KB
+```
+
+The network is the page. Hover for a popup, click to follow.
+
+End of post-launch adjustments.
