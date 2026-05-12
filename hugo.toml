@@ -89,6 +89,12 @@ weight = 4
 url = "courses/"
 
 [[menu.main]]
+parent = "contributions"
+name = "Books"
+weight = 5
+url = "books/"
+
+[[menu.main]]
 name = "Projects"
 weight = 3
 url = "projects/"
