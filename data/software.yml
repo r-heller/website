@@ -1,8 +1,8 @@
 # R packages — formal registry. Authored from content/software.md.
 # topics + methods drive graph edges.
-- name: hexmakeR
-  repo: https://github.com/CTTIR/hexmakeR
-  docs: https://CTTIR.github.io/hexmakeR/
+- name: hexmakR
+  repo: https://github.com/CTTIR/hexmakR
+  docs: https://cttir.github.io/hexmakR/
   language: R
   description: Interactive hex sticker generator for R packages with Shiny interface and programmatic API.
   topics: [biostatistics-research-methods]

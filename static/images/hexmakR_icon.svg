@@ -70,5 +70,5 @@
 
   <!-- Package name -->
   <text font-family="monospace" font-weight="700" font-size="28"
-    fill="#EEEDFE" text-anchor="middle" x="250" y="545" letter-spacing="1">hexmakeR</text>
+    fill="#EEEDFE" text-anchor="middle" x="250" y="545" letter-spacing="1">hexmakR</text>
 </svg>

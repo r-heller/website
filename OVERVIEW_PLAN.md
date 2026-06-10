@@ -199,7 +199,7 @@ Full pub-by-pub and software-by-software assignment table is below. Please scan 
 
 | #  | Package      | Research topic                       | Methods                                                         |
 |---:|--------------|--------------------------------------|-----------------------------------------------------------------|
-|  1 | hexmakeR     | biostatistics-research-methods       | —                                                                |
+|  1 | hexmakR     | biostatistics-research-methods       | —                                                                |
 |  2 | phenoscapR   | molecular-and-imaging-tools          | single-cell-spatial-analysis                                    |
 |  3 | bambamR      | molecular-and-imaging-tools          | rna-seq-differential-expression                                 |
 |  4 | lstparsR     | biostatistics-research-methods       | population-pk-pd                                                |

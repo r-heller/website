@@ -8,17 +8,17 @@ date: 2025-01-01
 <div class="pkg-grid">
 
 <div class="pkg-card">
-<img src="/website/images/hexmakeR_icon.svg" alt="hexmakeR" class="pkg-icon">
+<img src="/website/images/hexmakR_icon.svg" alt="hexmakR" class="pkg-icon">
 <div class="pkg-body">
 
-### hexmakeR
+### hexmakR
 
 Interactive hex sticker generator for R packages with Shiny interface and programmatic API.
 
 <div class="pkg-links">
 
-[GitHub](https://github.com/CTTIR/hexmakeR) ·
-[Documentation](https://CTTIR.github.io/hexmakeR/)
+[GitHub](https://github.com/CTTIR/hexmakR) ·
+[Documentation](https://cttir.github.io/hexmakR/)
 
 </div>
 </div>
