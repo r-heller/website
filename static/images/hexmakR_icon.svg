@@ -67,8 +67,5 @@
     <text font-family="Georgia, serif" font-weight="700" font-size="52"
       fill="#7F77DD" text-anchor="middle" x="250" y="258" opacity="0.9">R</text>
   </g>
-
-  <!-- Package name -->
-  <text font-family="monospace" font-weight="700" font-size="28"
-    fill="#EEEDFE" text-anchor="middle" x="250" y="545" letter-spacing="1">hexmakR</text>
+  
 </svg>

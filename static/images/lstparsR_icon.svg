@@ -14,31 +14,31 @@
   <g clip-path="url(#hexlst)">
 
     <!-- Raw .lst file text — left side -->
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.28" x="52" y="168">NM-TRAN MESSAGES</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.18" x="52" y="178">  WARNINGS AND ERRORS (IF ANY)</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.22" x="52" y="188">0MINIMIZATION SUCCESSFUL</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.18" x="52" y="198"> HOWEVER, PROBLEMS OCCURRED</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.22" x="52" y="208">0OBJECTIVE FUNCTION VALUE</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.28" x="52" y="168">NM-TRAN MESSAGES</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.18" x="52" y="178">  WARNINGS AND ERRORS (IF ANY)</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.22" x="52" y="188">0MINIMIZATION SUCCESSFUL</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.18" x="52" y="198"> HOWEVER, PROBLEMS OCCURRED</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.22" x="52" y="208">0OBJECTIVE FUNCTION VALUE</text>
     <text font-family="monospace" font-size="7.5" fill="#1D9E75" opacity="0.55" x="52" y="218"> WITHOUT CONST:  -1248.394</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.18" x="52" y="228">0NUMBER OF OBSERVATIONS</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.15" x="52" y="238"> USED:          842</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.22" x="52" y="248">0FINAL PARAMETER ESTIMATE</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.15" x="52" y="258"> THETA - VECTOR OF FIXED EFF</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.18" x="52" y="228">0NUMBER OF OBSERVATIONS</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.15" x="52" y="238"> USED:          842</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.22" x="52" y="248">0FINAL PARAMETER ESTIMATE</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.15" x="52" y="258"> THETA - VECTOR OF FIXED EFF</text>
     <text font-family="monospace" font-size="7.5" fill="#1D9E75" opacity="0.7"  x="52" y="268">  TH 1  TH 2  TH 3  TH 4</text>
     <text font-family="monospace" font-size="7.5" fill="#1D9E75" opacity="0.75" x="52" y="278">  2.14  0.38  1.02  0.87</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.15" x="52" y="288"> OMEGA - COV MATRIX FOR RAND</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.15" x="52" y="288"> OMEGA - COV MATRIX FOR RAND</text>
     <text font-family="monospace" font-size="7.5" fill="#1D9E75" opacity="0.65" x="52" y="298">  ETA1      ETA2</text>
     <text font-family="monospace" font-size="7.5" fill="#1D9E75" opacity="0.7"  x="52" y="308">  0.042     0.000</text>
     <text font-family="monospace" font-size="7.5" fill="#1D9E75" opacity="0.65" x="52" y="318">  0.000     0.018</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.15" x="52" y="328"> SIGMA - COV MATRIX FOR INTR</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.15" x="52" y="328"> SIGMA - COV MATRIX FOR INTR</text>
     <text font-family="monospace" font-size="7.5" fill="#1D9E75" opacity="0.65" x="52" y="338">  EPS1</text>
     <text font-family="monospace" font-size="7.5" fill="#1D9E75" opacity="0.7"  x="52" y="348">  0.011</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.18" x="52" y="358"> ETABAR:  0.000  0.000</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.15" x="52" y="368"> SHRINKAGE:  4.2%  11.8%</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.18" x="52" y="378"> CONDITION NUMBER: 28.4</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.12" x="52" y="388"> COVARIANCE STEP ABORTED</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.1"  x="52" y="398"> #CPUT: Total CPU Time</text>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" opacity="0.1"  x="52" y="408"> 0.234</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.18" x="52" y="358"> ETABAR:  0.000  0.000</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.15" x="52" y="368"> SHRINKAGE:  4.2%  11.8%</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.18" x="52" y="378"> CONDITION NUMBER: 28.4</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.12" x="52" y="388"> COVARIANCE STEP ABORTED</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.1"  x="52" y="398"> #CPUT: Total CPU Time</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" opacity="0.1"  x="52" y="408"> 0.234</text>
 
     <!-- Parse boundary -->
     <line x1="232" y1="152" x2="232" y2="478" stroke="#1D9E75" stroke-width="1" stroke-dasharray="4 3" opacity="0.35"/>
@@ -61,7 +61,7 @@
 
     <!-- Tidy rows -->
     <rect x="256" y="175" width="188" height="14" rx="2" fill="#0F6E56" opacity="0.25"/>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" x="262" y="185">OFV    -1248.39  NA      NA</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" x="262" y="185">OFV    -1248.39  NA      NA</text>
     <rect x="256" y="190" width="188" height="14" rx="2" fill="#0F6E56" opacity="0.12"/>
     <text font-family="monospace" font-size="7.5" fill="#9FE1CB" x="262" y="200">THETA1   2.140   0.041   NA</text>
     <rect x="256" y="205" width="188" height="14" rx="2" fill="#0F6E56" opacity="0.22"/>
@@ -81,11 +81,11 @@
     <line x1="256" y1="298" x2="444" y2="298" stroke="#1D9E75" stroke-width="0.6" opacity="0.3" stroke-dasharray="3 2"/>
 
     <rect x="256" y="300" width="188" height="14" rx="2" fill="#0F6E56" opacity="0.22"/>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" x="262" y="310">ETA1_SHK  4.2%  NA      NA</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" x="262" y="310">ETA1_SHK  4.2%  NA      NA</text>
     <rect x="256" y="315" width="188" height="14" rx="2" fill="#0F6E56" opacity="0.12"/>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" x="262" y="325">ETA2_SHK 11.8%  NA      NA</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" x="262" y="325">ETA2_SHK 11.8%  NA      NA</text>
     <rect x="256" y="330" width="188" height="14" rx="2" fill="#0F6E56" opacity="0.22"/>
-    <text font-family="monospace" font-size="7.5" fill="#5DCAA5" x="262" y="340">COND_NO   28.4   NA      NA</text>
+    <text font-family="monospace" font-size="7.5" fill="#80CBC4" x="262" y="340">COND_NO   28.4   NA      NA</text>
 
     <text font-family="monospace" font-size="7" fill="#1D9E75" opacity="0.5" x="258" y="357"># cov step absent → NA, no error</text>
 
@@ -109,8 +109,5 @@
     fill="none" stroke="#0F6E56" stroke-width="11" stroke-linejoin="round"/>
   <polygon points="250,44 441,153 441,367 250,476 59,367 59,153"
     fill="none" stroke="#085041" stroke-width="1.5" stroke-linejoin="round" opacity="0.7"/>
-
-  <!-- Package name -->
-  <text font-family="monospace" font-weight="700" font-size="25"
-    fill="#9FE1CB" text-anchor="middle" x="250" y="545" letter-spacing="1">lstparsR</text>
+  
 </svg>

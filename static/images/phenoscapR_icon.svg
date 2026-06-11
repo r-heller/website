@@ -28,9 +28,9 @@
 
     <!-- Vessels -->
     <path d="M45,222 Q110,212 155,237 Q200,260 255,250 Q310,240 370,257 Q420,270 455,260" fill="none" stroke="#185FA5" stroke-width="7" opacity="0.2" stroke-linecap="round"/>
-    <path d="M45,222 Q110,212 155,237 Q200,260 255,250 Q310,240 370,257 Q420,270 455,260" fill="none" stroke="#378ADD" stroke-width="2.5" opacity="0.32" stroke-linecap="round"/>
+    <path d="M45,222 Q110,212 155,237 Q200,260 255,250 Q310,240 370,257 Q420,270 455,260" fill="none" stroke="#3B82F6" stroke-width="2.5" opacity="0.32" stroke-linecap="round"/>
     <path d="M140,392 Q185,377 220,392 Q260,410 300,397 Q340,382 390,402 Q430,417 455,407" fill="none" stroke="#185FA5" stroke-width="5" opacity="0.16" stroke-linecap="round"/>
-    <path d="M140,392 Q185,377 220,392 Q260,410 300,397 Q340,382 390,402 Q430,417 455,407" fill="none" stroke="#378ADD" stroke-width="1.8" opacity="0.25" stroke-linecap="round"/>
+    <path d="M140,392 Q185,377 220,392 Q260,410 300,397 Q340,382 390,402 Q430,417 455,407" fill="none" stroke="#3B82F6" stroke-width="1.8" opacity="0.25" stroke-linecap="round"/>
 
     <!-- Region boundaries -->
     <path d="M45,200 Q120,195 200,205 Q280,190 340,210 Q400,198 455,208" fill="none" stroke="#B5D4F4" stroke-width="0.7" opacity="0.15" stroke-dasharray="6 4"/>
@@ -125,26 +125,26 @@
     <circle cx="425" cy="184" r="3"   fill="#3C3489" opacity="0.65"/>
 
     <!-- Stromal cells (blue) -->
-    <circle cx="68"  cy="168" r="3.5" fill="#378ADD" opacity="0.6"/>
-    <circle cx="85"  cy="175" r="3"   fill="#378ADD" opacity="0.55"/>
-    <circle cx="102" cy="165" r="3.5" fill="#378ADD" opacity="0.6"/>
+    <circle cx="68"  cy="168" r="3.5" fill="#3B82F6" opacity="0.6"/>
+    <circle cx="85"  cy="175" r="3"   fill="#3B82F6" opacity="0.55"/>
+    <circle cx="102" cy="165" r="3.5" fill="#3B82F6" opacity="0.6"/>
     <circle cx="120" cy="172" r="3"   fill="#185FA5" opacity="0.55"/>
-    <circle cx="138" cy="165" r="3.5" fill="#378ADD" opacity="0.6"/>
-    <circle cx="155" cy="172" r="3"   fill="#378ADD" opacity="0.55"/>
+    <circle cx="138" cy="165" r="3.5" fill="#3B82F6" opacity="0.6"/>
+    <circle cx="155" cy="172" r="3"   fill="#3B82F6" opacity="0.55"/>
     <circle cx="172" cy="167" r="3.5" fill="#185FA5" opacity="0.58"/>
-    <circle cx="210" cy="172" r="3"   fill="#378ADD" opacity="0.55"/>
-    <circle cx="228" cy="165" r="3.5" fill="#378ADD" opacity="0.6"/>
+    <circle cx="210" cy="172" r="3"   fill="#3B82F6" opacity="0.55"/>
+    <circle cx="228" cy="165" r="3.5" fill="#3B82F6" opacity="0.6"/>
     <circle cx="248" cy="170" r="3"   fill="#185FA5" opacity="0.55"/>
-    <circle cx="268" cy="165" r="3.5" fill="#378ADD" opacity="0.6"/>
-    <circle cx="292" cy="172" r="3"   fill="#378ADD" opacity="0.55"/>
+    <circle cx="268" cy="165" r="3.5" fill="#3B82F6" opacity="0.6"/>
+    <circle cx="292" cy="172" r="3"   fill="#3B82F6" opacity="0.55"/>
     <circle cx="312" cy="165" r="3.5" fill="#185FA5" opacity="0.58"/>
-    <circle cx="332" cy="170" r="3"   fill="#378ADD" opacity="0.55"/>
-    <circle cx="78"  cy="240" r="3"   fill="#378ADD" opacity="0.45"/>
-    <circle cx="95"  cy="255" r="3"   fill="#378ADD" opacity="0.42"/>
-    <circle cx="422" cy="250" r="3"   fill="#378ADD" opacity="0.42"/>
-    <circle cx="438" cy="235" r="3"   fill="#378ADD" opacity="0.42"/>
-    <circle cx="440" cy="310" r="3"   fill="#378ADD" opacity="0.4"/>
-    <circle cx="425" cy="325" r="2.5" fill="#378ADD" opacity="0.38"/>
+    <circle cx="332" cy="170" r="3"   fill="#3B82F6" opacity="0.55"/>
+    <circle cx="78"  cy="240" r="3"   fill="#3B82F6" opacity="0.45"/>
+    <circle cx="95"  cy="255" r="3"   fill="#3B82F6" opacity="0.42"/>
+    <circle cx="422" cy="250" r="3"   fill="#3B82F6" opacity="0.42"/>
+    <circle cx="438" cy="235" r="3"   fill="#3B82F6" opacity="0.42"/>
+    <circle cx="440" cy="310" r="3"   fill="#3B82F6" opacity="0.4"/>
+    <circle cx="425" cy="325" r="2.5" fill="#3B82F6" opacity="0.38"/>
 
     <!-- Necrotic zone (gray) -->
     <circle cx="80"  cy="348" r="3.5" fill="#888780" opacity="0.48"/>
@@ -160,8 +160,8 @@
     <circle cx="130" cy="370" r="2.5" fill="#5F5E5A" opacity="0.38"/>
 
     <!-- Scattered migrating cells -->
-    <circle cx="400" cy="355" r="3"   fill="#378ADD" opacity="0.42"/>
-    <circle cx="418" cy="362" r="3"   fill="#378ADD" opacity="0.38"/>
+    <circle cx="400" cy="355" r="3"   fill="#3B82F6" opacity="0.42"/>
+    <circle cx="418" cy="362" r="3"   fill="#3B82F6" opacity="0.38"/>
     <circle cx="390" cy="370" r="2.5" fill="#185FA5" opacity="0.38"/>
     <circle cx="310" cy="270" r="3"   fill="#1D9E75" opacity="0.65"/>
     <circle cx="152" cy="318" r="3"   fill="#1D9E75" opacity="0.62"/>
@@ -191,8 +191,5 @@
     fill="none" stroke="#185FA5" stroke-width="11" stroke-linejoin="round"/>
   <polygon points="250,44 441,153 441,367 250,476 59,367 59,153"
     fill="none" stroke="#0C447C" stroke-width="1.5" stroke-linejoin="round" opacity="0.6"/>
-
-  <!-- Package name -->
-  <text font-family="monospace" font-weight="700" font-size="24"
-    fill="#B5D4F4" text-anchor="middle" x="250" y="545" letter-spacing="1">phenoscapR</text>
+  
 </svg>
