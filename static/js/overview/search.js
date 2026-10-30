@@ -16,7 +16,7 @@ export function initSearch({ graph }) {
   }
 
   input.disabled = false;
-  input.placeholder = 'Search publications, software, courses…';
+  input.placeholder = 'Search publications and software…';
   input.setAttribute('aria-label', 'Search');
 
   let timer = null;
@@ -53,4 +53,35 @@ export function initSearch({ graph }) {
     }
     document.dispatchEvent(new CustomEvent('ov-search-change'));
   }
+}
+
+// The list is usable with a keyboard and when the graph library is unavailable.
+export function initList({ graph }) {
+  const list = document.getElementById('ov-results');
+  const status = document.getElementById('ov-results-status');
+  if (!list || !status) return;
+  function render(matched) {
+    const nodes = graph.nodes.filter(n => matched.has(n.id));
+    const fragment = document.createDocumentFragment();
+    for (const n of nodes) {
+      const item = document.createElement('li');
+      const title = document.createElement('a');
+      title.textContent = n.title;
+      try {
+        const url = new URL(n.url);
+        if (['http:', 'https:'].includes(url.protocol)) title.href = url.href;
+      } catch { /* An unavailable destination remains readable text. */ }
+      item.append(title);
+      const details = [n.type === 'publication' ? 'Publication' : 'Software',
+                       n.year, n.venue || n.description].filter(Boolean).join(' · ');
+      const description = document.createElement('p');
+      description.textContent = details;
+      item.append(description);
+      fragment.append(item);
+    }
+    list.replaceChildren(fragment);
+    status.textContent = nodes.length ? `${nodes.length} matching items` : 'No matching items. Clear the search or reset the filters.';
+  }
+  document.addEventListener('ov-matched', e => render(e.detail.matched));
+  render(new Set(graph.nodes.map(n => n.id)));
 }

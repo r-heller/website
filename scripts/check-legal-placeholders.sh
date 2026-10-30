@@ -1,23 +1,24 @@
 #!/bin/sh
-set -e
-dir="${1:-public}"
-rc=0
-for pattern in '{{CONTACT_EMAIL_HELLER}}' '{{CONTACT_EMAIL_LEBOULANGER}}' '{{SITE_DOMAIN}}'; do
-  hits=$(grep -rl "$pattern" "$dir" 2>/dev/null || true)
-  if [ -n "$hits" ]; then
-    echo "ERROR: Unfilled placeholder $pattern found in:"
-    echo "$hits" | sed 's/^/  /'
-    rc=1
-  fi
-done
-if [ -d "$dir/legal" ]; then
-  for pattern in 'TODO' 'FIXME'; do
-    hits=$(grep -rl "$pattern" "$dir"/legal/ 2>/dev/null || true)
-    if [ -n "$hits" ]; then
-      echo "ERROR: $pattern found in legal pages:"
-      echo "$hits" | sed 's/^/  /'
-      rc=1
-    fi
-  done
-fi
-exit $rc
+# Validate the actual rendered legal routes, including missing-build failures.
+set -eu
+python3 - "${1:-public}" <<'PY'
+from pathlib import Path
+import re
+import sys
+root = Path(sys.argv[1])
+required = ['index.html', 'impressum/index.html', 'privacy/index.html']
+errors = [f'Missing built page: {name}' for name in required if not (root / name).is_file()]
+for path in root.rglob('*.html'):
+    text = path.read_text(encoding='utf-8')
+    relative = path.relative_to(root)
+    patterns = [r'\{\{[^{}]+\}\}']
+    if any(part in {'legal', 'impressum', 'privacy', 'datenschutz'} for part in relative.parts):
+        patterns.append(r'\b(?:TODO|FIXME)\b')
+    for pattern in patterns:
+        for match in re.finditer(pattern, text):
+            errors.append(f'{relative}: unresolved marker {match.group(0)}')
+if errors:
+    print('\n'.join('ERROR: ' + error for error in errors), file=sys.stderr)
+    raise SystemExit(1)
+print('Built legal routes and placeholder checks passed')
+PY

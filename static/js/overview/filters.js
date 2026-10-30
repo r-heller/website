@@ -43,8 +43,8 @@ export function initFilters({ graph, cy, store }) {
   const sectionRtopic  = makeChipSection('Research topic', renderRTopicChips(state, graph));
   const sectionMethod  = makeChipSection('Method', renderMethodChips(state, graph));
   const sectionYear    = makeYearSlider(state, yearMin, yearMax);
-  const sectionVenue   = makeChipSection('Venue', renderVenueChips(state, venues));
-  const sectionLang    = makeChipSection('Language', renderLanguageChips(state, languages));
+  const sectionVenue   = makeChipSection('Venue', renderVenueChips(state, venues, graph));
+  const sectionLang    = makeChipSection('Language', renderLanguageChips(state, languages, graph));
   const reset = document.createElement('button');
   reset.type = 'button';
   reset.className = 'reset';
@@ -65,8 +65,9 @@ export function initFilters({ graph, cy, store }) {
     sectionType.body.replaceChildren(...renderTypeChips(state, graph));
     sectionRtopic.body.replaceChildren(...renderRTopicChips(state, graph));
     sectionMethod.body.replaceChildren(...renderMethodChips(state, graph));
-    sectionVenue.body.replaceChildren(...renderVenueChips(state, venues));
-    sectionLang.body.replaceChildren(...renderLanguageChips(state, languages));
+    sectionVenue.body.replaceChildren(...renderVenueChips(state, venues, graph));
+    sectionLang.body.replaceChildren(...renderLanguageChips(state, languages, graph));
+    sectionYear.syncState();
     apply();
   }
 
@@ -163,17 +164,18 @@ function renderMethodChips(state, graph) {
   }));
 }
 
-function renderVenueChips(state, venues) {
-  return venues.slice(0, 12).map(v => chip({
-    label: v.length > 28 ? v.slice(0, 27) + '…' : v, count: 0,
+function renderVenueChips(state, venues, graph) {
+  return venues.map(v => chip({
+    label: v.length > 28 ? v.slice(0, 27) + '…' : v,
+    count: graph.nodes.filter(n => n.venue === v).length,
     pressed: state.venues.has(v),
     on: () => { toggle(state.venues, v); fire(); },
   }));
 }
 
-function renderLanguageChips(state, languages) {
+function renderLanguageChips(state, languages, graph) {
   return languages.map(l => chip({
-    label: l, count: 0,
+    label: l, count: graph.nodes.filter(n => n.language === l).length,
     pressed: state.languages.has(l),
     on: () => { toggle(state.languages, l); fire(); },
   }));
@@ -186,8 +188,10 @@ function makeYearSlider(state, lo, hi) {
   row.style.cssText = 'display:flex; gap:.4rem; align-items:center; font-family:var(--ov-mono); font-size:.8rem;';
   const a = document.createElement('input');
   a.type = 'range'; a.min = lo; a.max = hi; a.value = state.yearFrom; a.style.flex = '1';
+  a.style.minWidth = '0'; a.setAttribute('aria-label', 'First publication year');
   const b = document.createElement('input');
   b.type = 'range'; b.min = lo; b.max = hi; b.value = state.yearTo; b.style.flex = '1';
+  b.style.minWidth = '0'; b.setAttribute('aria-label', 'Last publication year');
   const lbl = document.createElement('span');
   const sync = () => {
     let f = +a.value, t = +b.value;
@@ -200,6 +204,10 @@ function makeYearSlider(state, lo, hi) {
   lbl.textContent = `${state.yearFrom}–${state.yearTo}`;
   row.append(a, b);
   wrap.append(h, row, lbl);
+  wrap.syncState = () => {
+    a.value = state.yearFrom; b.value = state.yearTo;
+    lbl.textContent = `${state.yearFrom}–${state.yearTo}`;
+  };
   return wrap;
 }
 
@@ -245,10 +253,11 @@ function writeURL(state, { yearMin, yearMax }) {
     if (value && value.length) u.searchParams.set(key, value);
     else u.searchParams.delete(key);
   };
-  set(URL_KEYS.type,    state.types.size === ALL_TYPES.length ? '' : Array.from(state.types).join(','));
+  set(URL_KEYS.type, state.types.size === ALL_TYPES.length ? '' :
+      state.types.size === 0 ? 'none' : Array.from(state.types).join(','));
   set(URL_KEYS.rtopic,  Array.from(state.rtopics).join(','));
   set(URL_KEYS.method,  Array.from(state.methods).join(','));
-  set(URL_KEYS.venue,   Array.from(state.venues).join(','));
+  set(URL_KEYS.venue, state.venues.size ? JSON.stringify(Array.from(state.venues)) : '');
   set(URL_KEYS.language, Array.from(state.languages).join(','));
   set(URL_KEYS.from,    state.yearFrom !== yearMin ? String(state.yearFrom) : '');
   set(URL_KEYS.to,      state.yearTo   !== yearMax ? String(state.yearTo)   : '');
@@ -266,12 +275,19 @@ function hydrateFromURL(state, { yearMin, yearMax }) {
   };
   fillSet(URL_KEYS.rtopic, state.rtopics);
   fillSet(URL_KEYS.method, state.methods);
-  fillSet(URL_KEYS.venue,  state.venues);
+  const venue = get(URL_KEYS.venue);
+  if (venue) {
+    try {
+      const values = JSON.parse(venue);
+      if (Array.isArray(values)) values.filter(v => typeof v === 'string').forEach(v => state.venues.add(v));
+    } catch { venue.split(',').filter(Boolean).forEach(v => state.venues.add(v)); }
+  }
   fillSet(URL_KEYS.language, state.languages);
   const f = parseInt(get(URL_KEYS.from), 10);
   const t = parseInt(get(URL_KEYS.to),   10);
   if (!Number.isNaN(f) && f >= yearMin && f <= yearMax) state.yearFrom = f;
   if (!Number.isNaN(t) && t >= yearMin && t <= yearMax) state.yearTo   = t;
+  if (state.yearFrom > state.yearTo) [state.yearFrom, state.yearTo] = [state.yearTo, state.yearFrom];
 }
 
 // ============================================================================

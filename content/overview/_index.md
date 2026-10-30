@@ -36,6 +36,12 @@ filtered list below is the canonical view.
     <span><strong id="ov-stat-sw">…</strong> software</span>
     <span style="margin-left:auto;font-family:var(--ov-mono);" id="ov-stat-edges">…</span>
   </div>
+  <section aria-labelledby="ov-results-heading">
+    <h2 id="ov-results-heading">Publications and software</h2>
+    <p id="ov-results-status" role="status" aria-live="polite">Loading items…</p>
+    <ul id="ov-results"></ul>
+    <noscript>Enable JavaScript to filter this list, or use the Publications and Software pages in the Contributions menu.</noscript>
+  </section>
 </div>
 
 <script type="module" src="/website/js/overview/main.js"></script>

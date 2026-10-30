@@ -1,7 +1,7 @@
 // Overview network — entry point.
 // Phase 3: graph render. Phase 4: filters + URL state. Phase 5: search + list.
 import { initFilters } from './filters.js';
-import { initSearch }  from './search.js';
+import { initSearch, initList } from './search.js';
 
 const GRAPH_URL  = new URL('graph.json', document.baseURI).toString();
 const LAYOUT_KEY = 'ov-layout-v6';     // bumped: world-coord positions + post-init fit/center
@@ -245,6 +245,7 @@ async function init() {
   const setText = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
   setText('ov-stat-pub',    graph.stats.publications);
   setText('ov-stat-sw',     graph.stats.software);
+  initList({ graph });
   const edgesEl = document.getElementById('ov-stat-edges');
   if (edgesEl) edgesEl.textContent =
     `${graph.stats.edges_total} edges · ${(graph.stats.coverage * 100).toFixed(0)}% coverage`;
@@ -261,7 +262,9 @@ async function init() {
   try {
     for (const [url, integrity] of CDN) await loadScript(url, integrity);
   } catch (e) {
-    if (loading) loading.textContent = `failed to load Cytoscape (${e.message})`;
+    if (loading) loading.textContent = 'Graph unavailable. Search, filters and the publication list remain available.';
+    initSearch({ graph });
+    initFilters({ graph, cy: stubCy(), store: null });
     return;
   }
 
@@ -269,7 +272,10 @@ async function init() {
   const { nodes, edges } = buildElements(graph, topicIndex);
 
   const cached = readLayoutCache();
-  const useCached = cached && nodes.every(n => n.data.id in cached);
+  const useCached = cached && typeof cached === 'object' && nodes.every(n => {
+    const p = cached[n.data.id];
+    return p && Number.isFinite(p.x) && Number.isFinite(p.y);
+  });
   if (!useCached) computeClusteredLayout(nodes, graph);
   if (useCached) {
     nodes.forEach(n => { const p = cached[n.data.id]; if (p) n.position = p; });

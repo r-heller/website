@@ -1,59 +1,67 @@
 # r-heller/website
 
-Personal academic website of R. Heller. Built with [Hugo](https://gohugo.io/) (extended) and a small in-repo `academic` theme. Deployed to GitHub Pages via Actions on every push to `main`.
-
-Live: <https://r-heller.github.io/website/>
+R. Heller's academic site, built with Hugo extended and the pinned
+[Hugo Coder](https://github.com/luizdepra/hugo-coder) module. The Pages workflow
+publishes pushes to `main`; the maintenance candidate has not been deployed.
 
 ## Local development
 
+Install Hugo **extended 0.159.2** (the CI version), Go >= 1.21, and Python >= 3.10.
+The first build downloads the pinned theme module. The overview graph builder
+uses the standard library; optional PyYAML is not required. Browser checks
+add Node 24 and the development-only Playwright dependency in `package-lock.json`.
+
 ```sh
-hugo server -D    # http://localhost:1313/website/ — drafts on
-hugo --quiet      # one-shot build into ./public
+python3 -m unittest discover -s tests -v
+python3 scripts/build_overview_graph.py
+hugo --gc --minify
+sh scripts/check-legal-placeholders.sh public
+sh scripts/check-overview-budget.sh public
+npm ci
+npx playwright install chromium
+npm run test:browser
+hugo server -D
 ```
 
-Requires Hugo extended ≥ 0.141 (CI uses 0.159).
+Open the URL printed by Hugo. `-D` includes drafts for local review. The graph
+must be built before previewing the overview page. It is derived from the tracked
+publication list and annotations; no network probe runs unless `--probe-net` is
+explicitly supplied. Generated graph/build files are ignored by Git.
 
-## Layout
+## Structure and editing
 
-| Path | Purpose |
-|---|---|
-| `content/` | Page sources (Markdown). Top-level files = main pages; subdirs = sections (`blog/`, `courses/`, `tutorials/`, `legal/`). |
-| `content/legal/` | `impressum.md`, `datenschutz.md`, `haftungsausschluss.md` — DSGVO-compliant German legal pages. |
-| `themes/academic/` | In-repo theme. Templates and base CSS live here; do not edit unless redesigning. |
-| `layouts/` | Project-level overrides that take precedence over the theme. |
-| `layouts/_default/baseof.html` | Loads custom CSS and the Plausible script. |
-| `layouts/partials/header.html` | Top nav, including the **Rechtliches** dropdown (nested menus). |
-| `layouts/partials/footer.html` | Footer with the three legal links. |
-| `layouts/partials/head/extensions.html` | Self-hosted Plausible Analytics script. |
-| `static/` | Files copied verbatim to the site root (`/css/custom.css`, `/images/...`). |
-| `assets/` | Hugo Pipes inputs (currently unused at build time; CSS is served from `static/`). |
-| `scripts/check-legal-placeholders.sh` | CI guard — fails the build if `{{...}}` placeholders or `TODO`/`FIXME` survive into `public/legal/`. |
-| `Exported Items.bib` | Zotero export, retained for future regeneration of `content/publications.md`. |
-| `.github/workflows/deploy.yml` | Build → placeholder check → upload artifact → deploy to Pages. |
+- `content/`: Markdown pages and sections. Legal pages are `impressum.md` and
+  `privacy.md`; their rendered routes are `/impressum/` and `/privacy/`.
+- `data/`: reviewed publication, topic, method and software annotations.
+- `go.mod` and `go.sum`: pinned external theme, downloaded by Hugo modules.
+- `layouts/`: project overrides, including `_partials/header.html` and
+  `partials/head/extensions.html`.
+- `static/`: custom CSS, images and overview JavaScript. `assets/` supplies Hugo
+  Pipes inputs where referenced by templates.
+- `scripts/`: overview generation and build guards. Guards require built legal
+  pages and a nonempty overview JS directory; they fail on unresolved tokens.
 
-## Adding content
+Edit `hugo.toml` for the nested Contributions menu, site metadata and theme
+settings. Add a Markdown file with title/date/draft front matter for a new post.
+Keep publication DOIs and annotation records in sync; the graph builder rejects
+missing or stale annotations rather than inventing relationships.
 
-- **A page** (about, contact, etc.): edit the corresponding file in `content/`.
-- **A blog post / course / tutorial**: add a Markdown file under the relevant section, e.g. `content/blog/2026-05-thing.md`. Front matter: `title`, `date`, `draft: false`.
+## Analytics and publication
 
-## Navigation
+`layouts/partials/head/extensions.html` loads a script from
+`analytics.hellebo.de`. Review the actual endpoint behavior and privacy notice
+when changing analytics. Placeholder checks do not establish legal compliance.
+The overview uses a pinned third-party graph library with an integrity hash.
+The keyboard-accessible list, search and filters remain available if it fails.
+Filter URLs preserve empty type selections and journal names containing commas.
+The graph cache is checked before reuse; its
+320 KiB check covers this repository's overview JavaScript, excluding those CDNs.
 
-The top nav is configured in `hugo.toml` under `[[menu.main]]`. The "Rechtliches" entry uses Hugo's nested menu pattern (`identifier = "rechtliches"` + child entries with `parent = "rechtliches"`). The custom `header.html` partial renders nested entries as a dropdown.
+The existing workflow builds the graph and site, runs the guards, and deploys a
+Pages artifact. Hosted CI results and publication must be checked for the exact
+commit after an authorized push. Local verification is recorded in
+[MAINTENANCE.md](MAINTENANCE.md).
 
-## Analytics
-
-Plausible is loaded from a self-hosted instance for `r-heller.github.io/website`. It uses no cookies and no personal data; documented in `content/legal/datenschutz.md`. To change the endpoint or disable, edit the `<script>` tag in `layouts/partials/head/extensions.html`.
-
-## Legal pages
-
-The three files under `content/legal/` are written in German and tailored to a single Diensteanbieter (R. Heller, Hoyerswerda). Aliases redirect the legacy `/impressum/` and `/privacy/` URLs. Edits to legal text go directly in those Markdown files; the placeholder script in CI prevents stray `{{TOKENS}}` from reaching production.
-
-## Deployment
-
-`git push origin main` → Actions builds with Hugo, runs the placeholder check, and publishes via `actions/deploy-pages`. Manual run: workflow dispatch on the **Deploy Hugo site to GitHub Pages** workflow.
-
-First-time GitHub Pages setup: **Settings → Pages → Source: GitHub Actions**.
-
-## License
-
-Code under [LICENSE](./LICENSE). Editorial content © R. Heller, all rights reserved (see `content/legal/haftungsausschluss.md`).
+Code is under [LICENSE](LICENSE). Review separate content and third-party asset
+rights before reuse; an included bibliography is provenance, not a blanket
+content license.
