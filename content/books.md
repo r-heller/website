@@ -1,8 +1,8 @@
 ---
 title: "Books"
 date: 2026-05-12
-description: "Open-source bookdown projects on scientometrics, biomedical methods, and strategy — all implemented in R."
-keywords: ["books", "bookdown", "R", "scientometrics", "methods", "strategy"]
+description: "Open-source books on biomedical methods, clinical data science, scientometrics, and strategy — all implemented in R."
+keywords: ["books", "bookdown", "quarto", "R", "clinical data science", "scientometrics", "methods", "strategy"]
 ---
 
 ## Methods in R
@@ -10,6 +10,12 @@ keywords: ["books", "bookdown", "R", "scientometrics", "methods", "strategy"]
 A bench reference for biomedical authors and peer reviewers — every common method covered with R code, diagnostics, and reviewer-facing red flags.
 
 [r-heller.github.io/methods-in-r](https://r-heller.github.io/methods-in-r/)
+
+## Clinical Data Science in R
+
+Methods in clinical AI and translational trauma research — 28 chapters from the clinical question through model evaluation, imaging and simulation to ethics, regulation, data protection and security, each with an R lab on synthetic data. Companion course: [Clinical Data Science in R · Course](https://r-heller.github.io/clinical-data-science-in-r-course/).
+
+[r-heller.github.io/clinical-data-science-in-r](https://r-heller.github.io/clinical-data-science-in-r/)
 
 ## Scientometrics in R
 
