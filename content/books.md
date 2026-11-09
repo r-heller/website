@@ -13,7 +13,7 @@ A bench reference for biomedical authors and peer reviewers — every common met
 
 ## Clinical Data Science in R
 
-Methods in clinical AI and translational trauma research — 28 chapters from the clinical question through model evaluation, imaging and simulation to ethics, regulation, data protection and security, each with an R lab on synthetic data. Companion course: [Clinical Data Science in R · Course](https://r-heller.github.io/clinical-data-science-in-r-course/).
+Methods in clinical AI and translational trauma research — 28 chapters from the clinical question through model evaluation, imaging and simulation to ethics, regulation, data protection and security, each with an R lab on synthetic data. Companion course: [Clinical Data Science in R · Course](https://cttir.github.io/clinical-data-science-in-r-course/).
 
 [r-heller.github.io/clinical-data-science-in-r](https://r-heller.github.io/clinical-data-science-in-r/)
 
