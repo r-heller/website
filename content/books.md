@@ -28,3 +28,9 @@ A hands-on guide to scientometrics in R: data acquisition, bibliometric indicato
 An open-source book on game theory, simulation, and machine intelligence — implemented in R.
 
 [cttir.github.io/strategy-in-r](https://cttir.github.io/strategy-in-r/)
+
+## Folding in R
+
+Origami, manifolds and dimension reduction in R: folding geometry, embedding methods and benchmarks with known ground truth.
+
+[Read Folding in R](https://r-heller.github.io/folding-in-r/) · [Source repository](https://github.com/r-heller/folding-in-r)

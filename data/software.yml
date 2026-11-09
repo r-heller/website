@@ -1,11 +1,10 @@
-# Public software catalogue, shared by the Software page and Overview graph.
-# Repository availability checked 2026-11-09. Draft entries have no published GitHub release.
+# Shared software catalogue for r-heller and CTTIR, reconciled 2026-11-09.
 - name: "hexmakR"
   repo: "https://github.com/CTTIR/hexmakR"
   docs: "https://cttir.github.io/hexmakR/"
   language: "R"
   description: "Generate polished hex sticker logos for R packages using customizable templates."
-  topics: [biostatistics-research-methods]
+  topics: ["biostatistics-research-methods"]
   methods: []
   status: "usable"
   category: "R Packages"
@@ -18,8 +17,8 @@
   docs: "https://cttir.github.io/phenoscapR/"
   language: "R"
   description: "Reading, QC, phenotyping, spatial statistics, and visualisation of single-cell spatial biology data from multiplexed imaging platforms."
-  topics: [molecular-and-imaging-tools]
-  methods: [single-cell-spatial-analysis]
+  topics: ["molecular-and-imaging-tools"]
+  methods: ["single-cell-spatial-analysis"]
   status: "usable"
   category: "R Packages"
   group: "Spatial biology"
@@ -31,8 +30,8 @@
   docs: "https://cttir.github.io/bambamR/"
   language: "R"
   description: "Streamlined RNA-seq analysis pipelines — from count matrices to publication-ready results."
-  topics: [molecular-and-imaging-tools]
-  methods: [rna-seq-differential-expression]
+  topics: ["molecular-and-imaging-tools"]
+  methods: ["rna-seq-differential-expression"]
   status: "usable"
   category: "R Packages"
   group: "Molecular data"
@@ -44,8 +43,8 @@
   docs: "https://clinical-pharmacy-saarland-university.github.io/lstparsR/"
   language: "R"
   description: "Parser for NONMEM .lst output files — extracts THETA / OMEGA / SIGMA estimates into tidy data frames for population PK/PD analysis."
-  topics: [biostatistics-research-methods]
-  methods: [population-pk-pd]
+  topics: ["biostatistics-research-methods"]
+  methods: ["population-pk-pd"]
   status: "usable"
   category: "R Packages"
   group: "Clinical science"
@@ -57,7 +56,7 @@
   docs: "https://cttir.github.io/reflowR/"
   language: "R"
   description: "Custom workflowr themes and templates for reproducible research websites in R."
-  topics: [biostatistics-research-methods]
+  topics: ["biostatistics-research-methods"]
   methods: []
   status: "usable"
   category: "R Packages"
@@ -70,8 +69,8 @@
   docs: "https://cttir.github.io/songR/"
   language: "R"
   description: "Native R/C++ implementation of SONG (Self-Organizing Nebulous Growths) for nonlinear dimensionality reduction and visualisation."
-  topics: [biostatistics-research-methods]
-  methods: [dimensionality-reduction]
+  topics: ["biostatistics-research-methods"]
+  methods: ["dimensionality-reduction"]
   status: "usable"
   category: "R Packages"
   group: "Dimension reduction & visualisation"
@@ -83,8 +82,8 @@
   docs: "https://cttir.github.io/molpathR/"
   language: "R"
   description: "Unified R platform for molecular pathology data — parses NGS files (VCF, BAM, FASTQ), XML/PDF reports, and clinical data into a queryable database with an interactive Shiny app."
-  topics: [molecular-and-imaging-tools]
-  methods: [cox-regression, machine-learning-classification]
+  topics: ["molecular-and-imaging-tools"]
+  methods: ["cox-regression", "machine-learning-classification"]
   status: "usable"
   category: "R Packages"
   group: "Clinical science"
@@ -96,8 +95,8 @@
   docs: "https://cttir.github.io/segmantR/"
   language: "R"
   description: "Cell segmentation, annotation and mask correction for histology and multiplexed tissue imaging with human-in-the-loop training — classical methods plus Cellpose, StarDist, and Mesmer."
-  topics: [molecular-and-imaging-tools]
-  methods: [image-segmentation]
+  topics: ["molecular-and-imaging-tools"]
+  methods: ["image-segmentation"]
   status: "usable"
   category: "R Packages"
   group: "Spatial biology"
@@ -109,8 +108,8 @@
   docs: "https://cttir.github.io/scimagR/"
   language: "R"
   description: "End-to-end R pipeline for longitudinal MRI and CT analysis in spinal-cord injury research (wraps Spinal Cord Toolbox, dcm2niix, pydicom)."
-  topics: [trauma-spinal-cord-injury, molecular-and-imaging-tools]
-  methods: [image-segmentation]
+  topics: ["trauma-spinal-cord-injury", "molecular-and-imaging-tools"]
+  methods: ["image-segmentation"]
   status: "usable"
   category: "R Packages"
   group: "Clinical science"
@@ -122,8 +121,8 @@
   docs: "https://cttir.github.io/hyperspectR/"
   language: "R"
   description: "Complete R pipeline for biomedical hyperspectral imaging — from raw camera data to clinical tissue oxygenation maps."
-  topics: [molecular-and-imaging-tools]
-  methods: [hyperspectral-imaging]
+  topics: ["molecular-and-imaging-tools"]
+  methods: ["hyperspectral-imaging"]
   status: "usable"
   category: "R Packages"
   group: "Spectral imaging"
@@ -135,10 +134,10 @@
   docs: "https://r-heller.github.io/gambitR/"
   language: "R"
   description: "Chess move generation, position analysis, game simulation and interactive Shiny study tools, with optional UCI engine integration."
-  topics: [games-and-simulation]
+  topics: ["games-and-simulation"]
   methods: []
   status: "draft"
-  category: "R Packages"
+  category: "Games & simulation"
   group: "Games & simulation"
   logo: "/website/images/software/gambitR.png"
 
@@ -147,10 +146,10 @@
   docs: ""
   language: "R"
   description: "Experimental multilevel chess with a rules engine, synchronised 2D and 3D views, game analysis and coaching tools."
-  topics: [games-and-simulation]
+  topics: ["games-and-simulation"]
   methods: []
   status: "draft"
-  category: "R Packages"
+  category: "Games & simulation"
   group: "Games & simulation"
   logo: "/website/images/software/gambitR3D.svg"
 
@@ -159,10 +158,10 @@
   docs: "https://r-heller.github.io/diplomacyR/"
   language: "R"
   description: "Diplomacy adjudication, scriptable opponents, batch simulation and an interactive Shiny board."
-  topics: [games-and-simulation]
+  topics: ["games-and-simulation"]
   methods: []
   status: "draft"
-  category: "R Packages"
+  category: "Games & simulation"
   group: "Games & simulation"
   logo: "/website/images/software/diplomacyR.png"
 
@@ -171,10 +170,10 @@
   docs: "https://r-heller.github.io/risikoR/"
   language: "R"
   description: "Risk combat probabilities, conquest simulation, game-state analysis and interactive play in Shiny."
-  topics: [games-and-simulation]
+  topics: ["games-and-simulation"]
   methods: []
   status: "draft"
-  category: "R Packages"
+  category: "Games & simulation"
   group: "Games & simulation"
   logo: "/website/images/software/risikoR.png"
 
@@ -183,10 +182,10 @@
   docs: "https://r-heller.github.io/skatR/"
   language: "R"
   description: "Skat card-play and scoring tools, bidding values, simulated opponents and deal analysis."
-  topics: [games-and-simulation]
+  topics: ["games-and-simulation"]
   methods: []
   status: "draft"
-  category: "R Packages"
+  category: "Games & simulation"
   group: "Games & simulation"
   logo: "/website/images/software/skatR.svg"
 
@@ -195,10 +194,10 @@
   docs: "https://r-heller.github.io/maumauR/"
   language: "R"
   description: "A configurable Mau Mau engine with Monte Carlo simulation, strategy comparisons and interactive play."
-  topics: [games-and-simulation]
+  topics: ["games-and-simulation"]
   methods: []
   status: "draft"
-  category: "R Packages"
+  category: "Games & simulation"
   group: "Games & simulation"
   logo: "/website/images/software/maumauR.png"
 
@@ -207,10 +206,10 @@
   docs: "https://r-heller.github.io/tesseractR/"
   language: "R"
   description: "Four-dimensional tic-tac-toe with a game engine, heuristic opponent, hypercube visualisation and Shiny interface."
-  topics: [games-and-simulation]
+  topics: ["games-and-simulation"]
   methods: []
   status: "draft"
-  category: "R Packages"
+  category: "Games & simulation"
   group: "Games & simulation"
   logo: "/website/images/software/tesseractR.png"
 
@@ -219,10 +218,10 @@
   docs: "https://r-heller.github.io/multixoR/"
   language: "R"
   description: "Multiverse tic-tac-toe on a spatial cube with branching timelines and cross-axis win detection."
-  topics: [games-and-simulation]
+  topics: ["games-and-simulation"]
   methods: []
   status: "draft"
-  category: "R Packages"
+  category: "Games & simulation"
   group: "Games & simulation"
   logo: "/website/images/software/multixoR.png"
 
@@ -231,7 +230,7 @@
   docs: "https://r-heller.github.io/synesthR/"
   language: "R"
   description: "Linguistic features mapped to coordinated images and music, with shared palettes and a media interchange format."
-  topics: [creative-computing]
+  topics: ["creative-computing"]
   methods: []
   status: "draft"
   category: "R Packages"
@@ -243,8 +242,8 @@
   docs: ""
   language: "R"
   description: "Rigid Miura-sheet manifolds with known material coordinates for dimension-reduction benchmarks and reconstruction metrics."
-  topics: [biostatistics-research-methods]
-  methods: [dimensionality-reduction]
+  topics: ["biostatistics-research-methods"]
+  methods: ["dimensionality-reduction"]
   status: "draft"
   category: "R Packages"
   group: "Dimension reduction & visualisation"
@@ -254,7 +253,7 @@
   docs: ""
   language: "R"
   description: "An R teaching pipeline for single-end FASTQ inspection, HISAT2 or Rsubread alignment, BAM sorting and coverage checks."
-  topics: [molecular-and-imaging-tools]
+  topics: ["molecular-and-imaging-tools"]
   methods: []
   status: "draft"
   category: "Research Tools"
@@ -265,7 +264,7 @@
   docs: "https://r-heller.github.io/equilibria/"
   language: "R"
   description: "A teaching site on game theory, decision-making and simulation, with R examples and a Nash-equilibrium explorer."
-  topics: [games-and-simulation]
+  topics: ["games-and-simulation"]
   methods: []
   status: "draft"
   category: "Education & Resources"
@@ -276,7 +275,7 @@
   docs: ""
   language: "Python / Quarto"
   description: "A reusable Quarto course template with a syllabus, lessons, exercises, rubrics and instructor notes."
-  topics: [biostatistics-research-methods]
+  topics: ["biostatistics-research-methods"]
   methods: []
   status: "draft"
   category: "Education & Resources"
@@ -287,8 +286,538 @@
   docs: ""
   language: "Python / Quarto"
   description: "A reusable Quarto book template with chapter structure, references, author checklists and HTML/EPUB output."
-  topics: [biostatistics-research-methods]
+  topics: ["biostatistics-research-methods"]
   methods: []
   status: "draft"
   category: "Education & Resources"
   group: "Teaching resources"
+
+- name: "phenoloom"
+  status: "usable"
+  category: "R Packages"
+  group: "Spatial biology"
+  description: "Suite package for CTTIR spatial biology, bringing together segmantR, cellspecR, gatekeepR and phenoscapR."
+  docs: "https://github.com/CTTIR/phenoloom"
+  logo: "/website/images/hex/phenoloom.svg"
+  logo_dark: "/website/images/hex/phenoloom-dark.svg"
+  repo: "https://github.com/CTTIR/phenoloom"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "cellreportR"
+  status: "usable"
+  category: "R Packages"
+  group: "Spatial biology"
+  description: "Statistical analysis and audit-ready reporting pipeline for routine cell-culture diagnostics with microscopic evaluation."
+  docs: "https://cttir.github.io/cellreportR/"
+  logo: "/website/images/hex/cellreportR.svg"
+  logo_dark: "/website/images/hex/cellreportR-dark.svg"
+  repo: "https://github.com/CTTIR/cellreportR"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "hyperloom"
+  status: "usable"
+  category: "R Packages"
+  group: "Spectral imaging"
+  description: "Suite package for CTTIR hyperspectral imaging, bringing together hyperspectR, hyperspectaculR, cuvis.r and tivis.r."
+  docs: "https://github.com/CTTIR/hyperloom"
+  logo: "/website/images/hex/hyperloom.svg"
+  logo_dark: "/website/images/hex/hyperloom-dark.svg"
+  repo: "https://github.com/CTTIR/hyperloom"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "cuvis.r"
+  status: "usable"
+  category: "R Packages"
+  group: "Spectral imaging"
+  description: "R bindings to the Cubert CUVIS SDK for reading, calibrating, and exporting hyperspectral camera data."
+  docs: "https://cttir.github.io/cuvis.r/"
+  logo: "/website/images/hex/cuvis.r.svg"
+  logo_dark: "/website/images/hex/cuvis.r-dark.svg"
+  repo: "https://github.com/CTTIR/cuvis.r"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "hyperannotatR"
+  status: "usable"
+  category: "R Packages"
+  group: "Spectral imaging"
+  description: "Multi-layer region-of-interest annotation for hyperspectral imaging (HSI), including spectral cubes, band views, spectral extraction, and display rasters — exports binary, labelled, and multi-class masks (GeoJSON, QuPath, TIFF) with a resumable Shiny batch annotator."
+  docs: "https://cttir.github.io/hyperannotatR/"
+  logo: "/website/images/hex/hyperannotatR.svg"
+  logo_dark: "/website/images/hex/hyperannotatR-dark.svg"
+  repo: "https://github.com/CTTIR/hyperannotatR"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "hyperspectaculR"
+  status: "usable"
+  category: "R Packages"
+  group: "Spectral imaging"
+  description: "Publication-grade artistic visualisation of hyperspectral imagery, built on the hyperspectR cube class."
+  docs: "https://cttir.github.io/hyperspectaculR/"
+  logo: "/website/images/hex/hyperspectaculR.svg"
+  logo_dark: "/website/images/hex/hyperspectaculR-dark.svg"
+  repo: "https://github.com/CTTIR/hyperspectaculR"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "libscanR"
+  status: "usable"
+  category: "R Packages"
+  group: "Spectral imaging"
+  description: "Vendor-agnostic analysis and visualisation of Laser-Induced Breakdown Spectroscopy (LIBS) data, with a focus on biomedical tissue applications."
+  docs: "https://cttir.github.io/libscanR/"
+  logo: "/website/images/hex/libscanR.svg"
+  logo_dark: "/website/images/hex/libscanR-dark.svg"
+  repo: "https://github.com/CTTIR/libscanR"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "tivis.r"
+  status: "usable"
+  category: "R Packages"
+  group: "Spectral imaging"
+  description: "Pure-R reader for Diaspective Vision TIVITA hyperspectral recordings — parses the SpecCube container, acquisition metadata and exported parameter images, with no vendor SDK required."
+  docs: "https://cttir.github.io/tivis.r/"
+  logo: "/website/images/hex/tivis.r.svg"
+  logo_dark: "/website/images/hex/tivis.r-dark.svg"
+  repo: "https://github.com/CTTIR/tivis.r"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "hypermodR"
+  status: "draft"
+  category: "R Packages"
+  group: "Spectral imaging"
+  description: "Hyperspectral modelling and validation — proposed interpretable and black-box workflows, image and video interoperability, optional model backends and a Shiny workbench."
+  docs: "https://github.com/CTTIR/hypermodR"
+  logo: "/website/images/hex/hypermodR.svg"
+  logo_dark: "/website/images/hex/hypermodR-dark.svg"
+  repo: "https://github.com/CTTIR/hypermodR"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "zhncommandR"
+  status: "usable"
+  category: "R Packages"
+  group: "Clinical science"
+  description: "Auditor live-evaluation dashboard for haematological oncology cohorts — quality and coverage indicators, OPS-coded complex-therapy and diagnostics counts, Kaplan–Meier, oncoprint, and cytogenetics summaries in an interactive Shiny app."
+  docs: "https://cttir.github.io/zhncommandR/"
+  logo: "/website/images/hex/zhncommandR.svg"
+  logo_dark: "/website/images/hex/zhncommandR-dark.svg"
+  repo: "https://github.com/CTTIR/zhncommandR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "harbouR"
+  status: "usable"
+  category: "R Packages"
+  group: "Research infrastructure"
+  description: "Unofficial R client for the SeaTable REST API — read, write, and sync collaborative cloud databases from R."
+  docs: "https://cttir.github.io/harbouR/"
+  logo: "/website/images/hex/harbouR.svg"
+  logo_dark: "/website/images/hex/harbouR-dark.svg"
+  repo: "https://github.com/CTTIR/harbouR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "pressR"
+  status: "usable"
+  category: "R Packages"
+  group: "Clinical science"
+  description: "Parsing, analysis, and visualisation of capacitive pressure-distribution data — insoles, saddles (equine and bicycle), seating, and barefoot pedography."
+  docs: "https://cttir.github.io/pressR/"
+  logo: "/website/images/hex/pressR.svg"
+  logo_dark: "/website/images/hex/pressR-dark.svg"
+  repo: "https://github.com/CTTIR/pressR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "qviewparsR"
+  status: "cran"
+  category: "R Packages"
+  group: "Molecular data"
+  description: "Pure-R parser for the binary .Q-View project file format used in chemiluminescent multiplex ELISA plate imaging and quantification."
+  docs: "https://cttir.github.io/qviewparsR/"
+  zenodo: "https://doi.org/10.5281/zenodo.21395352"
+  logo: "/website/images/hex/qviewparsR.svg"
+  logo_dark: "/website/images/hex/qviewparsR-dark.svg"
+  repo: "https://github.com/CTTIR/qviewparsR"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "dynasimR"
+  status: "usable"
+  category: "R Packages"
+  group: "Systems & simulation"
+  description: "Domain-neutral analysis and visualisation layer for discrete-event, agent-based, and node-actor simulation outputs."
+  docs: "https://cttir.github.io/dynasimR/"
+  logo: "/website/images/hex/dynasimR.svg"
+  logo_dark: "/website/images/hex/dynasimR-dark.svg"
+  repo: "https://github.com/CTTIR/dynasimR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "scimapR"
+  status: "usable"
+  category: "R Packages"
+  group: "Evidence & discovery"
+  description: "Reproducible, question-driven, embedding-aware science mapping — a toolkit for bibliometric and scientometric analysis."
+  docs: "https://cttir.github.io/scimapR/"
+  logo: "/website/images/hex/scimapR.svg"
+  logo_dark: "/website/images/hex/scimapR-dark.svg"
+  repo: "https://github.com/CTTIR/scimapR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "themakR"
+  status: "usable"
+  category: "R Packages"
+  group: "Research infrastructure"
+  description: "Shared pkgdown template giving the CTTIR package suite a unified look — Hugo Coder palette with a light/dark toggle."
+  docs: "https://cttir.github.io/themakR/"
+  logo: "/website/images/hex/themakR.svg"
+  logo_dark: "/website/images/hex/themakR-dark.svg"
+  repo: "https://github.com/CTTIR/themakR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "argus-one"
+  status: "usable"
+  category: "Zotero Plugins"
+  description: "Merges duplicate Zotero items by DOI only — keeps the newest record's fields, unions collections, tags, and attachments inside one transaction."
+  docs: ""
+  logo: "/website/images/hex/argus-one.svg"
+  logo_dark: "/website/images/hex/argus-one-dark.svg"
+  repo: "https://github.com/CTTIR/argus-one"
+  language: ""
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "attaclone-dedup"
+  status: "usable"
+  category: "Zotero Plugins"
+  description: "Detects and resolves duplicate file attachments by content hash — auto-removes byte-identical bare copies, prompts a review dialog for annotated PDFs."
+  docs: ""
+  logo: "/website/images/hex/attaclone-dedup.svg"
+  logo_dark: "/website/images/hex/attaclone-dedup-dark.svg"
+  repo: "https://github.com/CTTIR/attaclone-dedup"
+  language: ""
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "metadata-mender"
+  status: "usable"
+  category: "Zotero Plugins"
+  description: "Reconciles and completes item metadata against PubMed, OpenAlex, Crossref, Semantic Scholar, OpenAIRE, Unpaywall, CORE, and CRAN."
+  docs: ""
+  logo: "/website/images/hex/metadata-mender.svg"
+  logo_dark: "/website/images/hex/metadata-mender-dark.svg"
+  repo: "https://github.com/CTTIR/metadata-mender"
+  language: ""
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "pwa-quest"
+  status: "usable"
+  category: "Applications"
+  description: "Offline-first Progressive Web App for collecting questionnaire responses in research and field settings — exports sessions as QR codes or CSV / XLSX / TXT / XML."
+  docs: ""
+  logo: "/website/images/hex/pwa-quest.svg"
+  logo_dark: "/website/images/hex/pwa-quest-dark.svg"
+  repo: "https://github.com/CTTIR/pwa-quest"
+  language: ""
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "shinylaunchR"
+  status: "usable"
+  category: "Applications"
+  description: "Desktop launchpad for package apps, staged Shiny source apps and hosted HTTPS URLs. Version 0.1.0 has a GitHub release; 0.2.0-rc.1 is an unpublished release candidate with platform qualification still pending."
+  docs: ""
+  logo: "/website/images/hex/shinylaunchR.svg"
+  logo_dark: "/website/images/hex/shinylaunchR-dark.svg"
+  repo: "https://github.com/CTTIR/shinylaunchR"
+  language: ""
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "bloodspottR"
+  status: "draft"
+  category: "R Packages"
+  group: "Spatial biology"
+  description: "Experimental package for calibrated histology burden measurements, traceable review, reporting and Shiny exploration of saved results; native whole-slide inference and portable DNN training are not yet qualified end to end."
+  docs: ""
+  logo: "/website/images/hex/bloodspottR.svg"
+  logo_dark: "/website/images/hex/bloodspottR-dark.svg"
+  repo: "https://github.com/CTTIR/bloodspottR"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "cellspecR"
+  status: "usable"
+  category: "R Packages"
+  group: "Spatial biology"
+  description: "1.0.0 release candidate defining the cellspec table contract for segmented cells: import, validation, signal policies and integrity-checked exchange. External fixture comparisons and CRAN submission remain pending."
+  docs: ""
+  logo: "/website/images/hex/cellspecR.svg"
+  logo_dark: "/website/images/hex/cellspecR-dark.svg"
+  repo: "https://github.com/CTTIR/cellspecR"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "gatekeepR"
+  status: "usable"
+  category: "R Packages"
+  group: "Spatial biology"
+  description: "1.0.0 release candidate for marker callability, thresholds, phenotype classification and Shiny review, with immutable snapshots and verifiable exports; preparation for first CRAN submission is ongoing."
+  docs: ""
+  logo: "/website/images/hex/gatekeepR.svg"
+  logo_dark: "/website/images/hex/gatekeepR-dark.svg"
+  repo: "https://github.com/CTTIR/gatekeepR"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "mssrscopR"
+  status: "usable"
+  category: "R Packages"
+  group: "Spatial biology"
+  description: "Single-frame mean-shift super-resolution (MSSR) structure maps."
+  docs: "https://cttir.github.io/mssrscopR/"
+  logo: "/website/images/hex/mssrscopR.svg"
+  logo_dark: "/website/images/hex/mssrscopR-dark.svg"
+  repo: "https://github.com/CTTIR/mssrscopR"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "brainwritR"
+  status: "usable"
+  category: "R Packages"
+  group: "Consensus & ideation"
+  description: "Development R/Shiny application for classroom brainwriting, with timed rounds, QR-code participation, SQLite persistence, mobile reconnect support and German, English and French interfaces."
+  docs: ""
+  logo: "/website/images/hex/brainwritR.svg"
+  logo_dark: "/website/images/hex/brainwritR-dark.svg"
+  repo: "https://github.com/CTTIR/brainwritR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "qupflowR"
+  status: "draft"
+  category: "R Packages"
+  group: "Spatial biology"
+  description: "Experimental R foundations for a planned QuPath interface: protocol helpers, synthetic contract fixtures and pinned external-method execution. Live bridge, interactive app and workflow engine remain planned."
+  docs: ""
+  logo: "/website/images/hex/qupflowR.svg"
+  logo_dark: "/website/images/hex/qupflowR-dark.svg"
+  repo: "https://github.com/CTTIR/qupflowR"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "inferguidR"
+  status: "draft"
+  category: "R Packages"
+  group: "Statistical inference"
+  description: "Guided inference, power analysis and diagnostic accuracy, with explicit assumptions, typed results, reproducible exports and a Shiny workbench."
+  docs: "https://github.com/CTTIR/inferguidR"
+  logo: "/website/images/hex/inferguidR.svg"
+  logo_dark: "/website/images/hex/inferguidR-dark.svg"
+  repo: "https://github.com/CTTIR/inferguidR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "infercalcR"
+  status: "draft"
+  category: "R Packages"
+  group: "Statistical inference"
+  description: "Explicit statistical procedures, descriptive summaries and diagnostic calculations behind one result contract, the computational core of the inference packages. Not public yet."
+  docs: ""
+  logo: "/website/images/hex/infercalcR.svg"
+  logo_dark: "/website/images/hex/infercalcR-dark.svg"
+  repo: ""
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "infereportR"
+  status: "draft"
+  category: "R Packages"
+  group: "Statistical inference"
+  description: "Tables, manuscript-ready text and ggplot annotations from finalized statistical results, without recomputing the inference. Not public yet."
+  docs: ""
+  logo: "/website/images/hex/infereportR.svg"
+  logo_dark: "/website/images/hex/infereportR-dark.svg"
+  repo: ""
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "sorenR"
+  status: "draft"
+  category: "R Packages"
+  group: "Dimension reduction & visualisation"
+  description: "Experimental self-organising representations with bounded updates."
+  docs: "https://github.com/CTTIR/sorenR"
+  logo: "/website/images/hex/sorenR.svg"
+  logo_dark: "/website/images/hex/sorenR-dark.svg"
+  repo: "https://github.com/CTTIR/sorenR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "sandtablR"
+  status: "draft"
+  category: "R Packages"
+  group: "Systems & simulation"
+  description: "Synthetic patient-flow simulation, decision-path analysis and model comparison, with an interactive Shiny workbench."
+  docs: "https://github.com/CTTIR/sandtablR"
+  logo: "/website/images/hex/sandtablR.svg"
+  logo_dark: "/website/images/hex/sandtablR-dark.svg"
+  repo: "https://github.com/CTTIR/sandtablR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "shieldR"
+  status: "draft"
+  category: "R Packages"
+  group: "Systems & simulation"
+  description: "Abstract logistics-chain simulation with time-varying item specifications and dynamic disruptions, with reproducible policy comparisons and a Shiny workbench."
+  docs: "https://github.com/CTTIR/shieldR"
+  logo: "/website/images/hex/shieldR.svg"
+  logo_dark: "/website/images/hex/shieldR-dark.svg"
+  repo: "https://github.com/CTTIR/shieldR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "cttiR"
+  status: "draft"
+  category: "R Packages"
+  group: "CTTIR core"
+  description: "Structured research-project creation, versioned workflow selection and reproducible analysis scaffolding; development software with explicit validation gates."
+  docs: "https://github.com/CTTIR/cttiR"
+  logo: "/website/images/hex/cttiR.svg"
+  logo_dark: "/website/images/hex/cttiR-dark.svg"
+  repo: "https://github.com/CTTIR/cttiR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "researchR"
+  status: "draft"
+  category: "R Packages"
+  group: "Evidence & discovery"
+  description: "R client for literature and signal surveillance through a separately deployed server; retrieves records and manages surveillance questions."
+  docs: "https://github.com/CTTIR/researchR"
+  logo: "/website/images/hex/researchR.svg"
+  logo_dark: "/website/images/hex/researchR-dark.svg"
+  repo: "https://github.com/CTTIR/researchR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "delphyR"
+  status: "draft"
+  category: "R Packages"
+  group: "Consensus & ideation"
+  description: "Delphi-study platform with R analysis packages, a multilingual Shiny interface and PostgreSQL workflows; synthetic development examples, not a production deployment."
+  docs: "https://github.com/CTTIR/delphyR"
+  logo: "/website/images/hex/delphyr.svg"
+  logo_dark: "/website/images/hex/delphyr-dark.svg"
+  repo: "https://github.com/CTTIR/delphyR"
+  language: "R"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "courses"
+  status: "usable"
+  category: "Education & Resources"
+  description: "Biostatistics curriculum covering foundations, regression, study design and machine learning."
+  docs: "https://github.com/CTTIR/courses"
+  logo: ""
+  repo: "https://github.com/CTTIR/courses"
+  language: ""
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "tutorials"
+  status: "usable"
+  category: "Education & Resources"
+  description: "Hands-on tutorials for CTTIR software and reproducible research methods."
+  docs: "https://github.com/CTTIR/tutorials"
+  logo: ""
+  repo: "https://github.com/CTTIR/tutorials"
+  language: ""
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "ressources"
+  status: "usable"
+  category: "Education & Resources"
+  description: "Shared research resources, references and supporting materials."
+  docs: "https://github.com/CTTIR/ressources"
+  logo: ""
+  repo: "https://github.com/CTTIR/ressources"
+  language: ""
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "researchD"
+  repo: "https://github.com/CTTIR/researchD"
+  docs: "https://github.com/CTTIR/researchD"
+  language: "Python"
+  description: "Self-hosted academic literature and research-signal surveillance server."
+  topics: ["biostatistics-research-methods"]
+  methods: []
+  status: "draft"
+  category: "Research Tools"
+  group: "Research infrastructure"
+
+- name: "pwa-container"
+  repo: "https://github.com/CTTIR/pwa-container"
+  docs: "https://github.com/CTTIR/pwa-container"
+  language: "TypeScript"
+  description: "Self-hosted container for anonymous surveys and web applications."
+  topics: ["biostatistics-research-methods"]
+  methods: []
+  status: "draft"
+  category: "Research Tools"
+  group: "Research infrastructure"
+
+- name: "cttiR-model"
+  repo: "https://github.com/CTTIR/cttiR-model"
+  docs: "https://github.com/CTTIR/cttiR-model"
+  language: "Python"
+  description: "CPU-first tooling for a planned R-domain specialist model: local broker, validation and evaluation. Training and model inference are not yet available."
+  topics: ["biostatistics-research-methods"]
+  methods: []
+  status: "draft"
+  category: "Research Tools"
+  group: "Research infrastructure"

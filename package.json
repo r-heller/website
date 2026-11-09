@@ -1,6 +1,6 @@
 {
   "name": "r-heller-website-checks",
   "private": true,
-  "scripts": {"test:browser": "node tests/overview-browser.cjs"},
+  "scripts": {"test:browser": "node tests/overview-browser.cjs && node tests/catalogue-browser.cjs"},
   "devDependencies": {"playwright": "1.63.0"}
 }
