@@ -31,7 +31,7 @@
     </svg>
   {{ end }}
   <header class="cttir-card__head">
-    <h3 class="cttir-card__name" id="{{ $p.name }}">{{ $p.name }}</h3>
+    <h3 class="cttir-card__name" id="{{ $p.name | anchorize }}">{{ $p.name }}</h3>
     {{ $status := $p.status | default "usable" }}
     {{ $filled := 2 }}{{ $label := "Usable" }}
     {{ if eq $status "cran" }}{{ $filled = 3 }}{{ $label = "Published" }}
