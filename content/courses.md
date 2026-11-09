@@ -17,6 +17,6 @@ Course materials, slides, and supplementary resources.
 
 ## Clinical Data Science in R · Course
 
-Eight workshops (32 teaching units) on clinical AI and translational trauma research: diagnostic accuracy, grouped validation, longitudinal and mechanistic models, simulation, regulation, data protection and incident response — with R labs on synthetic data and a project-based assessment. Companion book: [Clinical Data Science in R](https://r-heller.github.io/clinical-data-science-in-r/).
+Eight workshops (32 teaching units) on clinical AI and translational trauma research: diagnostic accuracy, grouped validation, longitudinal and mechanistic models, simulation, regulation, data protection and incident response — with R labs on synthetic data and a project-based assessment. Companion book: [Clinical Data Science in R](https://cttir.github.io/clinical-data-science-in-r/).
 
 [cttir.github.io/clinical-data-science-in-r-course](https://cttir.github.io/clinical-data-science-in-r-course/)
