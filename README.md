@@ -2,7 +2,7 @@
 
 R. Heller's academic site, built with Hugo extended and the pinned
 [Hugo Coder](https://github.com/luizdepra/hugo-coder) module. The Pages workflow
-publishes pushes to `main`; the maintenance candidate has not been deployed.
+publishes pushes to `main`.
 
 ## Local development
 
@@ -44,7 +44,10 @@ explicitly supplied. Generated graph/build files are ignored by Git.
 Edit `hugo.toml` for the nested Contributions menu, site metadata and theme
 settings. Add a Markdown file with title/date/draft front matter for a new post.
 Keep publication DOIs and annotation records in sync; the graph builder rejects
-missing or stale annotations rather than inventing relationships.
+missing or stale annotations rather than inventing relationships. Publication additions
+are reconciled against Zotero and verified DOI metadata. Preprints and conference
+abstracts retain their status in both the publication page and overview list;
+the list also shows full authors and journal citations.
 
 ## Analytics and publication
 

@@ -4,7 +4,10 @@ date: 2026-05-06
 description: "Discovery network across publications and software."
 ---
 
-A discovery network spanning publications and software. Hover a node to
+Browse [publications]({{< relref "publications.md" >}}), [software](/website/software/),
+[books]({{< relref "books.md" >}}) and [projects]({{< relref "projects.md" >}}).
+
+The discovery network below connects publications and software. Hover a node to
 inspect; click to follow. On small screens the graph is hidden — the
 filtered list below is the canonical view.
 

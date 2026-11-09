@@ -1,7 +1,7 @@
 """Assemble the unified overview graph.
 
 Reads:
-  - content/publications.md             (52 publications, hand-written HTML)
+  - content/publications.md             (publication citations, hand-written HTML)
   - data/publication_annotations.yml    (DOI → topics + methods)
   - data/software.yml                   (10 R packages, fully annotated)
   - data/_generated/cttir_tutorials.json (output of fetch_cttir_index.py)
@@ -25,6 +25,7 @@ CI gates (exit non-zero on failure) — see OVERVIEW_PLAN.md.
 from __future__ import annotations
 
 import json
+import html
 import re
 import sys
 import urllib.request
@@ -104,11 +105,13 @@ PUB_BLOCK_RE = re.compile(r'<div class="publication-item">(.*?)</div>', re.S)
 DOI_RE = re.compile(r'doi\.org/([^"]+)"')
 TITLE_RE = re.compile(r'pub-title"><a[^>]*>([^<]+)</a>')
 AUTHORS_RE = re.compile(r'pub-authors">(.*?)</span>', re.S)
+CITATION_RE = re.compile(r'pub-journal">(.*?)</span>', re.S)
+STATUS_RE = re.compile(r'pub-status">([^<]+)</span>')
 JOURNAL_RE = re.compile(r'<i>([^<]+)</i>')
 
 
 def _strip_tags(s: str) -> str:
-    return re.sub(r"<[^>]+>", "", s).strip()
+    return html.unescape(re.sub(r"<[^>]+>", "", s)).strip()
 
 
 def parse_publications(md_path: Path) -> list[dict]:
@@ -123,14 +126,18 @@ def parse_publications(md_path: Path) -> list[dict]:
             title_m = TITLE_RE.search(block)
             authors_m = AUTHORS_RE.search(block)
             journal_m = JOURNAL_RE.search(block)
+            citation_m = CITATION_RE.search(block)
+            status_m = STATUS_RE.search(block)
             if not (doi_m and title_m):
                 raise SystemExit(f"[build] FATAL: malformed publication entry; "
                                  f"missing DOI or title near year {year}")
             out.append({
                 "doi": doi_m.group(1),
-                "title": title_m.group(1).strip(),
+                "title": html.unescape(title_m.group(1).strip()),
                 "authors": _strip_tags(authors_m.group(1)) if authors_m else "",
-                "journal": journal_m.group(1).strip() if journal_m else "",
+                "journal": html.unescape(journal_m.group(1).strip()) if journal_m else "",
+                "citation": _strip_tags(citation_m.group(1)) if citation_m else "",
+                "publication_status": status_m.group(1) if status_m else "",
                 "year": year,
                 "url": f"https://doi.org/{doi_m.group(1)}",
             })
@@ -212,6 +219,8 @@ def main() -> int:
             "year": p["year"],
             "venue": p["journal"],
             "authors": p["authors"],
+            "citation": p["citation"],
+            "publication_status": p["publication_status"],
             "topics": topics,
             "methods": meths,
             "primary_topic": topics[0] if topics else None,

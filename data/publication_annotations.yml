@@ -1,6 +1,21 @@
 # Per-publication topic + method assignments, keyed by DOI.
 # Order is the same as content/publications.md (newest first).
 # Every DOI in publications.md MUST appear here — CI gate enforces this.
+- doi: 10.1016/j.jot.2026.101219
+  topics: [trauma-spinal-cord-injury]
+  methods: []
+- doi: 10.21203/rs.3.rs-10029339/v1
+  topics: [trauma-spinal-cord-injury, trace-element-biology]
+  methods: []
+- doi: 10.1016/s1556-0864(25)00297-7
+  topics: [immuno-oncology-haematology]
+  methods: [single-cell-spatial-analysis]
+- doi: 10.1016/j.bas.2024.103437
+  topics: [trauma-spinal-cord-injury, molecular-and-imaging-tools]
+  methods: [hyperspectral-imaging]
+- doi: 10.1055/s-0040-1717625
+  topics: [trauma-spinal-cord-injury, trace-element-biology]
+  methods: []
 - doi: 10.3390/cancers18071087
   topics: [immuno-oncology-haematology]
   methods: []

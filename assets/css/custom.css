@@ -438,3 +438,19 @@ body.colorscheme-dark {
   .ov-graph { display: none; }
   .ov-stats { font-size: .75rem; }
 }
+
+/* Full citations remain readable when the network is hidden or filtered. */
+#ov-results { list-style: none; padding: 0; margin: 1.2rem 0; }
+#ov-results > li { display: block; padding: 1.2rem 0; border-bottom: 1px solid var(--ov-border); }
+#ov-results > li > a { font-weight: 600; line-height: 1.45; }
+#ov-results > li > p { margin: .45rem 0 0; font-size: .9em; line-height: 1.5; }
+#ov-results .ov-result-authors { color: var(--ov-text-2); }
+.publication-item .pub-status {
+  display: inline-block;
+  margin-left: .4rem;
+  padding: .05rem .4rem;
+  border: 1px solid currentColor;
+  border-radius: .25rem;
+  font-size: .8em;
+  font-style: normal;
+}

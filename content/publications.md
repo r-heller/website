@@ -6,6 +6,19 @@ date: 2025-01-01
 ## 2026
 
 <div class="publication-item">
+<span class="pub-authors">Xiaowei Zha, Guoli Zheng, Hao Wang, Obada T. Alhalabi, <b>R Heller</b>, Maryam Hatami, Thomas Skutella, Marcin Luzarowski, Xingjin Wang, Sandro M. Krieg, Andreas Unterberg, Alexander Younsi.</span>
+<span class="pub-title"><a href="https://doi.org/10.1016/j.jot.2026.101219">Transplantation of LPS, IL-4, and TGF-β-induced reparative-biased macrophages promotes early motor functional recovery after spinal cord injury in rats</a>.</span>
+<span class="pub-journal"><b><i>Journal of Orthopaedic Translation</i></b>. 2026, 60:101219.</span>
+</div>
+
+<div class="publication-item">
+<span class="pub-authors">Stefan Heene, <b>R Heller</b>, Lutz Schomburg, Thilo Chillon, Guoli Zheng, Xiaowei Zha, Laura Ruebenacker, Johannes Walter, Thomas Skutella, Bahram Biglari, Andreas W. Unterberg, Klaus Zweckberger, Sandro M. Krieg, Alexander Younsi, Obada T. Alhalabi.</span>
+<span class="pub-title"><a href="https://doi.org/10.21203/rs.3.rs-10029339/v1">Serum copper and calcium as potential biomarkers after spinal cord injury: experimental and translational evidence</a>.</span>
+<span class="pub-journal"><b><i>Research Square</i></b>. 2026.</span>
+<span class="pub-status">Preprint</span>
+</div>
+
+<div class="publication-item">
 <span class="pub-authors">A Bauer, A Arndt, L Reichenbach, N Gebauer, M Mueller, C Neumann, C Schulz, K Steinestel, <b>R Heller</b>, E Chteinberg, H Busch, A Riecke, A Kuenstner, H Witte.</span>
 <span class="pub-title"><a href="https://doi.org/10.3390/cancers18071087">Adenosine Pathway Activation Defines Genetically Linked Immunosuppressive Subtypes in Solid Tumor Brain Metastases</a>.</span>
 <span class="pub-journal"><b><i>Cancers</i></b>. 2026, 18(7):1087.</span>
@@ -21,6 +34,13 @@ date: 2025-01-01
 ## 2025
 
 <div class="publication-item">
+<span class="pub-authors">M. Mueller, E. Philipp, P. Buechele, A. Riecke, C. Neumann, A. Arndt, K. Steinestel, <b>R Heller</b>, M. Grunert, H. Witte, A. Bauer.</span>
+<span class="pub-title"><a href="https://doi.org/10.1016/s1556-0864(25)00297-7">102P: Molecular characteristics and spatially resolved proteomic immune clusters reveal responsiveness of large cell neuroendocrine carcinomas of the lung (LCNEC) towards the Checkmate-9LA treatment protocol</a>.</span>
+<span class="pub-journal"><b><i>Journal of Thoracic Oncology</i></b>. 2025, 20(3):S74.</span>
+<span class="pub-status">Conference abstract</span>
+</div>
+
+<div class="publication-item">
 <span class="pub-authors"><b>R Heller</b>, M. Maares, T. Chillon, H. Witte, Obada T. Al-Halabi, Stefan Heene, A. Younsi, Patrick Haubruck, Lutz Schomburg, A. Moghaddam, B. Biglari, H. Haase.</span>
 <span class="pub-title"><a href="https://doi.org/10.3390/nu17030496">Total and Free Zinc Dynamics as Biomarkers for Neurological Impairment in Traumatic Spinal Cord Injury</a>.</span>
 <span class="pub-journal"><b><i>Nutrients</i></b>. 2025, 17(3).</span>
@@ -28,6 +48,12 @@ date: 2025-01-01
 
 
 ## 2024
+
+<div class="publication-item">
+<span class="pub-authors">Obada Alhalabi, Xeiwei Zha, Hao Wang, <b>R Heller</b>, Alexander Studier-Fischer, Maria Maares, Hajo Haase, Lutz Schomburg, Arash Moghaddam, Bahram Biglari, Sandro M. Krieg, Alexander Younsi.</span>
+<span class="pub-title"><a href="https://doi.org/10.1016/j.bas.2024.103437">Hyperspectral Imaging Detects Tissue Damage In A Spinal Cord Injury Rat Model</a>.</span>
+<span class="pub-journal"><b><i>Brain and Spine</i></b>. 2024, 4:103437.</span>
+</div>
 
 <div class="publication-item">
 <span class="pub-authors">Chillon TS, Tuchtenhagen M, Schwarz M, Hackler J, <b>R Heller</b>, Kaghazian P, Moghaddam A, Schomburg L, Haase H, Kipp AP, Schwerdtle T, Maares M.</span>
@@ -160,6 +186,13 @@ date: 2025-01-01
 
 
 ## 2020
+
+<div class="publication-item">
+<span class="pub-authors">A Moghaddam-Alvandi, <b>R Heller</b>, J Seelig, A Sperl, P Haubruck, L Schomburg, B Biglari.</span>
+<span class="pub-title"><a href="https://doi.org/10.1055/s-0040-1717625">Dynamikanalyse der Zinkkonzentration zeigt die Wahrscheinlichkeit einer neurologischen Beeinträchtigung nach einer traumatischen Wirbelsäulenverletzung an</a>.</span>
+<span class="pub-journal"><b><i>Deutscher Kongress für Orthopädie und Unfallchirurgie</i></b>. 2020.</span>
+<span class="pub-status">Conference abstract</span>
+</div>
 
 <div class="publication-item">
 <span class="pub-authors"><b>R Heller</b>, Sperl A, Seelig J, Haubruck P, Bock T, Werner T, Besseling A, Sun Q, Schomburg L, Moghaddam A, Biglari B.</span>

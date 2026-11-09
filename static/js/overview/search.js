@@ -10,7 +10,7 @@ export function initSearch({ graph }) {
   // Pre-build a flat haystack per node so each keystroke is just substring scans.
   const haystacks = new Map();
   for (const n of graph.nodes) {
-    const parts = [n.title, n.venue, n.authors, n.description, n.language];
+    const parts = [n.title, n.venue, n.authors, n.description, n.language, n.publication_status];
     if (n.tags) parts.push(n.tags.join(' '));
     haystacks.set(n.id, (parts.filter(Boolean).join(' ')).toLowerCase());
   }
@@ -72,8 +72,15 @@ export function initList({ graph }) {
         if (['http:', 'https:'].includes(url.protocol)) title.href = url.href;
       } catch { /* An unavailable destination remains readable text. */ }
       item.append(title);
-      const details = [n.type === 'publication' ? 'Publication' : 'Software',
-                       n.year, n.venue || n.description].filter(Boolean).join(' · ');
+      if (n.type === 'publication' && n.authors) {
+        const authors = document.createElement('p');
+        authors.className = 'ov-result-authors';
+        authors.textContent = n.authors;
+        item.append(authors);
+      }
+      const details = n.type === 'publication'
+        ? [n.publication_status || 'Publication', n.citation || [n.year, n.venue].filter(Boolean).join(' · ')].filter(Boolean).join(' · ')
+        : ['Software', n.description].filter(Boolean).join(' · ');
       const description = document.createElement('p');
       description.textContent = details;
       item.append(description);

@@ -36,6 +36,17 @@ let browser;
   assert.equal(await page.locator('#ov-stat-pub').innerText(),String(pubs));
   assert.equal(await page.locator('#ov-stat-sw').innerText(),String(software));
   assert.equal(await page.locator('#ov-results li').count(),total);
+  assert.equal(await page.locator('#ov-results .ov-result-authors').count(),pubs);
+  assert(await page.locator('#ov-results li').first().evaluate(e=>e.querySelector('p').getBoundingClientRect().top >= e.querySelector('a').getBoundingClientRect().bottom));
+  assert.match(await page.locator('#ov-results li').first().innerText(),/Transplantation of LPS/);
+  const preprint=page.locator('#ov-results li').filter({has:page.locator('a[href="https://doi.org/10.21203/rs.3.rs-10029339/v1"]')});
+  assert.match(await preprint.innerText(),/Preprint · Research Square\. 2026/);
+  await page.locator('#ov-search').fill('preprint');
+  await page.waitForFunction(()=>document.querySelectorAll('#ov-results li').length===1);
+  assert.match(await page.locator('#ov-results li').innerText(),/Serum copper and calcium/);
+  await page.locator('#ov-search').press('Escape');
+  await page.waitForFunction(n=>document.querySelectorAll('#ov-results li').length===n,total);
+
   if(scenario==='blocked-cdn') assert.match(await page.locator('#ov-loading').innerText(),/Search, filters/);
   await page.locator('#ov-search').fill('zzzz-no-matching-publication');
   await page.waitForFunction(()=>window.__ovSearchHits?.size===0);
