@@ -1,0 +1,203 @@
+:root {
+  --cttir-accent: #0e7c86;
+  --cttir-accent-hover: #0a5e66;
+  --cttir-card-bg: #ffffff;
+  --cttir-card-fg: #0d1117;
+  --cttir-card-muted: rgba(13, 17, 23, 0.7);
+  --cttir-border: rgba(13, 17, 23, 0.14);
+  --cttir-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    --cttir-card-bg: #1a1a1a;
+    --cttir-card-fg: #f5f5f5;
+    --cttir-card-muted: rgba(245, 245, 245, 0.72);
+    --cttir-border: rgba(245, 245, 245, 0.16);
+    --cttir-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  }
+}
+
+body.colorscheme-dark {
+  --cttir-card-bg: #1a1a1a;
+  --cttir-card-fg: #f5f5f5;
+  --cttir-card-muted: rgba(245, 245, 245, 0.72);
+  --cttir-border: rgba(245, 245, 245, 0.16);
+  --cttir-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+/* Project cards */
+.cttir-projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+@media (min-width: 640px) {
+  .cttir-projects { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 960px) {
+  .cttir-projects { grid-template-columns: repeat(3, 1fr); }
+}
+
+.cttir-card {
+  background: var(--cttir-card-bg);
+  color: var(--cttir-card-fg);
+  border: 1px solid var(--cttir-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.cttir-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--cttir-accent);
+  box-shadow: var(--cttir-shadow);
+}
+.cttir-card__logo {
+  width: 96px;
+  height: auto;
+  align-self: center;
+  margin-bottom: 0.25rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+.cttir-card__logo--placeholder {
+  filter: none;
+  color: #8a8a8a;
+}
+body.colorscheme-dark .cttir-card__logo--placeholder { color: #9a9a9a; }
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .cttir-card__logo--placeholder { color: #9a9a9a; }
+}
+.cttir-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.cttir-card__name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--cttir-card-fg);
+}
+.cttir-section-title {
+  margin: 2.5rem 0 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--cttir-border);
+  padding-bottom: 0.4rem;
+}
+.cttir-section-title:first-of-type { margin-top: 1.5rem; }
+.cttir-subsection-title {
+  margin: 1.75rem 0 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--cttir-card-muted);
+}
+/* R package sub-headers carry their v5 colour family as a small hex. */
+.cttir-family { display: flex; align-items: center; gap: 0.55rem; }
+.cttir-family::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.8rem;
+  height: 0.92rem;
+  background: var(--cttir-family, currentColor);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+.cttir-family--core { --cttir-family: #9A7B26; }
+.cttir-family--spectral { --cttir-family: #0072B2; }
+.cttir-family--spatial { --cttir-family: #009E73; }
+.cttir-family--omics { --cttir-family: #CC79A7; }
+.cttir-family--clinical { --cttir-family: #D55E00; }
+.cttir-family--methods { --cttir-family: #56B4E9; }
+.cttir-family--simulation { --cttir-family: #E69F00; }
+.cttir-family--evidence { --cttir-family: #F0E442; }
+.cttir-family--platform { --cttir-family: #000000; }
+.cttir-family--embedding { --cttir-family: #146554; }
+.cttir-family--consensus { --cttir-family: #91617B; }
+/* On dark pages, core uses the bright gold and platform its slate material. */
+body.colorscheme-dark .cttir-family--core { --cttir-family: #D4AF37; }
+body.colorscheme-dark .cttir-family--platform { --cttir-family: #8FAABD; }
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .cttir-family--core { --cttir-family: #D4AF37; }
+  body.colorscheme-auto .cttir-family--platform { --cttir-family: #8FAABD; }
+}
+/* Three-dot maturity indicator */
+.cttir-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+.cttir-status__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1.5px solid var(--cttir-card-fg);
+  background: transparent;
+}
+.cttir-status__dot.is-filled { background: var(--cttir-card-fg); }
+
+.cttir-status-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1rem;
+  margin: 0.75rem 0 0.25rem;
+  font-size: 0.85rem;
+  color: var(--cttir-card-muted);
+}
+.cttir-status-legend__key { font-weight: 700; }
+.cttir-status-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cttir-card__desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex: 1;
+  color: var(--cttir-card-muted);
+}
+.cttir-card__links {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+
+.cttir-brand-images { display: flex; justify-content: center; align-self: center; }
+.cttir-brand-images .cttir-brand-dark { display: none; }
+body.colorscheme-dark .cttir-brand-light { display: none; }
+body.colorscheme-dark .cttir-brand-images .cttir-brand-dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .cttir-brand-light { display: none; }
+  body.colorscheme-auto .cttir-brand-images .cttir-brand-dark { display: block; }
+}
+.cttir-card { min-width: 0; }
+.cttir-card__name { overflow-wrap: anywhere; }
+.cttir-card__links { flex-wrap: wrap; }
+
+/* Hugo Coder uses a 10px rem base and article-wide header/footer spacing.
+   Keep the catalogue readable and its card layout independent of those rules. */
+.cttir-card { padding: 2rem; gap: 1.2rem; }
+.content .cttir-card__head { margin: 0; }
+.content article .cttir-card__links { margin-top: 0; }
+.cttir-card__name { font-size: 1.8rem; line-height: 1.35; }
+.cttir-section-title { font-size: 2.8rem; line-height: 1.3; }
+.cttir-subsection-title { font-size: 2rem; line-height: 1.4; }
+.cttir-status-legend { font-size: 1.4rem; gap: 0.8rem 1.5rem; }
+.content article .cttir-card__desc {
+  font-size: 1.6rem;
+  text-align: left;
+  hyphens: none;
+}
+.cttir-card__links { font-size: 1.5rem; }
+.cttir-projects { gap: 2rem; }

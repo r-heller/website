@@ -33,3 +33,12 @@
   label: Biostatistics & Research Tooling
   description: Dimensionality reduction, NONMEM PK/PD, workflowr theming, hex stickers — general R tooling.
   colour_index: 8
+
+- slug: games-and-simulation
+  label: Games & Simulation
+  description: Game engines, strategic decision-making, simulated opponents and interactive teaching tools.
+  colour_index: 9
+- slug: creative-computing
+  label: Creative Computing
+  description: Generative images and music, linguistic features and shared media representations.
+  colour_index: 10

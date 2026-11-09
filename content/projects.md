@@ -18,3 +18,12 @@ A multilingual teaching platform providing educational resources for teaching En
 
 - GitHub: <https://github.com/boulingua>
 - Website: <https://boulingua.github.io/website/>
+
+## Établi
+
+A suite of tools for research, local knowledge work, games and self-hosted services. Projects include R and Python workspaces, Shiny apps, a research library, focus timers, document and project clients, and experimental board games. Each repository documents its current features and development builds.
+
+- GitHub and project overview: <https://github.com/etabli-dev>
+- Research workspace: [Atelier](https://github.com/etabli-dev/etabli-atelier)
+- Research library: [Recueil](https://github.com/etabli-dev/etabli-recueil)
+- Focus and task planning: [Focus](https://github.com/etabli-dev/etabli-focus)

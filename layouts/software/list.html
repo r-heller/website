@@ -1,0 +1,53 @@
+{{ define "content" }}
+<section class="container page">
+  <article>
+    <header><h1 class="title"><span class="title-text">{{ .Title }}</span></h1></header>
+    {{ with .Params.intro }}<p>{{ . }}</p>{{ end }}
+
+    <div class="cttir-status-legend">
+      <span class="cttir-status-legend__key">Status</span>
+      <span class="cttir-status-legend__item"><span class="cttir-status"><span class="cttir-status__dot is-filled"></span><span class="cttir-status__dot is-filled"></span><span class="cttir-status__dot is-filled"></span></span> published</span>
+      <span class="cttir-status-legend__item"><span class="cttir-status"><span class="cttir-status__dot is-filled"></span><span class="cttir-status__dot is-filled"></span><span class="cttir-status__dot"></span></span> usable</span>
+      <span class="cttir-status-legend__item"><span class="cttir-status"><span class="cttir-status__dot is-filled"></span><span class="cttir-status__dot"></span><span class="cttir-status__dot"></span></span> development</span>
+      <span class="cttir-status-legend__item"><span class="cttir-status"><span class="cttir-status__dot"></span><span class="cttir-status__dot"></span><span class="cttir-status__dot"></span></span> idea</span>
+    </div>
+
+    {{ $software := hugo.Data.software }}
+    {{/* R packages are grouped by their v5 colour family, in the token order,
+         with cttiR's reserved core palette first. */}}
+    {{ $rGroups := slice "Games & simulation" "Creative computing" "CTTIR core" "Spectral imaging" "Spatial biology" "Molecular data" "Clinical science" "Statistical inference" "Dimension reduction & visualisation" "Systems & simulation" "Evidence & discovery" "Consensus & ideation" "Research infrastructure" }}
+    {{ $family := dict "Games & simulation" "simulation" "Creative computing" "consensus" "CTTIR core" "core" "Spectral imaging" "spectral" "Spatial biology" "spatial" "Molecular data" "omics" "Clinical science" "clinical" "Statistical inference" "methods" "Dimension reduction & visualisation" "embedding" "Systems & simulation" "simulation" "Evidence & discovery" "evidence" "Consensus & ideation" "consensus" "Research infrastructure" "platform" }}
+    {{ range $cat := slice "R Packages" "Research Tools" "Education & Resources" }}
+      {{ $items := where $software "category" $cat }}
+      {{ if $items }}
+        <h2 class="cttir-section-title">{{ $cat }}</h2>
+        {{ if eq $cat "R Packages" }}
+          {{ range $group := $rGroups }}
+            {{ $gitems := where $items "group" $group }}
+            {{ if $gitems }}
+              <h3 class="cttir-subsection-title cttir-family cttir-family--{{ index $family $group }}">{{ $group }}</h3>
+              <div class="cttir-projects">
+                {{ range $p := $gitems }}{{ partial "software-card.html" (dict "p" $p "cat" $cat) }}{{ end }}
+              </div>
+            {{ end }}
+          {{ end }}
+          {{/* Defensive: surface any R package whose group is not in the list above. */}}
+          {{ $ungrouped := slice }}
+          {{ range $p := $items }}{{ if not (in $rGroups $p.group) }}{{ $ungrouped = $ungrouped | append $p }}{{ end }}{{ end }}
+          {{ if $ungrouped }}
+            <h3 class="cttir-subsection-title">More</h3>
+            <div class="cttir-projects">
+              {{ range $p := $ungrouped }}{{ partial "software-card.html" (dict "p" $p "cat" $cat) }}{{ end }}
+            </div>
+          {{ end }}
+        {{ else }}
+          <div class="cttir-projects">
+            {{ range $p := $items }}{{ partial "software-card.html" (dict "p" $p "cat" $cat) }}{{ end }}
+          </div>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ .Content }}
+  </article>
+</section>
+{{ end }}

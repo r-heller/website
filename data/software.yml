@@ -1,81 +1,294 @@
-# R packages — formal registry. Authored from content/software.md.
-# topics + methods drive graph edges.
-- name: hexmakR
-  repo: https://github.com/CTTIR/hexmakR
-  docs: https://cttir.github.io/hexmakR/
-  language: R
-  description: Interactive hex sticker generator for R packages with Shiny interface and programmatic API.
+# Public software catalogue, shared by the Software page and Overview graph.
+# Repository availability checked 2026-11-09. Draft entries have no published GitHub release.
+- name: "hexmakR"
+  repo: "https://github.com/CTTIR/hexmakR"
+  docs: "https://cttir.github.io/hexmakR/"
+  language: "R"
+  description: "Generate polished hex sticker logos for R packages using customizable templates."
   topics: [biostatistics-research-methods]
   methods: []
+  status: "usable"
+  category: "R Packages"
+  group: "Research infrastructure"
+  logo: "/website/images/hex/hexmakR.svg"
+  logo_dark: "/website/images/hex/hexmakR-dark.svg"
 
-- name: phenoscapR
-  repo: https://github.com/CTTIR/phenoscapR
-  docs: https://CTTIR.github.io/phenoscapR/
-  language: R
-  description: Spatial single-cell analysis for Akoya PhenoCycler/CODEX multiplexed tissue imaging data.
+- name: "phenoscapR"
+  repo: "https://github.com/CTTIR/phenoscapR"
+  docs: "https://cttir.github.io/phenoscapR/"
+  language: "R"
+  description: "Reading, QC, phenotyping, spatial statistics, and visualisation of single-cell spatial biology data from multiplexed imaging platforms."
   topics: [molecular-and-imaging-tools]
   methods: [single-cell-spatial-analysis]
+  status: "usable"
+  category: "R Packages"
+  group: "Spatial biology"
+  logo: "/website/images/hex/phenoscapR.svg"
+  logo_dark: "/website/images/hex/phenoscapR-dark.svg"
 
-- name: bambamR
-  repo: https://github.com/CTTIR/bambamR
-  docs: https://CTTIR.github.io/bambamR/
-  language: R
-  description: RNA-seq analysis toolkit from BAM to publication — QC, normalization, differential expression, and visualization.
+- name: "bambamR"
+  repo: "https://github.com/CTTIR/bambamR"
+  docs: "https://cttir.github.io/bambamR/"
+  language: "R"
+  description: "Streamlined RNA-seq analysis pipelines — from count matrices to publication-ready results."
   topics: [molecular-and-imaging-tools]
   methods: [rna-seq-differential-expression]
+  status: "usable"
+  category: "R Packages"
+  group: "Molecular data"
+  logo: "/website/images/hex/bambamR.svg"
+  logo_dark: "/website/images/hex/bambamR-dark.svg"
 
-- name: lstparsR
-  repo: https://github.com/Clinical-Pharmacy-Saarland-University/lstparsR
-  docs: https://clinical-pharmacy-saarland-university.github.io/lstparsR/
-  language: R
-  description: Tidy parsing of NONMEM listing files for population PK/PD workflows.
+- name: "lstparsR"
+  repo: "https://github.com/Clinical-Pharmacy-Saarland-University/lstparsR"
+  docs: "https://clinical-pharmacy-saarland-university.github.io/lstparsR/"
+  language: "R"
+  description: "Parser for NONMEM .lst output files — extracts THETA / OMEGA / SIGMA estimates into tidy data frames for population PK/PD analysis."
   topics: [biostatistics-research-methods]
   methods: [population-pk-pd]
+  status: "usable"
+  category: "R Packages"
+  group: "Clinical science"
+  logo: "/website/images/hex/lstparsR.svg"
+  logo_dark: "/website/images/hex/lstparsR-dark.svg"
 
-- name: reflowR
-  repo: https://github.com/CTTIR/reflowR
-  docs: https://CTTIR.github.io/reflowR/
-  language: R
-  description: Themed workflowr extensions for reproducible research with custom colour schemes, ggplot2 themes, and report templates.
+- name: "reflowR"
+  repo: "https://github.com/CTTIR/reflowR"
+  docs: "https://cttir.github.io/reflowR/"
+  language: "R"
+  description: "Custom workflowr themes and templates for reproducible research websites in R."
   topics: [biostatistics-research-methods]
   methods: []
+  status: "usable"
+  category: "R Packages"
+  group: "Research infrastructure"
+  logo: "/website/images/hex/reflowR.svg"
+  logo_dark: "/website/images/hex/reflowR-dark.svg"
 
-- name: songR
-  repo: https://github.com/CTTIR/songR
-  docs: https://CTTIR.github.io/songR/
-  language: R
-  description: Native R/C++ implementation of the SONG dimensionality reduction algorithm with incremental embedding support.
+- name: "songR"
+  repo: "https://github.com/CTTIR/songR"
+  docs: "https://cttir.github.io/songR/"
+  language: "R"
+  description: "Native R/C++ implementation of SONG (Self-Organizing Nebulous Growths) for nonlinear dimensionality reduction and visualisation."
   topics: [biostatistics-research-methods]
   methods: [dimensionality-reduction]
+  status: "usable"
+  category: "R Packages"
+  group: "Dimension reduction & visualisation"
+  logo: "/website/images/hex/songR.svg"
+  logo_dark: "/website/images/hex/songR-dark.svg"
 
-- name: molpathR
-  repo: https://github.com/CTTIR/molpathR
-  docs: https://CTTIR.github.io/molpathR/
-  language: R
-  description: Integrated database for molecular pathology — VCF, XML, PDF, clinical data, imaging, and survival analysis with Shiny explorer.
+- name: "molpathR"
+  repo: "https://github.com/CTTIR/molpathR"
+  docs: "https://cttir.github.io/molpathR/"
+  language: "R"
+  description: "Unified R platform for molecular pathology data — parses NGS files (VCF, BAM, FASTQ), XML/PDF reports, and clinical data into a queryable database with an interactive Shiny app."
   topics: [molecular-and-imaging-tools]
   methods: [cox-regression, machine-learning-classification]
+  status: "usable"
+  category: "R Packages"
+  group: "Clinical science"
+  logo: "/website/images/hex/molpathR.svg"
+  logo_dark: "/website/images/hex/molpathR-dark.svg"
 
-- name: segmantR
-  repo: https://github.com/CTTIR/segmantR
-  docs: https://CTTIR.github.io/segmantR/
-  language: R
-  description: Human-in-the-loop cell segmentation for histological and fluorescence microscopy images.
+- name: "segmantR"
+  repo: "https://github.com/CTTIR/segmantR"
+  docs: "https://cttir.github.io/segmantR/"
+  language: "R"
+  description: "Cell segmentation, annotation and mask correction for histology and multiplexed tissue imaging with human-in-the-loop training — classical methods plus Cellpose, StarDist, and Mesmer."
   topics: [molecular-and-imaging-tools]
   methods: [image-segmentation]
+  status: "usable"
+  category: "R Packages"
+  group: "Spatial biology"
+  logo: "/website/images/hex/segmantR.svg"
+  logo_dark: "/website/images/hex/segmantR-dark.svg"
 
-- name: scimagR
-  repo: https://github.com/CTTIR/scimagR
-  docs: https://CTTIR.github.io/scimagR/
-  language: R
-  description: MRI/CT analysis and visualization for spinal cord injury — lesion quantification, temporal tracking, and clinical reporting.
+- name: "scimagR"
+  repo: "https://github.com/CTTIR/scimagR"
+  docs: "https://cttir.github.io/scimagR/"
+  language: "R"
+  description: "End-to-end R pipeline for longitudinal MRI and CT analysis in spinal-cord injury research (wraps Spinal Cord Toolbox, dcm2niix, pydicom)."
   topics: [trauma-spinal-cord-injury, molecular-and-imaging-tools]
   methods: [image-segmentation]
+  status: "usable"
+  category: "R Packages"
+  group: "Clinical science"
+  logo: "/website/images/hex/scimagR.svg"
+  logo_dark: "/website/images/hex/scimagR-dark.svg"
 
-- name: hyperspectR
-  repo: https://github.com/CTTIR/hyperspectR
-  docs: https://CTTIR.github.io/hyperspectR/
-  language: R
-  description: Hyperspectral imaging analysis for Cubert cameras in biomedical and surgical applications — tissue indices, Shiny viewer.
+- name: "hyperspectR"
+  repo: "https://github.com/CTTIR/hyperspectR"
+  docs: "https://cttir.github.io/hyperspectR/"
+  language: "R"
+  description: "Complete R pipeline for biomedical hyperspectral imaging — from raw camera data to clinical tissue oxygenation maps."
   topics: [molecular-and-imaging-tools]
   methods: [hyperspectral-imaging]
+  status: "usable"
+  category: "R Packages"
+  group: "Spectral imaging"
+  logo: "/website/images/hex/hyperspectR.svg"
+  logo_dark: "/website/images/hex/hyperspectR-dark.svg"
+
+- name: "gambitR"
+  repo: "https://github.com/r-heller/gambitR"
+  docs: "https://r-heller.github.io/gambitR/"
+  language: "R"
+  description: "Chess move generation, position analysis, game simulation and interactive Shiny study tools, with optional UCI engine integration."
+  topics: [games-and-simulation]
+  methods: []
+  status: "draft"
+  category: "R Packages"
+  group: "Games & simulation"
+  logo: "/website/images/software/gambitR.png"
+
+- name: "gambitR3D"
+  repo: "https://github.com/r-heller/gambitR3D"
+  docs: ""
+  language: "R"
+  description: "Experimental multilevel chess with a rules engine, synchronised 2D and 3D views, game analysis and coaching tools."
+  topics: [games-and-simulation]
+  methods: []
+  status: "draft"
+  category: "R Packages"
+  group: "Games & simulation"
+  logo: "/website/images/software/gambitR3D.svg"
+
+- name: "diplomacyR"
+  repo: "https://github.com/r-heller/diplomacyR"
+  docs: "https://r-heller.github.io/diplomacyR/"
+  language: "R"
+  description: "Diplomacy adjudication, scriptable opponents, batch simulation and an interactive Shiny board."
+  topics: [games-and-simulation]
+  methods: []
+  status: "draft"
+  category: "R Packages"
+  group: "Games & simulation"
+  logo: "/website/images/software/diplomacyR.png"
+
+- name: "risikoR"
+  repo: "https://github.com/r-heller/risikoR"
+  docs: "https://r-heller.github.io/risikoR/"
+  language: "R"
+  description: "Risk combat probabilities, conquest simulation, game-state analysis and interactive play in Shiny."
+  topics: [games-and-simulation]
+  methods: []
+  status: "draft"
+  category: "R Packages"
+  group: "Games & simulation"
+  logo: "/website/images/software/risikoR.png"
+
+- name: "skatR"
+  repo: "https://github.com/r-heller/skatR"
+  docs: "https://r-heller.github.io/skatR/"
+  language: "R"
+  description: "Skat card-play and scoring tools, bidding values, simulated opponents and deal analysis."
+  topics: [games-and-simulation]
+  methods: []
+  status: "draft"
+  category: "R Packages"
+  group: "Games & simulation"
+  logo: "/website/images/software/skatR.svg"
+
+- name: "maumauR"
+  repo: "https://github.com/r-heller/maumauR"
+  docs: "https://r-heller.github.io/maumauR/"
+  language: "R"
+  description: "A configurable Mau Mau engine with Monte Carlo simulation, strategy comparisons and interactive play."
+  topics: [games-and-simulation]
+  methods: []
+  status: "draft"
+  category: "R Packages"
+  group: "Games & simulation"
+  logo: "/website/images/software/maumauR.png"
+
+- name: "tesseractR"
+  repo: "https://github.com/r-heller/tesseractR"
+  docs: "https://r-heller.github.io/tesseractR/"
+  language: "R"
+  description: "Four-dimensional tic-tac-toe with a game engine, heuristic opponent, hypercube visualisation and Shiny interface."
+  topics: [games-and-simulation]
+  methods: []
+  status: "draft"
+  category: "R Packages"
+  group: "Games & simulation"
+  logo: "/website/images/software/tesseractR.png"
+
+- name: "multixoR"
+  repo: "https://github.com/r-heller/multixoR"
+  docs: "https://r-heller.github.io/multixoR/"
+  language: "R"
+  description: "Multiverse tic-tac-toe on a spatial cube with branching timelines and cross-axis win detection."
+  topics: [games-and-simulation]
+  methods: []
+  status: "draft"
+  category: "R Packages"
+  group: "Games & simulation"
+  logo: "/website/images/software/multixoR.png"
+
+- name: "synesthR"
+  repo: "https://github.com/r-heller/synesthR"
+  docs: "https://r-heller.github.io/synesthR/"
+  language: "R"
+  description: "Linguistic features mapped to coordinated images and music, with shared palettes and a media interchange format."
+  topics: [creative-computing]
+  methods: []
+  status: "draft"
+  category: "R Packages"
+  group: "Creative computing"
+  logo: "/website/images/software/synesthR.png"
+
+- name: "foldbenchR"
+  repo: "https://github.com/r-heller/foldbenchR"
+  docs: ""
+  language: "R"
+  description: "Rigid Miura-sheet manifolds with known material coordinates for dimension-reduction benchmarks and reconstruction metrics."
+  topics: [biostatistics-research-methods]
+  methods: [dimensionality-reduction]
+  status: "draft"
+  category: "R Packages"
+  group: "Dimension reduction & visualisation"
+
+- name: "fastq2bam"
+  repo: "https://github.com/r-heller/fastq2bam"
+  docs: ""
+  language: "R"
+  description: "An R teaching pipeline for single-end FASTQ inspection, HISAT2 or Rsubread alignment, BAM sorting and coverage checks."
+  topics: [molecular-and-imaging-tools]
+  methods: []
+  status: "draft"
+  category: "Research Tools"
+  group: "Research tools"
+
+- name: "equilibria"
+  repo: "https://github.com/r-heller/equilibria"
+  docs: "https://r-heller.github.io/equilibria/"
+  language: "R"
+  description: "A teaching site on game theory, decision-making and simulation, with R examples and a Nash-equilibrium explorer."
+  topics: [games-and-simulation]
+  methods: []
+  status: "draft"
+  category: "Education & Resources"
+  group: "Teaching resources"
+
+- name: "coursegen"
+  repo: "https://github.com/r-heller/coursegen"
+  docs: ""
+  language: "Python / Quarto"
+  description: "A reusable Quarto course template with a syllabus, lessons, exercises, rubrics and instructor notes."
+  topics: [biostatistics-research-methods]
+  methods: []
+  status: "draft"
+  category: "Education & Resources"
+  group: "Teaching resources"
+
+- name: "bookgen"
+  repo: "https://github.com/r-heller/bookgen"
+  docs: ""
+  language: "Python / Quarto"
+  description: "A reusable Quarto book template with chapter structure, references, author checklists and HTML/EPUB output."
+  topics: [biostatistics-research-methods]
+  methods: []
+  status: "draft"
+  category: "Education & Resources"
+  group: "Teaching resources"

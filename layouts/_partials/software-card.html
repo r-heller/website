@@ -1,0 +1,51 @@
+{{/*
+  Software card. Input: dict with "p" (entry from data/software.yaml) and
+  "cat" (its category). When the entry has no image `logo`, a monochrome,
+  name-inside outline is drawn whose shape encodes the type:
+    R Packages / Others -> hexagon,  Zotero Plugins -> pentagon,  Applications -> square.
+*/}}
+{{ $p := .p }}
+{{ $cat := .cat }}
+<article class="cttir-card">
+  {{ if $p.logo }}
+    {{ if $p.logo_dark }}
+      <span class="cttir-brand-images">
+        <img class="cttir-card__logo cttir-brand-light" src="{{ $p.logo }}" alt="{{ $p.name }} logo" loading="lazy" />
+        <img class="cttir-card__logo cttir-brand-dark" src="{{ $p.logo_dark }}" alt="{{ $p.name }} logo" loading="lazy" />
+      </span>
+    {{ else }}<img class="cttir-card__logo" src="{{ $p.logo }}" alt="{{ $p.name }} logo" loading="lazy" />{{ end }}
+  {{ else if eq $cat "Zotero Plugins" }}
+    <svg class="cttir-card__logo cttir-card__logo--placeholder" viewBox="0 0 200 200" role="img" aria-label="{{ $p.name }}">
+      <polygon points="100,10 190.3,75.6 155.8,181.9 44.2,181.9 9.7,75.6" fill="none" stroke="currentColor" stroke-width="3" />
+      <text x="100" y="116" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700" fill="currentColor">{{ $p.name }}</text>
+    </svg>
+  {{ else if eq $cat "Applications" }}
+    <svg class="cttir-card__logo cttir-card__logo--placeholder" viewBox="0 0 200 200" role="img" aria-label="{{ $p.name }}">
+      <rect x="8" y="8" width="184" height="184" rx="18" fill="none" stroke="currentColor" stroke-width="3" />
+      <text x="100" y="100" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700" fill="currentColor">{{ $p.name }}</text>
+    </svg>
+  {{ else }}
+    <svg class="cttir-card__logo cttir-card__logo--placeholder" viewBox="0 0 200 230" role="img" aria-label="{{ $p.name }}">
+      <polygon points="100,4 196,59 196,171 100,226 4,171 4,59" fill="none" stroke="currentColor" stroke-width="3" />
+      <text x="100" y="115" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="700" fill="currentColor">{{ $p.name }}</text>
+    </svg>
+  {{ end }}
+  <header class="cttir-card__head">
+    <h3 class="cttir-card__name" id="{{ $p.name }}">{{ $p.name }}</h3>
+    {{ $status := $p.status | default "usable" }}
+    {{ $filled := 2 }}{{ $label := "Usable" }}
+    {{ if eq $status "cran" }}{{ $filled = 3 }}{{ $label = "Published" }}
+    {{ else if eq $status "usable" }}{{ $filled = 2 }}{{ $label = "Usable" }}
+    {{ else if eq $status "draft" }}{{ $filled = 1 }}{{ $label = "Development" }}
+    {{ else if eq $status "idea" }}{{ $filled = 0 }}{{ $label = "Idea" }}{{ end }}
+    <span class="cttir-status cttir-status--{{ $status }}" role="img" aria-label="Status: {{ $label }}" title="{{ $label }}">
+      {{ range $i := (seq 3) }}<span class="cttir-status__dot{{ if le $i $filled }} is-filled{{ end }}"></span>{{ end }}
+    </span>
+  </header>
+  <p class="cttir-card__desc">{{ $p.description }}</p>
+  <footer class="cttir-card__links">
+    {{ with $p.repo }}<a href="{{ . }}" rel="noopener">GitHub</a>{{ end }}
+    {{ with $p.docs }}<a href="{{ . }}" rel="noopener">Docs</a>{{ end }}
+    {{ with $p.zenodo }}<a href="{{ . }}" rel="noopener">Zenodo</a>{{ end }}
+  </footer>
+</article>

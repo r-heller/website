@@ -30,7 +30,7 @@ enableTwemoji = false
 colorScheme = "auto"
 
 # Custom CSS (optional, for minor tweaks)
-customCSS = ["css/custom.css"]
+customCSS = ["css/custom.css", "css/software-catalog.css"]
 
 # Social icons on the home page
 [[params.social]]

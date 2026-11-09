@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="278" viewBox="0 0 240 278">
+  <polygon points="120,4 236,70 236,208 120,274 4,208 4,70"
+           fill="#1a1a2e" stroke="#5E2C8E" stroke-width="8"/>
+  <text x="120" y="130" font-family="JetBrains Mono, monospace" font-size="52"
+        fill="#5E2C8E" text-anchor="middle" font-weight="bold">skatR</text>
+  <text x="120" y="185" font-size="44" text-anchor="middle" fill="#ffffff">&#9827;&#9824;&#9829;&#9830;</text>
+</svg>
