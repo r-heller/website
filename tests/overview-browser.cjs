@@ -33,6 +33,7 @@ let browser;
   const page=await context.newPage(); const errors=[]; page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base+'overview/',{waitUntil:'networkidle'});
   await page.waitForFunction(()=>!document.querySelector('#ov-search').disabled,{timeout:30000});
+  if(scenario!=='mobile') assert((await page.locator('.ov-graph').boundingBox()).height<=800);
   assert.equal(await page.locator('#ov-stat-pub').innerText(),String(pubs));
   assert.equal(await page.locator('#ov-stat-sw').innerText(),String(software));
   assert.equal(await page.locator('#ov-results li').count(),total);
@@ -72,6 +73,11 @@ let browser;
   await page.waitForFunction(()=>!document.querySelector('#ov-search').disabled);
   assert.equal(await page.locator('#ov-results li').count(),matching);
   await page.getByRole('button',{name:'Reset all',exact:true}).click();
+  if(scenario==='desktop') assert(await page.evaluate(()=>{
+    const cy=document.querySelector('#ov-cy')._cyreg.cy;
+    const bounds=cy.elements().renderedBoundingBox();
+    return bounds.x1>=0 && bounds.y1>=0 && bounds.x2<=cy.width() && bounds.y2<=cy.height();
+  }));
   if(out){fs.mkdirSync(out,{recursive:true}); await page.screenshot({path:`${out}/${scenario}.png`,fullPage:true});}
   assert.deepEqual(errors,[]);
   results.push({scenario,pageErrors:errors,overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)});

@@ -425,6 +425,13 @@ body.colorscheme-dark {
   border-radius: 4px;
 }
 
+/* Keep the desktop network visible beside the scrollable filter rail. */
+@media (min-width: 1024px) {
+  .ov-body { height: clamp(500px, 70vh, 800px); min-height: 0; }
+  .ov-rail { min-height: 0; }
+  .ov-graph { min-height: 0; }
+}
+
 /* Tablet */
 @media (max-width: 1023px) {
   .ov-body { grid-template-columns: 1fr; }

@@ -55,6 +55,7 @@ export function initFilters({ graph, cy, store }) {
     state.venues.clear(); state.languages.clear();
     state.yearFrom = yearMin; state.yearTo = yearMax;
     rerenderAll();
+    cy.fit?.(undefined, 30);
   });
 
   rail.append(sectionType, sectionRtopic, sectionMethod,
