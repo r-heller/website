@@ -10,10 +10,10 @@
   {{ if $p.logo }}
     {{ if $p.logo_dark }}
       <span class="cttir-brand-images">
-        <img class="cttir-card__logo cttir-brand-light" src="{{ $p.logo }}" alt="{{ $p.name }} logo" loading="lazy" />
-        <img class="cttir-card__logo cttir-brand-dark" src="{{ $p.logo_dark }}" alt="{{ $p.name }} logo" loading="lazy" />
+        <img class="cttir-card__logo cttir-brand-light" src="{{ $p.logo }}" alt="{{ $p.name }} logo" loading="lazy" width="96" height="111" />
+        <img class="cttir-card__logo cttir-brand-dark" src="{{ $p.logo_dark }}" alt="{{ $p.name }} logo" loading="lazy" width="96" height="111" />
       </span>
-    {{ else }}<img class="cttir-card__logo" src="{{ $p.logo }}" alt="{{ $p.name }} logo" loading="lazy" />{{ end }}
+    {{ else }}<img class="cttir-card__logo" src="{{ $p.logo }}" alt="{{ $p.name }} logo" loading="lazy" width="96" height="111" />{{ end }}
   {{ else if eq $cat "Zotero Plugins" }}
     <svg class="cttir-card__logo cttir-card__logo--placeholder" viewBox="0 0 200 200" role="img" aria-label="{{ $p.name }}">
       <polygon points="100,10 190.3,75.6 155.8,181.9 44.2,181.9 9.7,75.6" fill="none" stroke="currentColor" stroke-width="3" />
