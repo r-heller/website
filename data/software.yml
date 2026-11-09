@@ -1,4 +1,30 @@
 # Shared software catalogue for r-heller and CTTIR, reconciled 2026-11-09.
+- name: "hyperloom"
+  status: "usable"
+  category: "R Packages"
+  group: "Spectral imaging"
+  description: "Suite package for CTTIR hyperspectral imaging, bringing together hyperspectR, hyperspectaculR, cuvis.r and tivis.r."
+  docs: "https://github.com/CTTIR/hyperloom"
+  logo: "/website/images/hex/hyperloom.svg"
+  logo_dark: "/website/images/hex/hyperloom-dark.svg"
+  repo: "https://github.com/CTTIR/hyperloom"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
+- name: "phenoloom"
+  status: "usable"
+  category: "R Packages"
+  group: "Spatial biology"
+  description: "Suite package for CTTIR spatial biology, bringing together segmantR, cellspecR, gatekeepR and phenoscapR."
+  docs: "https://github.com/CTTIR/phenoloom"
+  logo: "/website/images/hex/phenoloom.svg"
+  logo_dark: "/website/images/hex/phenoloom-dark.svg"
+  repo: "https://github.com/CTTIR/phenoloom"
+  language: "R"
+  topics: ["molecular-and-imaging-tools"]
+  methods: []
+
 - name: "hexmakR"
   repo: "https://github.com/CTTIR/hexmakR"
   docs: "https://cttir.github.io/hexmakR/"
@@ -303,19 +329,6 @@
   category: "Education & Resources"
   group: "Teaching resources"
 
-- name: "phenoloom"
-  status: "usable"
-  category: "R Packages"
-  group: "Spatial biology"
-  description: "Suite package for CTTIR spatial biology, bringing together segmantR, cellspecR, gatekeepR and phenoscapR."
-  docs: "https://github.com/CTTIR/phenoloom"
-  logo: "/website/images/hex/phenoloom.svg"
-  logo_dark: "/website/images/hex/phenoloom-dark.svg"
-  repo: "https://github.com/CTTIR/phenoloom"
-  language: "R"
-  topics: ["molecular-and-imaging-tools"]
-  methods: []
-
 - name: "cellreportR"
   status: "usable"
   category: "R Packages"
@@ -325,19 +338,6 @@
   logo: "/website/images/hex/cellreportR.svg"
   logo_dark: "/website/images/hex/cellreportR-dark.svg"
   repo: "https://github.com/CTTIR/cellreportR"
-  language: "R"
-  topics: ["molecular-and-imaging-tools"]
-  methods: []
-
-- name: "hyperloom"
-  status: "usable"
-  category: "R Packages"
-  group: "Spectral imaging"
-  description: "Suite package for CTTIR hyperspectral imaging, bringing together hyperspectR, hyperspectaculR, cuvis.r and tivis.r."
-  docs: "https://github.com/CTTIR/hyperloom"
-  logo: "/website/images/hex/hyperloom.svg"
-  logo_dark: "/website/images/hex/hyperloom-dark.svg"
-  repo: "https://github.com/CTTIR/hyperloom"
   language: "R"
   topics: ["molecular-and-imaging-tools"]
   methods: []
