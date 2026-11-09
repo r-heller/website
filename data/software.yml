@@ -139,7 +139,8 @@
   status: "draft"
   category: "Games & simulation"
   group: "Games & simulation"
-  logo: "/website/images/software/gambitR.png"
+  logo: "/website/images/hex/gambitR.svg"
+  logo_dark: "/website/images/hex/gambitR-dark.svg"
 
 - name: "gambitR3D"
   repo: "https://github.com/r-heller/gambitR3D"
@@ -151,7 +152,8 @@
   status: "draft"
   category: "Games & simulation"
   group: "Games & simulation"
-  logo: "/website/images/software/gambitR3D.svg"
+  logo: "/website/images/hex/gambitR3D.svg"
+  logo_dark: "/website/images/hex/gambitR3D-dark.svg"
 
 - name: "diplomacyR"
   repo: "https://github.com/r-heller/diplomacyR"
@@ -163,7 +165,8 @@
   status: "draft"
   category: "Games & simulation"
   group: "Games & simulation"
-  logo: "/website/images/software/diplomacyR.png"
+  logo: "/website/images/hex/diplomacyR.svg"
+  logo_dark: "/website/images/hex/diplomacyR-dark.svg"
 
 - name: "risikoR"
   repo: "https://github.com/r-heller/risikoR"
@@ -175,7 +178,8 @@
   status: "draft"
   category: "Games & simulation"
   group: "Games & simulation"
-  logo: "/website/images/software/risikoR.png"
+  logo: "/website/images/hex/risikoR.svg"
+  logo_dark: "/website/images/hex/risikoR-dark.svg"
 
 - name: "skatR"
   repo: "https://github.com/r-heller/skatR"
@@ -187,7 +191,8 @@
   status: "draft"
   category: "Games & simulation"
   group: "Games & simulation"
-  logo: "/website/images/software/skatR.svg"
+  logo: "/website/images/hex/skatR.svg"
+  logo_dark: "/website/images/hex/skatR-dark.svg"
 
 - name: "maumauR"
   repo: "https://github.com/r-heller/maumauR"
@@ -199,7 +204,8 @@
   status: "draft"
   category: "Games & simulation"
   group: "Games & simulation"
-  logo: "/website/images/software/maumauR.png"
+  logo: "/website/images/hex/maumauR.svg"
+  logo_dark: "/website/images/hex/maumauR-dark.svg"
 
 - name: "tesseractR"
   repo: "https://github.com/r-heller/tesseractR"
@@ -211,7 +217,8 @@
   status: "draft"
   category: "Games & simulation"
   group: "Games & simulation"
-  logo: "/website/images/software/tesseractR.png"
+  logo: "/website/images/hex/tesseractR.svg"
+  logo_dark: "/website/images/hex/tesseractR-dark.svg"
 
 - name: "multixoR"
   repo: "https://github.com/r-heller/multixoR"
@@ -223,7 +230,8 @@
   status: "draft"
   category: "Games & simulation"
   group: "Games & simulation"
-  logo: "/website/images/software/multixoR.png"
+  logo: "/website/images/hex/multixoR.svg"
+  logo_dark: "/website/images/hex/multixoR-dark.svg"
 
 - name: "synesthR"
   repo: "https://github.com/r-heller/synesthR"
@@ -235,7 +243,8 @@
   status: "draft"
   category: "R Packages"
   group: "Creative computing"
-  logo: "/website/images/software/synesthR.png"
+  logo: "/website/images/hex/synesthR.svg"
+  logo_dark: "/website/images/hex/synesthR-dark.svg"
 
 - name: "foldbenchR"
   repo: "https://github.com/r-heller/foldbenchR"
@@ -247,6 +256,8 @@
   status: "draft"
   category: "R Packages"
   group: "Dimension reduction & visualisation"
+  logo: "/website/images/hex/foldbenchR.svg"
+  logo_dark: "/website/images/hex/foldbenchR-dark.svg"
 
 - name: "fastq2bam"
   repo: "https://github.com/r-heller/fastq2bam"

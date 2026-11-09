@@ -6,7 +6,7 @@ import { initSearch, initList } from './search.js';
 const GRAPH_URL  = new URL('graph.json', document.baseURI).toString();
 const LAYOUT_KEY = 'ov-layout-v6';     // bumped: world-coord positions + post-init fit/center
 
-const TOPIC_VAR = ['--ov-t1','--ov-t2','--ov-t3','--ov-t4','--ov-t5','--ov-t6','--ov-t7','--ov-t8'];
+const TOPIC_VAR = ['--ov-t1','--ov-t2','--ov-t3','--ov-t4','--ov-t5','--ov-t6','--ov-t7','--ov-t8','--ov-t9','--ov-t10'];
 
 function cssVar(name) {
   // Read from <body> so values cascaded from body.colorscheme-{light,dark}

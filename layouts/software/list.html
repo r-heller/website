@@ -20,7 +20,7 @@
     {{ range $cat := slice "R Packages" "Research Tools" "Zotero Plugins" "Applications" "Education & Resources" "Games & simulation" }}
       {{ $items := where $software "category" $cat }}
       {{ if $items }}
-        <h2 class="cttir-section-title">{{ $cat }}</h2>
+        <h2 class="cttir-section-title{{ if eq $cat "Games & simulation" }} cttir-family cttir-family--games{{ end }}">{{ $cat }}</h2>
         {{ if eq $cat "R Packages" }}
           {{ range $group := $rGroups }}
             {{ $gitems := where $items "group" $group }}

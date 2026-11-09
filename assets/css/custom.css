@@ -461,3 +461,11 @@ body.colorscheme-dark {
   font-size: .8em;
   font-style: normal;
 }
+
+/* Personal software families share the package artwork palettes. */
+body { --ov-t9: #7956B5; --ov-t10: #91617B; }
+body.colorscheme-dark { --ov-t9: #B19ADE; --ov-t10: #D1A7BE; }
+@media (prefers-color-scheme: dark) { body.colorscheme-auto { --ov-t9: #B19ADE; --ov-t10: #D1A7BE; } }
+.ov-topic-9 { --ov-topic: var(--ov-t9); }
+.ov-topic-10 { --ov-topic: var(--ov-t10); }
+.cttir-family--games { --cttir-family: #7956B5; }
