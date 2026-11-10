@@ -12,6 +12,12 @@ Reproducible computational tools, analyses, and teaching resources for trauma an
 - GitHub: <https://github.com/CTTIR>
 - Website: <https://cttir.github.io/website/>
 
+## Fonderie
+
+AI model engineering for scientific work: training and fine-tuning open models on domain data, inspecting and editing model weights, building customised local models, and evaluating them reproducibly on scientific tasks.
+
+*Coming soon.*
+
 ## Établi
 
 A suite of tools for research, local knowledge work, games and self-hosted services. Projects include R and Python workspaces, Shiny apps, a research library, focus timers, document and project clients, and experimental board games. Each repository documents its current features and development builds.
