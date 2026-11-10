@@ -32,7 +32,7 @@ Albert-Einstein-Straße 47
 02977 Hoyerswerda
 Deutschland
 
-E-Mail: 58561665+r-heller@users.noreply.github.com
+E-Mail: rheller.dev@outlook.com
 
 ## 4. Datenerfassung auf dieser Website
 
