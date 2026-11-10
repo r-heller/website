@@ -596,7 +596,7 @@
   category: "R Packages"
   group: "Statistical inference"
   description: "Explicit statistical procedures, descriptive summaries and diagnostic calculations behind one result contract, the computational core of the inference packages."
-  docs: "https://github.com/CTTIR/infercalcR#readme"
+  docs: "https://cttir.github.io/infercalcR/"
   logo: "/website/images/hex/infercalcR.svg"
   logo_dark: "/website/images/hex/infercalcR-dark.svg"
   repo: "https://github.com/CTTIR/infercalcR"
@@ -608,11 +608,11 @@
   status: "draft"
   category: "R Packages"
   group: "Statistical inference"
-  description: "Tables, manuscript-ready text and ggplot annotations from finalized statistical results, without recomputing the inference. Not public yet."
-  docs: ""
+  description: "Tables, manuscript-ready text and ggplot annotations from finalized statistical results, without recomputing the inference."
+  docs: "https://cttir.github.io/infereportR/"
   logo: "/website/images/hex/infereportR.svg"
   logo_dark: "/website/images/hex/infereportR-dark.svg"
-  repo: ""
+  repo: "https://github.com/CTTIR/infereportR"
   language: "R"
   topics: ["biostatistics-research-methods"]
   methods: []
