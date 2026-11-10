@@ -348,19 +348,6 @@
   topics: ["molecular-and-imaging-tools"]
   methods: []
 
-- name: "zhncommandR"
-  status: "usable"
-  category: "R Packages"
-  group: "Clinical science"
-  description: "Auditor live-evaluation dashboard for haematological oncology cohorts — quality and coverage indicators, OPS-coded complex-therapy and diagnostics counts, Kaplan–Meier, oncoprint, and cytogenetics summaries in an interactive Shiny app. Not public yet."
-  docs: ""
-  logo: "/website/images/hex/zhncommandR.svg"
-  logo_dark: "/website/images/hex/zhncommandR-dark.svg"
-  repo: ""
-  language: "R"
-  topics: ["biostatistics-research-methods"]
-  methods: []
-
 - name: "harbouR"
   status: "usable"
   category: "R Packages"
