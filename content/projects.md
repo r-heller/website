@@ -18,6 +18,8 @@ AI model engineering for scientific work: training and fine-tuning open models o
 
 *Coming soon.*
 
+- GitHub: <https://github.com/fonderie-dev>
+
 ## Établi
 
 A suite of tools for research, local knowledge work, games and self-hosted services. Projects include R and Python workspaces, Shiny apps, a research library, focus timers, document and project clients, and experimental board games. Each repository documents its current features and development builds.
