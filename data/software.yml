@@ -181,32 +181,6 @@
   logo: "/website/images/hex/gambitR3D.svg"
   logo_dark: "/website/images/hex/gambitR3D-dark.svg"
 
-- name: "diplomacyR"
-  repo: "https://github.com/r-heller/diplomacyR"
-  docs: "https://r-heller.github.io/diplomacyR/"
-  language: "R"
-  description: "Diplomacy adjudication, scriptable opponents, batch simulation and an interactive Shiny board."
-  topics: ["games-and-simulation"]
-  methods: []
-  status: "draft"
-  category: "Games & simulation"
-  group: "Games & simulation"
-  logo: "/website/images/hex/diplomacyR.svg"
-  logo_dark: "/website/images/hex/diplomacyR-dark.svg"
-
-- name: "risikoR"
-  repo: "https://github.com/r-heller/risikoR"
-  docs: "https://r-heller.github.io/risikoR/"
-  language: "R"
-  description: "Risk combat probabilities, conquest simulation, game-state analysis and interactive play in Shiny."
-  topics: ["games-and-simulation"]
-  methods: []
-  status: "draft"
-  category: "Games & simulation"
-  group: "Games & simulation"
-  logo: "/website/images/hex/risikoR.svg"
-  logo_dark: "/website/images/hex/risikoR-dark.svg"
-
 - name: "skatR"
   repo: "https://github.com/r-heller/skatR"
   docs: "https://r-heller.github.io/skatR/"
@@ -219,19 +193,6 @@
   group: "Games & simulation"
   logo: "/website/images/hex/skatR.svg"
   logo_dark: "/website/images/hex/skatR-dark.svg"
-
-- name: "maumauR"
-  repo: "https://github.com/r-heller/maumauR"
-  docs: "https://r-heller.github.io/maumauR/"
-  language: "R"
-  description: "A configurable Mau Mau engine with Monte Carlo simulation, strategy comparisons and interactive play."
-  topics: ["games-and-simulation"]
-  methods: []
-  status: "draft"
-  category: "Games & simulation"
-  group: "Games & simulation"
-  logo: "/website/images/hex/maumauR.svg"
-  logo_dark: "/website/images/hex/maumauR-dark.svg"
 
 - name: "tesseractR"
   repo: "https://github.com/r-heller/tesseractR"
@@ -267,7 +228,7 @@
   topics: ["creative-computing"]
   methods: []
   status: "draft"
-  category: "R Packages"
+  category: "Creative computing"
   group: "Creative computing"
   logo: "/website/images/hex/synesthR.svg"
   logo_dark: "/website/images/hex/synesthR-dark.svg"
@@ -285,49 +246,16 @@
   logo: "/website/images/hex/foldbenchR.svg"
   logo_dark: "/website/images/hex/foldbenchR-dark.svg"
 
-- name: "fastq2bam"
-  repo: "https://github.com/r-heller/fastq2bam"
-  docs: ""
-  language: "R"
-  description: "An R teaching pipeline for single-end FASTQ inspection, HISAT2 or Rsubread alignment, BAM sorting and coverage checks."
-  topics: ["molecular-and-imaging-tools"]
-  methods: []
-  status: "draft"
-  category: "Research Tools"
-  group: "Research tools"
-
-- name: "equilibria"
+- name: "Game Theory Course"
   repo: "https://github.com/r-heller/equilibria"
   docs: "https://r-heller.github.io/equilibria/"
   language: "R"
-  description: "A teaching site on game theory, decision-making and simulation, with R examples and a Nash-equilibrium explorer."
+  description: "#equilibria: a course-style teaching site on game theory, decision-making and simulation in R, with more than 240 pages in 32 topic areas and an interactive Nash-equilibrium explorer."
   topics: ["games-and-simulation"]
   methods: []
   status: "draft"
-  category: "Education & Resources"
-  group: "Teaching resources"
-
-- name: "coursegen"
-  repo: "https://github.com/r-heller/coursegen"
-  docs: ""
-  language: "Python / Quarto"
-  description: "A reusable Quarto course template with a syllabus, lessons, exercises, rubrics and instructor notes."
-  topics: ["biostatistics-research-methods"]
-  methods: []
-  status: "draft"
-  category: "Education & Resources"
-  group: "Teaching resources"
-
-- name: "bookgen"
-  repo: "https://github.com/r-heller/bookgen"
-  docs: ""
-  language: "Python / Quarto"
-  description: "A reusable Quarto book template with chapter structure, references, author checklists and HTML/EPUB output."
-  topics: ["biostatistics-research-methods"]
-  methods: []
-  status: "draft"
-  category: "Education & Resources"
-  group: "Teaching resources"
+  category: "Courses"
+  group: "Courses"
 
 - name: "cellreportR"
   status: "usable"
@@ -424,11 +352,11 @@
   status: "usable"
   category: "R Packages"
   group: "Clinical science"
-  description: "Auditor live-evaluation dashboard for haematological oncology cohorts — quality and coverage indicators, OPS-coded complex-therapy and diagnostics counts, Kaplan–Meier, oncoprint, and cytogenetics summaries in an interactive Shiny app."
-  docs: "https://cttir.github.io/zhncommandR/"
+  description: "Auditor live-evaluation dashboard for haematological oncology cohorts — quality and coverage indicators, OPS-coded complex-therapy and diagnostics counts, Kaplan–Meier, oncoprint, and cytogenetics summaries in an interactive Shiny app. Not public yet."
+  docs: ""
   logo: "/website/images/hex/zhncommandR.svg"
   logo_dark: "/website/images/hex/zhncommandR-dark.svg"
-  repo: "https://github.com/CTTIR/zhncommandR"
+  repo: ""
   language: "R"
   topics: ["biostatistics-research-methods"]
   methods: []
@@ -667,11 +595,11 @@
   status: "draft"
   category: "R Packages"
   group: "Statistical inference"
-  description: "Explicit statistical procedures, descriptive summaries and diagnostic calculations behind one result contract, the computational core of the inference packages. Not public yet."
-  docs: ""
+  description: "Explicit statistical procedures, descriptive summaries and diagnostic calculations behind one result contract, the computational core of the inference packages."
+  docs: "https://github.com/CTTIR/infercalcR#readme"
   logo: "/website/images/hex/infercalcR.svg"
   logo_dark: "/website/images/hex/infercalcR-dark.svg"
-  repo: ""
+  repo: "https://github.com/CTTIR/infercalcR"
   language: "R"
   topics: ["biostatistics-research-methods"]
   methods: []
@@ -763,72 +691,96 @@
   logo: "/website/images/hex/delphyr.svg"
   logo_dark: "/website/images/hex/delphyr-dark.svg"
   repo: "https://github.com/CTTIR/delphyR"
+  version_file: "packages/delphyr/DESCRIPTION"
   language: "R"
   topics: ["biostatistics-research-methods"]
   methods: []
 
-- name: "courses"
+- name: "R Course"
   status: "usable"
-  category: "Education & Resources"
-  description: "Biostatistics curriculum covering foundations, regression, study design and machine learning."
-  docs: "https://github.com/CTTIR/courses"
+  category: "Courses"
+  description: "A four-course biostatistics programme in R and Quarto, from the scientific process and core tests through regression, study design and causal inference to statistical learning on high-dimensional biomedical data: a structured starting point that goes well beyond the basics."
+  docs: "https://cttir.github.io/courses/"
   logo: ""
   repo: "https://github.com/CTTIR/courses"
-  language: ""
+  language: "R / Quarto"
   topics: ["biostatistics-research-methods"]
   methods: []
 
-- name: "tutorials"
+- name: "Methods in R"
   status: "usable"
-  category: "Education & Resources"
-  description: "Hands-on tutorials for CTTIR software and reproducible research methods."
-  docs: "https://github.com/CTTIR/tutorials"
+  category: "Books"
+  description: "A bench reference for biomedical authors and peer reviewers: common methods with R code, diagnostics and reviewer-facing red flags."
+  docs: "https://cttir.github.io/methods-in-r/"
+  logo: ""
+  repo: "https://github.com/CTTIR/methods-in-r"
+  language: "R / Quarto"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "Clinical Data Science in R"
+  status: "usable"
+  category: "Books"
+  description: "Open textbook on methods in clinical AI and translational trauma research: 28 chapters from the clinical question to model evaluation, imaging, simulation and ethics, with R labs on synthetic data."
+  docs: "https://cttir.github.io/clinical-data-science-in-r/"
+  logo: ""
+  repo: "https://github.com/CTTIR/clinical-data-science-in-r"
+  language: "R / Quarto"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "Scientometrics in R"
+  status: "usable"
+  category: "Books"
+  description: "A hands-on guide to bibliometric data acquisition, indicators, network analysis, text mining and reproducible reporting in R."
+  docs: "https://cttir.github.io/scientometrics-in-r/"
+  logo: ""
+  repo: "https://github.com/CTTIR/scientometrics-in-r"
+  language: "R / Quarto"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "Strategy in R"
+  status: "usable"
+  category: "Books"
+  description: "An open book on game theory, simulation and machine intelligence, implemented in R."
+  docs: "https://cttir.github.io/strategy-in-r/"
+  logo: ""
+  repo: "https://github.com/CTTIR/strategy-in-r"
+  language: "R / Quarto"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "Folding in R"
+  status: "usable"
+  category: "Books"
+  description: "Origami, manifolds and dimension reduction in R: folding geometry, embedding methods and benchmarks with known ground truth."
+  docs: "https://r-heller.github.io/folding-in-r/"
+  logo: ""
+  repo: "https://github.com/r-heller/folding-in-r"
+  language: "R / Quarto"
+  topics: ["biostatistics-research-methods"]
+  methods: []
+
+- name: "R Tutorials"
+  status: "usable"
+  category: "Tutorials"
+  description: "Tutorials on R in general, for anyone working with data and not tied to CTTIR projects: a knowledge base of more than 550 runnable method pages in 16 topic areas, from probability and visualisation to regression, Bayesian inference, survival analysis, machine learning and bioinformatics, with a test-selection decision tree and companion Shiny apps: a first point of entry that also serves as an in-depth reference."
+  docs: "https://cttir.github.io/tutorials/"
   logo: ""
   repo: "https://github.com/CTTIR/tutorials"
-  language: ""
+  language: "R / Quarto"
   topics: ["biostatistics-research-methods"]
   methods: []
 
-- name: "ressources"
+- name: "Clinical Data Science Course"
   status: "usable"
-  category: "Education & Resources"
-  description: "Shared research resources, references and supporting materials."
-  docs: "https://github.com/CTTIR/ressources"
+  category: "Courses"
+  description: "Clinical Data Science in R: eight workshops (32 teaching units) on clinical AI and translational trauma research, from diagnostic accuracy and grouped validation to longitudinal and mechanistic models, simulation, regulation and data protection, with R labs on synthetic data."
+  docs: "https://cttir.github.io/clinical-data-science-in-r-course/"
   logo: ""
-  repo: "https://github.com/CTTIR/ressources"
-  language: ""
+  repo: "https://github.com/CTTIR/clinical-data-science-in-r-course"
+  language: "R / Quarto"
   topics: ["biostatistics-research-methods"]
   methods: []
 
-- name: "researchD"
-  repo: "https://github.com/CTTIR/researchD"
-  docs: "https://github.com/CTTIR/researchD"
-  language: "Python"
-  description: "Self-hosted academic literature and research-signal surveillance server."
-  topics: ["biostatistics-research-methods"]
-  methods: []
-  status: "draft"
-  category: "Research Tools"
-  group: "Research infrastructure"
-
-- name: "pwa-container"
-  repo: "https://github.com/CTTIR/pwa-container"
-  docs: "https://github.com/CTTIR/pwa-container"
-  language: "TypeScript"
-  description: "Self-hosted container for anonymous surveys and web applications."
-  topics: ["biostatistics-research-methods"]
-  methods: []
-  status: "draft"
-  category: "Research Tools"
-  group: "Research infrastructure"
-
-- name: "cttiR-model"
-  repo: "https://github.com/CTTIR/cttiR-model"
-  docs: "https://github.com/CTTIR/cttiR-model"
-  language: "Python"
-  description: "CPU-first tooling for a planned R-domain specialist model: local broker, validation and evaluation. Training and model inference are not yet available."
-  topics: ["biostatistics-research-methods"]
-  methods: []
-  status: "draft"
-  category: "Research Tools"
-  group: "Research infrastructure"

@@ -14,13 +14,14 @@
 
     {{ $software := hugo.Data.software }}
     {{/* R packages are grouped by their v5 colour family, in the token order,
-         with cttiR's reserved core palette first. */}}
-    {{ $rGroups := slice "Creative computing" "CTTIR core" "Spectral imaging" "Spatial biology" "Molecular data" "Clinical science" "Statistical inference" "Dimension reduction & visualisation" "Systems & simulation" "Evidence & discovery" "Consensus & ideation" "Research infrastructure" }}
+         with cttiR's reserved core palette first. Creative computing and the
+         games close the page, in that order. */}}
+    {{ $rGroups := slice "CTTIR core" "Spectral imaging" "Spatial biology" "Molecular data" "Clinical science" "Statistical inference" "Dimension reduction & visualisation" "Systems & simulation" "Evidence & discovery" "Consensus & ideation" "Research infrastructure" }}
     {{ $family := dict "Games & simulation" "simulation" "Creative computing" "consensus" "CTTIR core" "core" "Spectral imaging" "spectral" "Spatial biology" "spatial" "Molecular data" "omics" "Clinical science" "clinical" "Statistical inference" "methods" "Dimension reduction & visualisation" "embedding" "Systems & simulation" "simulation" "Evidence & discovery" "evidence" "Consensus & ideation" "consensus" "Research infrastructure" "platform" }}
-    {{ range $cat := slice "R Packages" "Research Tools" "Zotero Plugins" "Applications" "Education & Resources" "Games & simulation" }}
+    {{ range $cat := slice "R Packages" "Zotero Plugins" "Applications" "Tutorials" "Books" "Courses" "Creative computing" "Games & simulation" }}
       {{ $items := where $software "category" $cat }}
       {{ if $items }}
-        <h2 class="cttir-section-title{{ if eq $cat "Games & simulation" }} cttir-family cttir-family--games{{ end }}">{{ $cat }}</h2>
+        <h2 class="cttir-section-title{{ if eq $cat "Games & simulation" }} cttir-family cttir-family--games{{ else if eq $cat "Creative computing" }} cttir-family cttir-family--consensus{{ end }}">{{ $cat }}</h2>
         {{ if eq $cat "R Packages" }}
           {{ range $group := $rGroups }}
             {{ $gitems := where $items "group" $group }}

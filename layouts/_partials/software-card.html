@@ -2,7 +2,8 @@
   Software card. Input: dict with "p" (entry from data/software.yaml) and
   "cat" (its category). When the entry has no image `logo`, a monochrome,
   name-inside outline is drawn whose shape encodes the type:
-    R Packages / Others -> hexagon,  Zotero Plugins -> pentagon,  Applications -> square.
+    R Packages / Others -> hexagon,  Zotero Plugins -> pentagon,  Applications -> square,
+    Tutorials / Books / Courses -> octagon.
 */}}
 {{ $p := .p }}
 {{ $cat := .cat }}
@@ -14,6 +15,16 @@
         <img class="cttir-card__logo cttir-brand-dark" src="{{ $p.logo_dark }}" alt="{{ $p.name }} logo" loading="lazy" width="96" height="111" />
       </span>
     {{ else }}<img class="cttir-card__logo" src="{{ $p.logo }}" alt="{{ $p.name }} logo" loading="lazy" width="96" height="111" />{{ end }}
+  {{ else if in (slice "Tutorials" "Books" "Courses") $cat }}
+    {{/* Education and teaching content (Tutorials, Books, Courses): an
+         octagon with the name inside, one word per line. */}}
+    {{ $words := split $p.name " " }}
+    <svg class="cttir-card__logo cttir-card__logo--placeholder" viewBox="0 0 200 200" role="img" aria-label="{{ $p.name }}">
+      <polygon points="136.4,12.2 187.8,63.6 187.8,136.4 136.4,187.8 63.6,187.8 12.2,136.4 12.2,63.6 63.6,12.2" fill="none" stroke="currentColor" stroke-width="3" />
+      <text x="100" y="{{ sub 100 (mul (sub (len $words) 1) 11) }}" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700" fill="currentColor">
+        {{- range $i, $w := $words }}<tspan x="100" dy="{{ if $i }}22{{ else }}0{{ end }}">{{ $w }}</tspan>{{ end -}}
+      </text>
+    </svg>
   {{ else if eq $cat "Zotero Plugins" }}
     <svg class="cttir-card__logo cttir-card__logo--placeholder" viewBox="0 0 200 200" role="img" aria-label="{{ $p.name }}">
       <polygon points="100,10 190.3,75.6 155.8,181.9 44.2,181.9 9.7,75.6" fill="none" stroke="currentColor" stroke-width="3" />
@@ -43,6 +54,14 @@
     </span>
   </header>
   <p class="cttir-card__desc">{{ $p.description }}</p>
+  {{/* Version and last update come from data/software_meta.json, refreshed
+       from GitHub by scripts/update_software_meta.py on every build. */}}
+  {{ with index (hugo.Data.software_meta | default (dict)) $p.name }}
+    <p class="cttir-card__meta">
+      {{- with .version }}<span class="cttir-card__version">v{{ . }}</span>{{ end -}}
+      {{- with .updated }}<span class="cttir-card__updated">Updated <time datetime="{{ . }}">{{ time.Format "2 Jan 2006" (time.AsTime .) }}</time></span>{{ end -}}
+    </p>
+  {{ end }}
   <footer class="cttir-card__links">
     {{ with $p.repo }}<a href="{{ . }}" rel="noopener">GitHub</a>{{ end }}
     {{ with $p.docs }}<a href="{{ . }}" rel="noopener">Docs</a>{{ end }}

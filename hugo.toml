@@ -84,15 +84,21 @@ url = "software/"
 
 [[menu.main]]
 parent = "contributions"
-name = "Courses"
+name = "Tutorials"
 weight = 4
-url = "courses/"
+url = "tutorials/"
 
 [[menu.main]]
 parent = "contributions"
 name = "Books"
 weight = 5
 url = "books/"
+
+[[menu.main]]
+parent = "contributions"
+name = "Courses"
+weight = 6
+url = "courses/"
 
 [[menu.main]]
 name = "Projects"

@@ -171,6 +171,16 @@ body.colorscheme-dark .cttir-family--platform { --cttir-family: #8FAABD; }
   font-size: 0.9rem;
   font-weight: 600;
 }
+.cttir-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.9rem;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--cttir-card-muted);
+  font-variant-numeric: tabular-nums;
+}
+.cttir-card__version { font-weight: 600; }
 
 
 .cttir-brand-images { display: flex; justify-content: center; align-self: center; }
@@ -200,4 +210,5 @@ body.colorscheme-dark .cttir-brand-images .cttir-brand-dark { display: block; }
   hyphens: none;
 }
 .cttir-card__links { font-size: 1.5rem; }
+.content article .cttir-card__meta { font-size: 1.35rem; margin: 0; }
 .cttir-projects { gap: 2rem; }

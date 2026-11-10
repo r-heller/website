@@ -1,0 +1,234 @@
+{
+  "Clinical Data Science Course": {
+    "updated": "2026-11-09"
+  },
+  "Clinical Data Science in R": {
+    "updated": "2026-11-09"
+  },
+  "Folding in R": {
+    "updated": "2026-11-09"
+  },
+  "Game Theory Course": {
+    "updated": "2026-11-09"
+  },
+  "Methods in R": {
+    "updated": "2026-11-09"
+  },
+  "R Course": {
+    "updated": "2026-11-06"
+  },
+  "R Tutorials": {
+    "updated": "2026-11-06"
+  },
+  "Scientometrics in R": {
+    "updated": "2026-11-09",
+    "version": "0.1.0"
+  },
+  "Strategy in R": {
+    "updated": "2026-11-09",
+    "version": "1.0.0"
+  },
+  "argus-one": {
+    "updated": "2026-11-09"
+  },
+  "attaclone-dedup": {
+    "updated": "2026-11-09",
+    "version": "1.0.1"
+  },
+  "bambamR": {
+    "updated": "2026-11-10",
+    "version": "0.2.0"
+  },
+  "bloodspottR": {
+    "updated": "2026-11-10",
+    "version": "0.2.0"
+  },
+  "brainwritR": {
+    "updated": "2026-11-10",
+    "version": "0.7.0"
+  },
+  "cellreportR": {
+    "updated": "2026-11-10",
+    "version": "0.3.0"
+  },
+  "cellspecR": {
+    "updated": "2026-11-09",
+    "version": "1.2.0"
+  },
+  "cttiR": {
+    "updated": "2026-11-10",
+    "version": "0.2.0"
+  },
+  "cuvis.r": {
+    "updated": "2026-11-09",
+    "version": "0.2.0"
+  },
+  "delphyR": {
+    "updated": "2026-11-06",
+    "version": "0.0.2"
+  },
+  "dynasimR": {
+    "updated": "2026-11-09",
+    "version": "0.2.0"
+  },
+  "foldbenchR": {
+    "updated": "2026-11-09",
+    "version": "0.3.0"
+  },
+  "gambitR": {
+    "updated": "2026-11-09",
+    "version": "0.2.0"
+  },
+  "gambitR3D": {
+    "updated": "2026-11-10",
+    "version": "0.2.0"
+  },
+  "gatekeepR": {
+    "updated": "2026-11-10",
+    "version": "1.2.0"
+  },
+  "harbouR": {
+    "updated": "2026-11-09",
+    "version": "1.0.0"
+  },
+  "hexmakR": {
+    "updated": "2026-11-10",
+    "version": "0.5.0"
+  },
+  "hyperannotatR": {
+    "updated": "2026-11-09",
+    "version": "0.3.1"
+  },
+  "hyperloom": {
+    "updated": "2026-11-09",
+    "version": "0.2.0"
+  },
+  "hypermodR": {
+    "updated": "2026-11-10",
+    "version": "0.1.0"
+  },
+  "hyperspectR": {
+    "updated": "2026-11-09",
+    "version": "0.3.0"
+  },
+  "hyperspectaculR": {
+    "updated": "2026-11-10",
+    "version": "0.3.0"
+  },
+  "infercalcR": {
+    "updated": "2026-11-10",
+    "version": "0.1.0"
+  },
+  "inferguidR": {
+    "updated": "2026-11-10",
+    "version": "0.1.0"
+  },
+  "libscanR": {
+    "updated": "2026-11-09",
+    "version": "0.2.0"
+  },
+  "lstparsR": {
+    "updated": "2026-11-09",
+    "version": "1.0.0"
+  },
+  "metadata-mender": {
+    "updated": "2026-11-09",
+    "version": "0.6.2"
+  },
+  "molpathR": {
+    "updated": "2026-11-10",
+    "version": "0.2.0"
+  },
+  "mssrscopR": {
+    "updated": "2026-11-09",
+    "version": "0.2.0.9001"
+  },
+  "multixoR": {
+    "updated": "2026-11-10",
+    "version": "0.2.0"
+  },
+  "phenoloom": {
+    "updated": "2026-11-10",
+    "version": "0.2.0"
+  },
+  "phenoscapR": {
+    "updated": "2026-11-10",
+    "version": "1.0.0"
+  },
+  "pressR": {
+    "updated": "2026-11-09",
+    "version": "0.2.0.9000"
+  },
+  "pwa-quest": {
+    "updated": "2026-11-09",
+    "version": "1.0.0"
+  },
+  "qupflowR": {
+    "updated": "2026-11-10",
+    "version": "0.1.0"
+  },
+  "qviewparsR": {
+    "updated": "2026-11-09",
+    "version": "1.1.0"
+  },
+  "reflowR": {
+    "updated": "2026-11-10",
+    "version": "0.3.0"
+  },
+  "researchR": {
+    "updated": "2026-11-09",
+    "version": "0.2.0"
+  },
+  "sandtablR": {
+    "updated": "2026-11-10",
+    "version": "0.1.0"
+  },
+  "scimagR": {
+    "updated": "2026-11-10",
+    "version": "0.2.0"
+  },
+  "scimapR": {
+    "updated": "2026-11-10",
+    "version": "0.5.0"
+  },
+  "segmantR": {
+    "updated": "2026-11-09",
+    "version": "0.2.0"
+  },
+  "shieldR": {
+    "updated": "2026-11-09",
+    "version": "0.7.0"
+  },
+  "shinylaunchR": {
+    "updated": "2026-11-09",
+    "version": "0.2.0-rc.1"
+  },
+  "skatR": {
+    "updated": "2026-11-10",
+    "version": "0.2.0"
+  },
+  "songR": {
+    "updated": "2026-11-09",
+    "version": "1.0.0"
+  },
+  "sorenR": {
+    "updated": "2026-11-09",
+    "version": "0.1.0"
+  },
+  "synesthR": {
+    "updated": "2026-11-10",
+    "version": "0.2.0"
+  },
+  "tesseractR": {
+    "updated": "2026-11-10",
+    "version": "0.2.0"
+  },
+  "themakR": {
+    "updated": "2026-11-10",
+    "version": "0.2.0"
+  },
+  "tivis.r": {
+    "updated": "2026-11-09",
+    "version": "0.2.0"
+  }
+}

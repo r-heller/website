@@ -1,13 +1,21 @@
 ---
-title: "R Statistics Tutorials"
-description: "A structured learning path from descriptive statistics to advanced modelling in R."
+title: "Tutorials"
+description: "R tutorials: a knowledge base of runnable statistics and bioinformatics method pages, plus a short tutorial series on this site."
 ---
 
-Welcome to the **R Statistics Tutorial Series**. This curriculum is designed to take you from summarising raw data all the way to building and interpreting complex statistical models — with beautiful visualisations along the way.
+## R Tutorials
+
+Tutorials on R in general, for anyone working with data and not tied to CTTIR projects: a knowledge base of more than 550 runnable method pages in 16 topic areas, from probability and visualisation to regression, Bayesian inference, survival analysis, machine learning and bioinformatics, with a test-selection decision tree and companion Shiny apps. It is a first point of entry and an in-depth reference at the same time.
+
+[CTTIR.github.io/tutorials](https://CTTIR.github.io/tutorials/)
+
+## Tutorial series on this site
+
+A short **R statistics tutorial series** hosted on this site. It is designed to take you from summarising raw data all the way to building and interpreting complex statistical models — with beautiful visualisations along the way.
 
 Each tutorial includes fully reproducible R code that you can copy and run in your own R environment.
 
-## Learning Path
+### Learning Path
 
 | # | Tutorial | Topics |
 |---|----------|--------|
@@ -16,7 +24,7 @@ Each tutorial includes fully reproducible R code that you can copy and run in yo
 | 3 | [Inferential Statistics]({{< ref "03-inferential-statistics" >}}) | t-tests, ANOVA, chi-square, non-parametric tests |
 | 4 | [Regression & Modelling]({{< ref "04-regression-modelling" >}}) | Linear models, GLM, mixed models, diagnostics |
 
-## Prerequisites
+### Prerequisites
 
 - **R** (version 4.0+) installed — [Download R](https://cran.r-project.org/)
 - **RStudio** recommended — [Download RStudio](https://posit.co/download/rstudio-desktop/)

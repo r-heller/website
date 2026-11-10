@@ -3,6 +3,10 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # Daily rebuild so the version and last-update lines on the software
+    # cards follow the package repositories.
+    - cron: '17 4 * * *'
   workflow_dispatch:
 
 permissions:
@@ -49,6 +53,11 @@ jobs:
 
       - name: Build overview graph
         run: python scripts/build_overview_graph.py
+
+      - name: Refresh software versions and update dates
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/update_software_meta.py
 
       - name: Build with Hugo
         env:
