@@ -45,10 +45,9 @@ Diese Website wird über GitHub Pages gehostet. Anbieter ist die GitHub Inc., 88
 ### Webanalyse mit Plausible Analytics
 
 Zur statistischen Auswertung der Zugriffe nutzt diese Website Plausible
-Analytics in der selbst gehosteten Community Edition. Das Analyseskript wird von
-analytics.hellebo.de geladen, einem vom Betreiber dieser Website selbst
-betriebenen Server; die erfassten Daten werden nicht an Dritte, auch nicht an
-den Hersteller von Plausible, übermittelt.
+Analytics in der selbst gehosteten Community Edition auf einem eigenen Server des
+Betreibers; die erfassten Daten werden nicht an Dritte, auch nicht an den
+Hersteller von Plausible, übermittelt.
 
 Plausible setzt keine Cookies und verwendet kein Fingerprinting; auf Ihrem
 Endgerät werden keine Informationen gespeichert. Bei einem Seitenaufruf werden
@@ -63,8 +62,8 @@ Personenbezug.
 
 Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; das berechtigte Interesse
 liegt in der Analyse und Verbesserung dieses Angebots. Sie können der Erfassung
-jederzeit widersprechen, indem Sie in Ihrem Browser Skripte von
-analytics.hellebo.de blockieren, etwa mit einem Inhaltsblocker. Weitere
+jederzeit widersprechen, indem Sie das Statistikskript in Ihrem Browser
+blockieren, etwa mit einem Inhaltsblocker. Weitere
 Informationen: [Datenschutzhinweise von Plausible](https://plausible.io/data-policy).
 
 ### VG Wort

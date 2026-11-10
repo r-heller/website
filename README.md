@@ -51,8 +51,8 @@ the list also shows full authors and journal citations.
 
 ## Analytics and publication
 
-`layouts/partials/head/extensions.html` loads a script from
-`analytics.hellebo.de`. Review the actual endpoint behavior and privacy notice
+`layouts/partials/head/extensions.html` loads the self-hosted Plausible
+statistics script. Review the actual endpoint behavior and privacy notice
 when changing analytics. Placeholder checks do not establish legal compliance.
 The overview uses a pinned third-party graph library with an integrity hash.
 The keyboard-accessible list, search and filters remain available if it fails.
