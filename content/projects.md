@@ -16,9 +16,13 @@ Reproducible computational tools, analyses, and teaching resources for trauma an
 
 AI model engineering for scientific work: training and fine-tuning open models on domain data, inspecting and editing model weights, building customised local models, and evaluating them reproducibly on scientific tasks.
 
-*Coming soon.*
+Early stage: the three tools below are scaffolds that state their scope; nothing has been released yet.
 
 - GitHub: <https://github.com/fonderie-dev>
+- Website: <https://fonderie-dev.github.io/website/>
+- Training and fine-tuning: [Affinage](https://github.com/fonderie-dev/fonderie-affinage)
+- Weight inspection and editing: [Burin](https://github.com/fonderie-dev/fonderie-burin)
+- Reproducible evaluation: [Essai](https://github.com/fonderie-dev/fonderie-essai)
 
 ## Établi
 
